@@ -1,5 +1,5 @@
 {
-  "name": "transpro ",
+  "name": "pandurang-udyog-samuh",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -28,6 +28,7 @@
     "react-scripts": "5.0.1",
     "react-scroll-to-top": "^3.0.0",
     "react-slick": "^0.29.0",
+    "react-toastify": "^10.0.4",
     "slick-carousel": "^1.8.1",
     "web-vitals": "^2.1.4"
   },

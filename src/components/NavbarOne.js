@@ -50,7 +50,7 @@ const NavbarOne = () => {
 				<div className="navbar-top">
 					<Link className="main-logo" to="/home">
 						<div className="logo d-none d-xl-block">
-							<img src="/assets/img/logo.png" alt="Transpro" />
+							<img src="/assets/img/logo.png" alt="Pandurang Udyog Samuh" />
 						</div>
 					</Link>
 					<div className="nav-phone-wrap">
@@ -125,7 +125,7 @@ const NavbarOne = () => {
 										? "menu toggle-btn d-block d-lg-none open"
 										: "menu toggle-btn d-block d-lg-none "
 								}
-								data-target="#transpro_main_menu"
+								data-target="#pandurang-udyog-samuh_main_menu"
 								aria-expanded="false"
 								aria-label="Toggle navigation"
 							>
@@ -135,7 +135,7 @@ const NavbarOne = () => {
 						</div>
 						<div className="logo">
 							<Link to="/">
-								<img src="assets/img/logo-2.png" alt="Transpro" />
+								<img src="assets/img/logo-2.png" alt="Pandurang Udyog Samuh" />
 							</Link>
 						</div>
 						<div className="nav-left-part"></div>
@@ -160,7 +160,7 @@ const NavbarOne = () => {
 						</div>
 						<div
 							className={open ? "collapse navbar-collapse sopen" : "collapse navbar-collapse"}
-							id="transpro_main_menu"
+							id="pandurang-udyog-samuh_main_menu"
 						>
 							<ul className="navbar-nav menu-open">
 								<li className="current-menu-item">
@@ -236,6 +236,9 @@ const NavbarOne = () => {
                     </li>
                   </ul>
                 </li> */}
+								<li>
+									<Link to="/contact">Awards</Link>
+								</li>
 								<li>
 									<Link to="/contact">Contact Us</Link>
 								</li>

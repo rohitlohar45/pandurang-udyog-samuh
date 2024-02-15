@@ -1,24 +1,13 @@
-import firebase from './initialise';
-import { loginRequest, loginSuccess, loginFailure } from './authSlice';
+import { signInWithEmailAndPassword } from "firebase/auth";
+import { auth } from "./initialise";
 
-export const loginUser = (email, password) => async (dispatch) => {
-  dispatch(loginRequest());
-  try {
-    const userCredential = await firebase.auth().signInWithEmailAndPassword(email, password);
-    const user = userCredential.user;
-    dispatch(loginSuccess(user));
-  } catch (error) {
-    dispatch(loginFailure(error.message));
-  }
-};
-
-export const registerUser = (email, password) => async (dispatch) => {
-  dispatch(loginRequest());
-  try {
-    const userCredential = await firebase.auth().createUserWithEmailAndPassword(email, password);
-    const user = userCredential.user;
-    dispatch(loginSuccess(user));
-  } catch (error) {
-    dispatch(loginFailure(error.message));
-  }
+export const loginUser = (email, password) => async () => {
+	console.log(email, password);
+	try {
+		const userCredential = await signInWithEmailAndPassword(email, password);
+		const user = userCredential.user;
+		return user;
+	} catch (error) {
+		console.log(error);
+	}
 };

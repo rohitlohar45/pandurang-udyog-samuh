@@ -26,9 +26,9 @@ const ServiceDetailsInner = ({ service }) => {
 						<div className="col-lg-8">
 							<div className="service-details-wrap">
 								<div className="thumb">
-									<img src={information.image1} alt="Transpro" />
+									<img src={information.image1} alt="Pandurang Udyog Samuh" />
 									<div className="icon">
-										<img src={information.image2} alt="Transpro" />
+										<img src={information.image2} alt="Pandurang Udyog Samuh" />
 									</div>
 								</div>
 								<h2>{information?.title}</h2>
@@ -44,9 +44,9 @@ const ServiceDetailsInner = ({ service }) => {
 								<div key={index} className="col-lg-4">
 									<div className="single-service-wrap">
 										<div className="thumb">
-											<img src={event?.image} alt="Transpro" />
+											<img src={event?.image} alt="Pandurang Udyog Samuh" />
 											<div className="icon">
-												<img src={event?.icon} alt="Transpro" />
+												<img src={event?.icon} alt="Pandurang Udyog Samuh" />
 											</div>
 										</div>
 										<div className="details">
