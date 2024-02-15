@@ -77,7 +77,7 @@ const TeamOne = () => {
             <div className='col-lg-12'>
               <div className='team-slider owl-carousel'>
                 <Slider {...settings}>
-                  <div className='item'>
+                  {/* <div className='item'>
                     <div className='single-team-wrap'>
                       <div className='thumb'>
                         <img src='assets/img/team/1.png' alt='Transpro' />
@@ -112,14 +112,14 @@ const TeamOne = () => {
                         </div>
                       </div>
                     </div>
-                  </div>
+                  </div> */}
                   <div className='item'>
                     <div className='single-team-wrap'>
                       <div className='thumb'>
                         <img src='assets/img/team/2.png' alt='Transpro' />
                       </div>
                       <div className='details'>
-                        <h5>ANJELINA ROSEE</h5>
+                        <h5>SHIVAJI NAMDEO PATIL</h5>
                         <p>Founder</p>
                         <div className='hover-icon'>
                           <FaPlus />
@@ -155,8 +155,8 @@ const TeamOne = () => {
                         <img src='assets/img/team/3.png' alt='Transpro' />
                       </div>
                       <div className='details'>
-                        <h5>MISHEL MARSH</h5>
-                        <p>Co-Founder</p>
+                        <h5>DADASAHEB NAMDEO PATIL</h5>
+                        <p>Founder</p>
                         <div className='hover-icon'>
                           <FaPlus />
                           <ul className='social-area'>
@@ -191,7 +191,7 @@ const TeamOne = () => {
                         <img src='assets/img/team/2.png' alt='Transpro' />
                       </div>
                       <div className='details'>
-                        <h5>ANJELINA ROSEE</h5>
+                        <h5>SHAMBHUDEO NAMDEO PATIL</h5>
                         <p>Founder</p>
                         <div className='hover-icon'>
                           <FaPlus />
