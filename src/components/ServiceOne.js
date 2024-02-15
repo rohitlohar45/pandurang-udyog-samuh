@@ -17,9 +17,7 @@ const ServiceOne = () => {
                 <h4 className='subtitle style-2'>SERVICES</h4>
                 <h2 className='title'>OUR SERVICE FOR YOU</h2>
                 <p>
-                  Quickly optimize cooperative models for long-term high-impact
-                  ROI. Dynamically drive innovative e-commerce and distributed
-                  paradigms.
+                   Explore our diverse services at Pandurang Enterprises, including cold storage solutions, fruit supply to major clients, agricultural technologies, fuel services, and construction materials. Your satisfaction is our priority.
                 </p>
               </div>
             </div>
@@ -37,13 +35,12 @@ const ServiceOne = () => {
                   </div>
                 </div>
                 <div className='details'>
-                  <h5>SEA TRANSPORTATION</h5>
+                  <h5>Pan Exports Cold Storage</h5>
                   <p>
-                    Intrinsicly exploit e-business imperative with emerging
-                    human capital.
+                  APEDA-approved cold storage with 2000 metric ton capacity, featuring pre-cooling and 10 cold chambers, powered by eco-friendly solar panels.
                   </p>
                   <div className='btn-wrap'>
-                    <Link className='read-more-text' to='/service-details'>
+                    <Link className='read-more-text' to='/service-details/pan-exports-cold-storage'>
                       READ MORE{" "}
                       <span>
                         <FaArrowRight />
@@ -65,13 +62,12 @@ const ServiceOne = () => {
                   </div>
                 </div>
                 <div className='details'>
-                  <h5>AIR TRANSPORTATION</h5>
-                  <p>
-                    Intrinsicly exploit e-business imperative with emerging
-                    human capital.
+                  <h5>Pandurang Agro Industries Cold Storage</h5>
+                  <p>   
+                   APEDA-approved pack house specializing in enhancing banana packaging quality and quantity, with a daily 100-ton capacity.
                   </p>
                   <div className='btn-wrap'>
-                    <Link className='read-more-text' to='/service-details'>
+                    <Link className='read-more-text' to='/service-details/pandurang-agro-industries-cold-storage'>
                       READ MORE{" "}
                       <span>
                         <FaArrowRight />
@@ -93,13 +89,12 @@ const ServiceOne = () => {
                   </div>
                 </div>
                 <div className='details'>
-                  <h5>WAREHOUSING</h5>
+                  <h5>DP Fruit Suppliers (Reliance, INI, SK)</h5>
                   <p>
-                    Intrinsicly exploit e-business imperative with emerging
-                    human capital.
+                    17 year veteran supplying banana packaging to DP Fruit & major chains (Reliance Fresh, INI, Desai, S K). 
                   </p>
                   <div className='btn-wrap'>
-                    <Link className='read-more-text' to='/service-details'>
+                    <Link className='read-more-text' to='/service-details/dp-fruit-suppliers-reliance-ini-sk'>
                       READ MORE{" "}
                       <span>
                         <FaArrowRight />
