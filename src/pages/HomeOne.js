@@ -39,7 +39,7 @@ const HomeOne = () => {
           <AboutOne />
 
           {/* Service One */}
-          <ServiceOne />
+          {/* <ServiceOne /> */}
 
           {/* Why Choose Us One */}
           <WhyChooseUsOne />
@@ -53,7 +53,7 @@ const HomeOne = () => {
 
           {/* Contact One */}
           <div
-            className='call-to-contact-area pd-top-240'
+            className="call-to-contact-area pd-top-240"
             style={{ background: "#F9F9F9" }}
           >
             <ContactOne />
