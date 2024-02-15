@@ -1,10 +1,10 @@
-import { createStore, combineReducers } from 'redux';
-import authReducer from './reducers/authReducer';
-import clickActionReducer from './reducers/clickActionReducer';
+import { createStore, combineReducers } from "redux";
+import authReducer from "../reducers/authReducer";
+import clickActionReducer from "../reducers/clickActionReducer";
 
 const rootReducer = combineReducers({
   auth: authReducer,
-  clickAction: clickActionReducer
+  clickAction: clickActionReducer,
 });
 
 const preloadedState = {}; // Ensure preloaded state matches reducer structure
