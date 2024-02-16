@@ -196,7 +196,7 @@
                   position: relative;
                 }
                 &:hover {
-                  background: #fb493d;
+                  background: var(--main-color);
                   a {
                     color: #fff;
                     &:before {
