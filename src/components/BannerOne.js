@@ -51,13 +51,6 @@ const BannerOne = () => {
                         </p>
                         <div className='btn-wrap'>
                           <Link
-                            className='btn btn-base b-animate-4'
-                            to='/service'
-                          >
-                            {" "}
-                            Explore The Services
-                          </Link>
-                          <Link
                             className='btn btn-white b-animate-4'
                             to='/contact'
                           >
@@ -92,13 +85,6 @@ const BannerOne = () => {
                         <div className='btn-wrap'>
                           <Link
                             className='btn btn-base b-animate-4'
-                            to='/service'
-                          >
-                            {" "}
-                            Explore The Services
-                          </Link>
-                          <Link
-                            className='btn btn-white b-animate-4'
                             to='/contact'
                           >
                             Contact Us

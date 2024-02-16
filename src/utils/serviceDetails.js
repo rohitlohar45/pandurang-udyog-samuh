@@ -13,7 +13,6 @@ const serviceContent = {
 			image1: "assets/img/service/pan-exports-cold-storage/1.png",
 			image2: "assets/img/service/pan-exports-cold-storage/2.png",
 		},
-		// making this field for now will make this dynamic
 		events: {
 			name: {
 				title: "Event 1",

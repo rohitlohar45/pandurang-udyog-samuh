@@ -53,7 +53,7 @@ function App() {
 				<Route exact path="/faq" element={<Faq />} />
 				<Route exact path="/contact" element={<Contact />} />
 			</Routes>
-			<ScrollToTop smooth color="#FA4318" />
+			<ScrollToTop smooth color="#bd0e0e" />
 		</BrowserRouter>
 	);
 }
