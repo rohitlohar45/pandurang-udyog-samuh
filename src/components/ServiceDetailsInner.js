@@ -26,19 +26,18 @@ const ServiceDetailsInner = ({ service }) => {
 						<div className="col-lg-8">
 							<div className="service-details-wrap">
 								<div className="thumb">
-									<img src={information.image1} alt="Pandurang Udyog Samuh" />
+									<img src={information.image1} alt="image1" />
 									<div className="icon">
-										<img src={information.image2} alt="Pandurang Udyog Samuh" />
+										<img src={information.image2} alt="image2" />
 									</div>
 								</div>
 								<h2>{information?.title}</h2>
 								<p>{information?.description1}</p>
 								<p>{information?.description2}</p>
-								<h4 className="subtitle mt-3">How It Works</h4>
 								<p>{information?.description3}</p>
 								<p className="last-para">{information?.description4}</p>
 							</div>
-							<h1>Events section below</h1>
+							<h3>Events section below</h3>
 							{/* {eventInfo?.map((event, index) => {
 							return (
 								<div key={index} className="col-lg-4">

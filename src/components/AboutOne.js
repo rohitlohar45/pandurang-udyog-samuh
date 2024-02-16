@@ -48,9 +48,9 @@ const AboutOne = () => {
 								<div className="about-inner-wrap">
 									<div className="section-title mb-0">
 										<h4 className="subtitle">ABOUT US</h4>
-										<h2 className="title">WELCOME WORLD WIDE BEST TRANSPORT COMPANY</h2>
+										<h2 className="title">Pandurang Udyog Samuh</h2>
 										<p className="content left-line">
-											Competently implement efficient e-commerce without cross-unit growth
+											Competently implement efficient business without cross-unit growth
 											strategies.
 										</p>
 										<div className="row">
