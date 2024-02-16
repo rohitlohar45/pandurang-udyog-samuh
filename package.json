@@ -3,7 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@chakra-ui/react": "^2.8.2",
     "@emailjs/browser": "^3.10.0",
+    "@emotion/react": "^11.11.3",
+    "@emotion/styled": "^11.11.0",
     "@ramonak/react-progress-bar": "^5.0.3",
     "@reduxjs/toolkit": "^1.9.3",
     "@testing-library/jest-dom": "^5.16.5",
@@ -14,6 +17,7 @@
     "bootstrap": "^5.2.3",
     "emailjs-com": "^3.2.0",
     "firebase": "^10.8.0",
+    "framer-motion": "^11.0.5",
     "react": "^18.2.0",
     "react-animated-css": "^1.2.1",
     "react-countup": "^6.4.1",

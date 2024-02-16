@@ -3,11 +3,12 @@
 import React, { useState } from "react";
 import { FaRegEnvelope, FaUserAlt } from "react-icons/fa";
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
-import toast from "react-hot-toast";
+import { useToast } from "@chakra-ui/react";
 
 const Login = () => {
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
+	const toast = useToast();
 
 	const handleLogin = async (e) => {
 		e.preventDefault();
@@ -15,7 +16,13 @@ const Login = () => {
 			console.log(email, password);
 			const auth = getAuth();
 			const res = await signInWithEmailAndPassword(auth, email, password);
-			toast.success("Login successful!");
+			toast({
+				title: "Login Success.",
+				description: "Login Success. Redirecting to dashboard.",
+				status: "success",
+				duration: 9000,
+				isClosable: true,
+			});
 			window.location.href = "/dashboard";
 		} catch (error) {
 			console.error("Error signing in:", error);

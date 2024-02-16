@@ -1,47 +1,179 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import {
+	Box,
+	Flex,
+	Button,
+	Spacer,
+	IconButton,
+	Icon,
+	useDisclosure,
+	Table,
+	Thead,
+	Tbody,
+	Tr,
+	Th,
+	Td,
+	Text,
+	Input,
+	useToast,
+	Modal,
+	ModalOverlay,
+	ModalContent,
+	ModalHeader,
+	ModalFooter,
+	ModalBody,
+	ModalCloseButton,
+} from "@chakra-ui/react";
+import { MdMenu, MdExitToApp, MdEdit, MdDelete } from "react-icons/md";
 import { signOut } from "firebase/auth";
-import { auth } from "../../firebase/initialise";
-import { toast } from "react-toastify";
+import EntryForm from "./Form";
+import Sidebar from "./Sidebar";
+import { auth, firestore } from "../../firebase/initialise";
+import { collection, addDoc, getDocs } from "firebase/firestore";
+import { handleCreateEntry, handleDelete, handleEdit } from "./Utils";
 
-const Dashboard = () => {
-	const logout = () => {
+function Dashboard() {
+	const { isOpen, onOpen, onClose } = useDisclosure();
+	const toast = useToast();
+
+	const handleLogout = () => {
 		signOut(auth)
 			.then(() => {
-				toast.success("Logout successful!");
+				toast({
+					title: "Logout Success",
+					description: "Logout Success",
+					status: "success",
+					duration: 9000,
+					isClosable: true,
+				});
 				window.location.href = "/login";
 			})
 			.catch((error) => {
 				console.error(error);
 			});
 	};
-	return (
-		<div>
-			<h1>Dashboard</h1>
-			<div className="dashboard-content">
-				{/* Add various components, widgets, or modules here */}
-				<div className="widget">
-					<h2>Welcome User!</h2>
-					<p>Here's a quick overview of your account.</p>
-				</div>
-				<div className="widget">
-					<h2>Recent Activity</h2>
-					{/* Display recent activity or notifications */}
-					<ul>
-						<li>Activity 1</li>
-						<li>Activity 2</li>
-						<li>Activity 3</li>
-					</ul>
-				</div>
-				<div className="widget">
-					<h2>Quick Actions</h2>
-					{/* Add buttons or links for quick actions */}
-					<button>View Profile</button>
-					<button>Settings</button>
-					<button onClick={logout}>Logout</button>
-				</div>
-			</div>
-		</div>
+
+	const [searchTerm, setSearchTerm] = useState("");
+	const [data, setData] = useState([]);
+
+	// Fetch data from Firestore on component mount
+	useEffect(() => {
+		const fetchData = async () => {
+			try {
+				const usersCollection = collection(firestore, "users");
+				const querySnapshot = await getDocs(usersCollection);
+
+				const usersData = [];
+				querySnapshot.forEach((doc) => {
+					usersData.push({
+						id: doc.id,
+						...doc.data(),
+					});
+				});
+
+				setData(usersData);
+			} catch (error) {
+				console.error("Error fetching data: ", error);
+				// Handle error, perhaps display a toast or message to the user
+			}
+		};
+
+		fetchData();
+	}, []);
+
+	const filteredData = data.filter((user) =>
+		user.name.toLowerCase().includes(searchTerm.toLowerCase())
 	);
-};
+
+	return (
+		<Flex>
+			<Sidebar />
+			<Box ml="200px" p={4} w="100%">
+				<Flex mb={4}>
+					<IconButton
+						icon={<Icon as={MdMenu} />}
+						aria-label="Menu"
+						onClick={onOpen}
+						display={{ base: "block", md: "none" }}
+					/>
+					<Spacer />
+					<Button
+						right="10"
+						onClick={handleLogout}
+						variant="ghost"
+						colorScheme="teal"
+						leftIcon={<Icon as={MdExitToApp} />}
+					>
+						Logout
+					</Button>
+				</Flex>
+				<Flex p={4}>
+					{/* Search input on the left */}
+					<Input
+						placeholder="Search"
+						value={searchTerm}
+						onChange={(e) => setSearchTerm(e.target.value)}
+					/>
+					{/* Spacer to push the create entry button to the right */}
+					<Spacer />
+					{/* Create entry button on the right */}
+					<Button onClick={onOpen}>Create Entry</Button>
+				</Flex>
+				<Box bg="gray.100" p={4} borderRadius="md" boxShadow="md">
+					<Text fontSize="xl" mb={4}>
+						User Data
+					</Text>
+					<Table variant="striped" colorScheme="gray">
+						<Thead>
+							<Tr>
+								<Th>ID</Th>
+								<Th>Name</Th>
+								<Th>Email</Th>
+								<Th>Actions</Th>
+							</Tr>
+						</Thead>
+						<Tbody>
+							{filteredData.map((user) => (
+								<Tr key={user.id}>
+									<Td>{user.id}</Td>
+									<Td>{user.name}</Td>
+									<Td>{user.email}</Td>
+									<Td>
+										<IconButton
+											icon={<Icon as={MdEdit} />}
+											aria-label="Edit"
+											onClick={() => handleEdit(user.id)}
+											mr={2}
+										/>
+										<IconButton
+											icon={<Icon as={MdDelete} />}
+											aria-label="Delete"
+											onClick={() => handleDelete(user.id)}
+										/>
+									</Td>
+								</Tr>
+							))}
+						</Tbody>
+					</Table>
+				</Box>
+				<Modal isOpen={isOpen} onClose={onClose}>
+					<ModalOverlay />
+					<ModalContent>
+						<ModalHeader>Create Entry</ModalHeader>
+						<ModalCloseButton />
+						<ModalBody>
+							<EntryForm handleCreateEntry={handleCreateEntry} />
+						</ModalBody>
+						<ModalFooter>
+							<Button variant="ghost" onClick={onClose}>
+								Close
+							</Button>
+						</ModalFooter>
+					</ModalContent>
+				</Modal>
+			</Box>
+		</Flex>
+	);
+}
 
 export default Dashboard;

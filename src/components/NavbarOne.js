@@ -50,7 +50,11 @@ const NavbarOne = () => {
 				<div className="navbar-top">
 					<Link className="main-logo" to="/home">
 						<div className="logo d-none d-xl-block">
-							<img src="/assets/img/logo.png" alt="Pandurang Udyog Samuh"/>
+							<img
+								src="/assets/img/logo.png"
+								alt="Pandurang Udyog Samuh"
+								style={{ marginRight: "30px" }}
+							/>
 						</div>
 					</Link>
 					<div className="nav-phone-wrap">
@@ -139,7 +143,7 @@ const NavbarOne = () => {
 							</Link>
 						</div>
 						<div className="nav-left-part"></div>
-						
+
 						<div
 							className={open ? "collapse navbar-collapse sopen" : "collapse navbar-collapse"}
 							id="pandurang-udyog-samuh_main_menu"
