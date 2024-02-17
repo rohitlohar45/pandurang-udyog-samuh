@@ -6,7 +6,10 @@ const WhyChooseUsOne = () => {
 	return (
 		<>
 			{/*wcu-area start*/}
-			<div className="wcu-area bg-overlay" style={{ background: "url(assets/img/wcu/bg.png)" }}>
+			<div
+				className="wcu-area bg-overlay"
+				style={{ background: "url(assets/img/banner/awards.png)" }}
+			>
 				<img className="img-1" src="assets/img/wcu/1.png" alt="Pandurang Udyog Samuh" />
 				<img className="img-2" src="assets/img/wcu/2.png" alt="Pandurang Udyog Samuh" />
 				<div className="container">

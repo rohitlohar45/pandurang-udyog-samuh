@@ -1,5 +1,6 @@
 import React, { Fragment, Suspense } from "react";
 import Preloader from "../elements/Preloader";
+import LogisticsOne from "../components/LogisticsOne";
 const BannerOne = React.lazy(() => import("../components/BannerOne"));
 const AboutOne = React.lazy(() => import("../components/AboutOne"));
 const ContactOne = React.lazy(() => import("../components/ContactOne"));
@@ -41,10 +42,7 @@ const HomeOne = () => {
 
 					<CounterOne />
 
-					{/* Contact One */}
-					<div className="call-to-contact-area pd-top-240" style={{ background: "#F9F9F9" }}>
-						<ContactOne />
-					</div>
+					<LogisticsOne />
 
 					{/* Footer One */}
 					<FooterOne />
