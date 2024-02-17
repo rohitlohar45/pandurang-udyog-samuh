@@ -83,36 +83,8 @@ const Navbar = () => {
 										</svg>
 										A/p. KandarTal. KarmalaDist. Solapur Maharashtra,India
 									</li>
-									{/* <li>
-                    <FaRegClock />
-                    Mon - Sat: 8 am - 5 pm, Sunday: CLOSED
-                  </li> */}
 								</ul>
 							</div>
-							{/* <div className="col-lg-2 col-md-3">
-                <ul className="topbar-right social-area text-md-end text-center">
-                  <li>
-                    <Link to="#">
-                      <FaFacebookF aria-hidden="true" />
-                    </Link>
-                  </li>
-                  <li>
-                    <Link to="#">
-                      <FaTwitter aria-hidden="true" />
-                    </Link>
-                  </li>
-                  <li>
-                    <Link to="#">
-                      <FaLinkedinIn aria-hidden="true" />
-                    </Link>
-                  </li>
-                  <li>
-                    <Link to="#">
-                      <FaInstagram aria-hidden="true" />
-                    </Link>
-                  </li>
-                </ul>
-              </div> */}
 						</div>
 					</div>
 				</div>

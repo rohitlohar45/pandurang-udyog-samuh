@@ -40,7 +40,7 @@ const ServiceDetails = () => {
 
 					{/* Footer Bottom One */}
 					<FooterBottomOne />
-				</Suspense>{" "}
+				</Suspense>
 			</Fragment>
 		</>
 	);
