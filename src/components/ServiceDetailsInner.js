@@ -11,7 +11,7 @@ import {
 import { Link } from "react-router-dom";
 import servicePages from "../utils/services";
 import serviceContent from "../utils/serviceDetails";
-
+import Events from "./Events";
 const ServiceDetailsInner = ({ service }) => {
 	const [isOpen, setOpen] = useState(false);
 	const details = serviceContent[service];
@@ -27,6 +27,9 @@ const ServiceDetailsInner = ({ service }) => {
 							<div className="service-details-wrap">
 								<div className="thumb">
 									<img src={information.image1} alt="image1" />
+									<div className="icon">
+										<img src={information.image2} alt="image2" />
+									</div>
 								</div>
 								<h2>{information?.title}</h2>
 								<p>{information?.description1}</p>
@@ -34,33 +37,7 @@ const ServiceDetailsInner = ({ service }) => {
 								<p>{information?.description3}</p>
 								<p className="last-para">{information?.description4}</p>
 							</div>
-							<h3>Events section below</h3>
-							{/* {eventInfo?.map((event, index) => {
-							return (
-								<div key={index} className="col-lg-4">
-									<div className="single-service-wrap">
-										<div className="thumb">
-											<img src={event?.image} alt="Pandurang Udyog Samuh" />
-											<div className="icon">
-												<img src={event?.icon} alt="Pandurang Udyog Samuh" />
-											</div>
-										</div>
-										<div className="details">
-											<h5>{event.title}</h5>
-											<p>{event.description}</p>
-											<div className="btn-wrap">
-												<Link className="read-more-text" to="/service-details">
-													READ MORE{" "}
-													<span>
-														<FaArrowRight />
-													</span>
-												</Link>
-											</div>
-										</div>
-									</div>
-								</div>
-							);
-						})} */}
+							<Events />
 						</div>
 						<div className="col-lg-4">
 							<div className="sidebar-area">
