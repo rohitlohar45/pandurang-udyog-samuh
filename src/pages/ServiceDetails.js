@@ -1,6 +1,6 @@
-import React, { Fragment, Suspense, useEffect } from "react";
+import React, { Fragment, Suspense, useEffect, useState } from "react";
 import Preloader from "../elements/Preloader";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import servicePages from "../utils/services";
 const Breadcrumb = React.lazy(() => import("../components/Breadcrumb"));
 const FooterBottomOne = React.lazy(() => import("../components/FooterBottomOne"));
@@ -11,13 +11,16 @@ const SearchPopup = React.lazy(() => import("../elements/SearchPopup"));
 const ServiceDetails = () => {
 	// collect slug from URL
 	const { id } = useParams();
+	const [image, setImage] = useState("");
 
 	// get the name of the service from the slug
 	const service = servicePages.find((service) => service.slug === id);
 
 	useEffect(() => {
-		console.log(service);
-	}, []);
+		if (service) {
+			setImage("assets/img/banner/awards1.png");
+		}
+	}, [service]);
 
 	return (
 		<>
@@ -30,7 +33,7 @@ const ServiceDetails = () => {
 					<Navbar />
 
 					{/* Breadcrumb */}
-					<Breadcrumb title={service.name} />
+					<Breadcrumb title={service?.name} image={image} />
 
 					{/* Service Details Inner */}
 					<ServiceDetailsInner service={service.slug} />

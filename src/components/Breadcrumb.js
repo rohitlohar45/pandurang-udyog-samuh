@@ -1,12 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const Breadcrumb = ({ title }) => {
+const Breadcrumb = ({ title, image }) => {
 	return (
 		<>
 			<div
 				className="breadcrumb-area bg-overlay-2"
-				style={{ backgroundImage: 'url("assets/img/banner/awards.png")' }}
+				style={{ backgroundImage: image ? `url(${image})` : 'url("assets/img/banner/awards.png")' }}
 			>
 				<div className="container">
 					<div className="row">
@@ -16,9 +16,9 @@ const Breadcrumb = ({ title }) => {
 									<h2 className="page-title">{title}</h2>
 									<ul className="page-list">
 										<li>
-											<Link to="/">HOME</Link>
-										</li>{" "}
-										/<li className="ps-0">{title}</li>
+											<Link to="/">HOME /</Link>
+										</li>
+										<li className="ps-0">{title}</li>
 									</ul>
 								</div>
 							</div>
@@ -26,7 +26,6 @@ const Breadcrumb = ({ title }) => {
 					</div>
 				</div>
 			</div>
-			{/* breadcrumb end */}
 		</>
 	);
 };
