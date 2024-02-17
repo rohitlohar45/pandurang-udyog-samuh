@@ -13,7 +13,7 @@ import { SetSearchPopUp } from "../redux/stateSlice/clickActionSlice";
 import store from "../redux/store/store";
 import servicePages from "../utils/services";
 
-const NavbarOne = () => {
+const Navbar = () => {
 	const [open, setOpen] = useState(false);
 	const [active, setActive] = useState(false);
 
@@ -53,14 +53,10 @@ const NavbarOne = () => {
 							<img
 								src="/assets/img/logo.png"
 								alt="Pandurang Udyog Samuh"
-								style={{ marginRight: "30px" }}
+								style={{ marginLeft: "80px" }}
 							/>
 						</div>
 					</Link>
-					<div className="nav-phone-wrap">
-						<FaPhoneAlt />
-						+18882079275
-					</div>
 					<div className="container p-lg-0">
 						<div className="row">
 							<div className="col-lg-10 col-md-9 text-md-start text-center">
@@ -151,23 +147,6 @@ const NavbarOne = () => {
 							<ul className="navbar-nav menu-open">
 								<li className="current-menu-item">
 									<Link to="/">Home</Link>
-									{/* <ul className='sub-menu'>
-                    <li>
-                      <Link to='/'>Home 01</Link>
-                    </li>
-                    <li>
-                      <Link to='/home-2'>Home 02</Link>
-                    </li>
-                    <li>
-                      <Link to='/home-3'>Home 03</Link>
-                    </li>
-                    <li>
-                      <Link to='/home-4'>Home 04</Link>
-                    </li>
-                    <li>
-                      <Link to='/home-5'>Home 05</Link>
-                    </li>
-                  </ul> */}
 								</li>
 								<li>
 									<Link to="/about">About Us</Link>
@@ -182,65 +161,19 @@ const NavbarOne = () => {
 										))}
 									</ul>
 								</li>
-								{/* <li className='menu-item-has-children'>
-                  <Link to='#'>Pages</Link>
-                  <ul className='sub-menu'>
-                    <li>
-                      <Link to='/about'>About Us</Link>
-                    </li>
-                    <li>
-                      <Link to='/service'>Service Page</Link>
-                    </li>
-                    <li>
-                      <Link to='/service-details'>Service Details Page</Link>
-                    </li>
-                    <li>
-                      <Link to='/blog'>Blog Page</Link>
-                    </li>
-                    <li>
-                      <Link to='/blog-details'>Blog Details</Link>
-                    </li>
-                    <li>
-                      <Link to='/pricing'>Pricing</Link>
-                    </li>
-                    <li>
-                      <Link to='/faq'>FAQ</Link>
-                    </li>
-                    <li>
-                      <Link to='/contact'>Contact</Link>
-                    </li>
-                  </ul>
-                </li> */}
-								{/* <li className='menu-item-has-children'>
-                  <Link to='#'>Blog</Link>
-                  <ul className='sub-menu'>
-                    <li>
-                      <Link to='/blog'>Blog</Link>
-                    </li>
-                    <li>
-                      <Link to='/blog-details'>Blog Details</Link>
-                    </li>
-                  </ul>
-                </li> */}
 								<li>
-									<Link to="/contact">Awards</Link>
+									<Link to="/awards">Awards</Link>
 								</li>
 								<li>
 									<Link to="/contact">Contact Us</Link>
 								</li>
 							</ul>
 						</div>
-						{/* <div className='nav-right-part nav-right-part-desktop'>
-              <Link className='btn btn-base' to='/contact'>
-                <span></span> Get A Quote
-              </Link>
-            </div> */}
 					</div>
 				</nav>
 			</header>
-			{/* navbar end */}
 		</>
 	);
 };
 
-export default NavbarOne;
+export default Navbar;

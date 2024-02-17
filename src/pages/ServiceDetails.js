@@ -5,7 +5,7 @@ import servicePages from "../utils/services";
 const Breadcrumb = React.lazy(() => import("../components/Breadcrumb"));
 const FooterBottomOne = React.lazy(() => import("../components/FooterBottomOne"));
 const FooterOne = React.lazy(() => import("../components/FooterOne"));
-const NavbarOne = React.lazy(() => import("../components/NavbarOne"));
+const Navbar = React.lazy(() => import("../components/Navbar"));
 const ServiceDetailsInner = React.lazy(() => import("../components/ServiceDetailsInner"));
 const SearchPopup = React.lazy(() => import("../elements/SearchPopup"));
 const ServiceDetails = () => {
@@ -27,7 +27,7 @@ const ServiceDetails = () => {
 					<SearchPopup />
 
 					{/* Navbar One */}
-					<NavbarOne />
+					<Navbar />
 
 					{/* Breadcrumb */}
 					<Breadcrumb title={service.name} />

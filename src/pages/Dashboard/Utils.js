@@ -2,11 +2,13 @@ import { collection, addDoc, doc, setDoc, deleteDoc } from "firebase/firestore";
 import { firestore } from "../../firebase/initialise";
 
 const handleCreateEntry = async (name, email) => {
+	console.log(name, email);
 	try {
 		const docRef = await addDoc(collection(firestore, "users"), {
 			name: name,
 			email: email,
 		});
+		console.log("Document written with ID: ", docRef.id);
 	} catch (error) {
 		console.error("Error adding entry: ", error);
 	}
