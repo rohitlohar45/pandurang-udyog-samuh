@@ -1,6 +1,4 @@
 import React from "react";
-import { FaArrowRight } from "react-icons/fa";
-import { Link } from "react-router-dom";
 import { Box, Grid, Image, Text } from "@chakra-ui/react";
 const Events = () => {
   const events = [

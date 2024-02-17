@@ -48,18 +48,25 @@ const Navbar = () => {
 			{/* navbar start */}
 			<header className="navbar-area">
 				<div className="navbar-top">
-					<Link className="main-logo" to="/home">
+					<Link className="main-logo" to="/">
 						<div className="logo d-none d-xl-block">
 							<img
 								src="/assets/img/logo.png"
 								alt="Pandurang Udyog Samuh"
-								style={{ marginLeft: "80px" }}
+								style={{
+									maxWidth: "100%",
+									height: "auto",
+									display: "block",
+									marginLeft: "auto",
+									marginRight: "auto",
+									alignContent: "center",
+								}}
 							/>
 						</div>
 					</Link>
 					<div className="container p-lg-0">
 						<div className="row">
-							<div className="col-lg-10 col-md-9 text-md-start text-center">
+							<div className="col-lg-10 col-md-9 text-md-center text-center">
 								<ul className="topbar-left">
 									<li>
 										<svg
@@ -74,35 +81,7 @@ const Navbar = () => {
 												fill="#bd0e0e"
 											/>
 										</svg>
-										2500 Southbranch Blvd A, United States
-									</li>
-									<li>
-										<FaRegClock />
-										Mon - Sat: 8 am - 5 pm, Sunday: CLOSED
-									</li>
-								</ul>
-							</div>
-							<div className="col-lg-2 col-md-3">
-								<ul className="topbar-right social-area text-md-end text-center">
-									<li>
-										<Link to="#">
-											<FaFacebookF aria-hidden="true" />
-										</Link>
-									</li>
-									<li>
-										<Link to="#">
-											<FaTwitter aria-hidden="true" />
-										</Link>
-									</li>
-									<li>
-										<Link to="#">
-											<FaLinkedinIn aria-hidden="true" />
-										</Link>
-									</li>
-									<li>
-										<Link to="#">
-											<FaInstagram aria-hidden="true" />
-										</Link>
+										A/p. KandarTal. KarmalaDist. Solapur Maharashtra,India
 									</li>
 								</ul>
 							</div>
@@ -135,7 +114,11 @@ const Navbar = () => {
 						</div>
 						<div className="logo">
 							<Link to="/">
-								<img src="assets/img/logo-2.png" alt="Pandurang Udyog Samuh" />
+								<img
+									src="assets/img/logo-2.png"
+									alt="Pandurang Udyog Samuh"
+									style={{ width: "75%" }}
+								/>
 							</Link>
 						</div>
 						<div className="nav-left-part"></div>
@@ -144,7 +127,7 @@ const Navbar = () => {
 							className={open ? "collapse navbar-collapse sopen" : "collapse navbar-collapse"}
 							id="pandurang-udyog-samuh_main_menu"
 						>
-							<ul className="navbar-nav menu-open">
+							<ul className="navbar-nav menu-open text-md-end">
 								<li className="current-menu-item">
 									<Link to="/">Home</Link>
 								</li>

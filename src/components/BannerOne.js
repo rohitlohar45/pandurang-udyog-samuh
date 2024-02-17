@@ -29,30 +29,31 @@ const BannerOne = () => {
   return (
     <>
       {/* banner start */}
-      <div className='banner-area banner-area-1'>
-        <div className='banner-slider owl-carousel'>
+      <div className="banner-area banner-area-1">
+        <div className="banner-slider owl-carousel">
           <Slider {...settings}>
             <div>
               <div
-                className='item'
-                style={{ backgroundImage: 'url("./assets/img/banner/1.png")' }}
+                className="item"
+                style={{ backgroundImage: 'url("./assets/img/banner/1.jpg")' }}
               >
-                <div className='container'>
-                  <div className='row'>
-                    <div className='col-lg-7 col-md-8'>
-                      <div className='banner-inner style-white'>
-                        <h1 className='b-animate-2 title'>
-                          FAST CERTIFIED &amp; BEST WORLD WIDE SERVICE
+                <div className="container">
+                  <div className="row">
+                    <div className="col-lg-7 col-md-8">
+                      <div className="banner-inner style-white">
+                        <h1 className="b-animate-2 title">
+                          APEDA APPROVED FACILITIES &amp; BEST WORLD WIDE
+                          SERVICE
                         </h1>
-                        <p className='b-animate-3 content'>
-                          Professionally strategize stand-alone functionalities
-                          and cooperative total linkage. Objectively predominate
-                          virtual quality vectors with orthogonal.
+                        <p className="b-animate-3 content">
+                          Professionally strategize individual operations while
+                          fostering collaborative synergy. Objectively excel in
+                          delivering superior quality across all facets.
                         </p>
-                        <div className='btn-wrap'>
+                        <div className="btn-wrap">
                           <Link
-                            className='btn btn-white b-animate-4'
-                            to='/contact'
+                            className="btn btn-white b-animate-4"
+                            to="/contact"
                           >
                             Contact Us
                           </Link>
@@ -66,26 +67,29 @@ const BannerOne = () => {
 
             <div>
               <div
-                className='item'
-                style={{ backgroundImage: 'url("./assets/img/banner/2.png")' }}
+                className="item"
+                style={{ backgroundImage: 'url("./assets/img/banner/2.jpg")' }}
               >
-                <div className='container'>
-                  <div className='row'>
-                    <div className='col-lg-7 col-md-8'>
-                      <div className='banner-inner style-white'>
-                        <h1 className='b-animate-2 title'>
-                          FAST CERTIFIED &amp; BEST WORLD WIDE SERVICE
+                <div className="container">
+                  <div className="row">
+                    <div className="col-lg-7 col-md-8">
+                      <div className="banner-inner style-white">
+                        <h1 className="b-animate-2 title">
+                          APEDA APPROVED FACILITIES &amp; BEST WORLD WIDE
+                          SERVICE
                         </h1>
-                        <p className='b-animate-3 content'>
-                          Our transport management solutions are designed to
-                          enable the effective and efficient management of the
-                          delivery of goods. Having the real-time visibility of
-                          vehicle movements.
+                        <p className="b-animate-3 content">
+                          From APEDA-approved facilities to skilled expertise,
+                          we ensure top-quality, reliable fruit supply with an
+                          unwavering commitment to customer satisfaction.
+                          Experience excellence in fruit storage, packaging, and
+                          supply – where quality meets trust, every container,
+                          every day.
                         </p>
-                        <div className='btn-wrap'>
+                        <div className="btn-wrap">
                           <Link
-                            className='btn btn-base b-animate-4'
-                            to='/contact'
+                            className="btn btn-base b-animate-4"
+                            to="/contact"
                           >
                             Contact Us
                           </Link>
