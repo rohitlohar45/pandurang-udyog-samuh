@@ -24,17 +24,14 @@ const WhyChooseUsOne = () => {
           <div className="row justify-content-center">
             <div className="col-xl-7 col-lg-6 order-lg-2">
               <div className="video-thumb-wrap">
-                <img
-                  src="assets/img/wcu/video.png"
-                  alt="Pandurang Udyog Samuh"
-                />
-                <span
+                <img src="assets/img/wcu/1.jpg" alt="Pandurang Udyog Samuh" />
+                {/* <span
                   className="video-play-btn cursor-pointer"
                   data-effect="mfp-zoom-in"
                   onClick={() => setOpen(true)}
                 >
                   <FaPlay />
-                </span>
+                </span> */}
               </div>
             </div>
             <div className="col-xl-5 col-lg-6 order-lg-1">
@@ -99,13 +96,13 @@ const WhyChooseUsOne = () => {
         </div>
       </div>
       {/*wcu-area end*/}
-      <ModalVideo
+      {/* <ModalVideo
         channel="youtube"
         autoplay
         isOpen={isOpen}
         videoId="XM6kTQPzzpQ"
         onClose={() => setOpen(false)}
-      />
+      /> */}
     </>
   );
 };

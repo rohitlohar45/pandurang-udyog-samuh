@@ -19,7 +19,7 @@ const FooterOne = () => {
           className="footer-top"
           style={{ backgroundImage: 'url("./assets/img/footer/bg.png")' }}
         >
-          <div className="container">
+          {/* <div className="container">
             <div className="row justify-content-center">
               <div className="col-lg-4 col-md-6">
                 <div className="single-footer-top">
@@ -67,7 +67,7 @@ const FooterOne = () => {
                 </div>
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
         <div className="container">
           <div className="row">
