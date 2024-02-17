@@ -6,53 +6,55 @@ const AboutOne = React.lazy(() => import("../components/AboutOne"));
 const ContactOne = React.lazy(() => import("../components/ContactOne"));
 const CounterOne = React.lazy(() => import("../components/CounterOne"));
 const FeatureOne = React.lazy(() => import("../components/FeatureOne"));
-const FooterBottomOne = React.lazy(() => import("../components/FooterBottomOne"));
+const FooterBottomOne = React.lazy(() =>
+  import("../components/FooterBottomOne")
+);
 const FooterOne = React.lazy(() => import("../components/FooterOne"));
 const Navbar = React.lazy(() => import("../components/Navbar"));
 
 const WhyChooseUsOne = React.lazy(() => import("../components/WhyChooseUsOne"));
 const SearchPopup = React.lazy(() => import("../elements/SearchPopup"));
 const HomeOne = () => {
-	return (
-		<>
-			<Fragment>
-				<Suspense fallback={<Preloader />}>
-					{/* Search Popup */}
-					<SearchPopup />
+  return (
+    <>
+      <Fragment>
+        <Suspense fallback={<Preloader />}>
+          {/* Search Popup */}
+          <SearchPopup />
 
-					{/* Navbar One */}
-					<Navbar />
+          {/* Navbar One */}
+          <Navbar />
 
-					{/* Banner One */}
-					<BannerOne />
+          {/* Banner One */}
+          <BannerOne />
 
-					{/* Feature One */}
-					<FeatureOne />
+          {/* Feature One */}
+          <FeatureOne />
 
-					{/* About One */}
-					<AboutOne />
+          {/* About One */}
+          <AboutOne />
 
-					{/* Service One */}
-					{/* <ServiceOne /> */}
+          {/* Service One */}
+          {/* <ServiceOne /> */}
 
-					{/* Why Choose Us One */}
-					<WhyChooseUsOne />
+          {/* Why Choose Us One */}
+          <WhyChooseUsOne />
 
-					{/* Counter One */}
+          {/* Counter One */}
 
-					<CounterOne />
+          {/* <CounterOne /> */}
 
-					<LogisticsOne />
+          <LogisticsOne />
 
-					{/* Footer One */}
-					<FooterOne />
+          {/* Footer One */}
+          <FooterOne />
 
-					{/* Footer Bottom One */}
-					<FooterBottomOne />
-				</Suspense>
-			</Fragment>
-		</>
-	);
+          {/* Footer Bottom One */}
+          <FooterBottomOne />
+        </Suspense>
+      </Fragment>
+    </>
+  );
 };
 
 export default HomeOne;

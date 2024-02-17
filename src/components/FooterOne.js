@@ -31,8 +31,8 @@ const FooterOne = () => {
                   </div>
                   <div className="details">
                     <h6>OFFICE ADDRESS:</h6>
-                    <p>2245 Gilbert Ave, Cincinnati,</p>
-                    <p>OH 45206, United States</p>
+                    <p> A/p. KandarTal. KarmalaDist. Solapur,</p>
+                    <p>Maharashtra,India</p>
                   </div>
                 </div>
               </div>
@@ -61,8 +61,8 @@ const FooterOne = () => {
                   </div>
                   <div className="details">
                     <h6>WORKING HOURS:</h6>
-                    <p>Weekdays - Mon-Fri: 8am-21pm</p>
-                    <p>Weekend - Sta &amp; Sun: Closed</p>
+                    <p>Weekdays - Mon-Fri: 8am-10pm</p>
+                    <p>Weekend - Sat &amp; Sun: Closed</p>
                   </div>
                 </div>
               </div>
@@ -86,7 +86,7 @@ const FooterOne = () => {
                     clients, agricultural technologies, fuel services, and
                     construction materials. Your satisfaction is our priority
                   </p>
-                  <ul className="social-media style-border">
+                  {/* <ul className="social-media style-border">
                     <li>
                       <a href="#">
                         <FaFacebookF />
@@ -107,7 +107,7 @@ const FooterOne = () => {
                         <FaLinkedinIn />
                       </a>
                     </li>
-                  </ul>
+                  </ul> */}
                 </div>
               </div>
             </div>
