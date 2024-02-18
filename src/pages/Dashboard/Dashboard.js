@@ -34,7 +34,7 @@ import { handleCreateEntry, handleDelete, handleEdit } from "./Utils";
 
 function Dashboard() {
 	const { isOpen, onOpen, onClose } = useDisclosure();
-	const toast = useToast();
+	const toast = useToast({ position: "top" });
 
 	const handleLogout = () => {
 		signOut(auth)
@@ -42,9 +42,13 @@ function Dashboard() {
 				toast({
 					title: "Logout Success",
 					description: "Logout Success",
-					status: "success",
-					duration: 9000,
+					status: "info",
+					duration: 900,
 					isClosable: true,
+					containerStyle: {
+						marginTop: "40px",
+						width: "400px",
+					},
 				});
 				window.location.href = "/login";
 			})
@@ -60,29 +64,29 @@ function Dashboard() {
 	useEffect(() => {
 		const fetchData = async () => {
 			try {
-				const usersCollection = collection(firestore, "users");
-				const querySnapshot = await getDocs(usersCollection);
+				const eventsCollection = collection(firestore, "events");
+				const querySnapshot = await getDocs(eventsCollection);
 
-				const usersData = [];
+				const eventsData = [];
 				querySnapshot.forEach((doc) => {
-					usersData.push({
+					eventsData.push({
 						id: doc.id,
 						...doc.data(),
 					});
 				});
 
-				setData(usersData);
+				setData(eventsData);
 			} catch (error) {
 				console.error("Error fetching data: ", error);
-				// Handle error, perhaps display a toast or message to the user
+				// Handle error, perhaps display a toast or message to the event
 			}
 		};
 
 		fetchData();
 	}, []);
 
-	const filteredData = data.filter((user) =>
-		user.name.toLowerCase().includes(searchTerm.toLowerCase())
+	const filteredData = data.filter((data) =>
+		data?.title?.toLowerCase().includes(searchTerm.toLowerCase())
 	);
 
 	return (
@@ -121,34 +125,32 @@ function Dashboard() {
 				</Flex>
 				<Box bg="gray.100" p={4} borderRadius="md" boxShadow="md">
 					<Text fontSize="xl" mb={4}>
-						User Data
+						Event Data
 					</Text>
 					<Table variant="striped" colorScheme="gray">
 						<Thead>
 							<Tr>
-								<Th>ID</Th>
 								<Th>Name</Th>
-								<Th>Email</Th>
+								<Th>Description</Th>
 								<Th>Actions</Th>
 							</Tr>
 						</Thead>
 						<Tbody>
-							{filteredData.map((user) => (
-								<Tr key={user.id}>
-									<Td>{user.id}</Td>
-									<Td>{user.name}</Td>
-									<Td>{user.email}</Td>
+							{filteredData.map((event) => (
+								<Tr key={event.id}>
+									<Td>{event.title}</Td>
+									<Td>{event.description}</Td>
 									<Td>
 										<IconButton
 											icon={<Icon as={MdEdit} />}
 											aria-label="Edit"
-											onClick={() => handleEdit(user.id)}
+											onClick={() => handleEdit(event.id)}
 											mr={2}
 										/>
 										<IconButton
 											icon={<Icon as={MdDelete} />}
 											aria-label="Delete"
-											onClick={() => handleDelete(user.id)}
+											onClick={() => handleDelete(event.id)}
 										/>
 									</Td>
 								</Tr>
@@ -162,13 +164,12 @@ function Dashboard() {
 						<ModalHeader>Create Entry</ModalHeader>
 						<ModalCloseButton />
 						<ModalBody>
-							<EntryForm handleCreateEntry={handleCreateEntry} />
+							<EntryForm
+								handleCreateEntry={handleCreateEntry}
+								onClose={onClose}
+								setData={setData}
+							/>
 						</ModalBody>
-						<ModalFooter>
-							<Button variant="ghost" onClick={onClose}>
-								Close
-							</Button>
-						</ModalFooter>
 					</ModalContent>
 				</Modal>
 			</Box>
