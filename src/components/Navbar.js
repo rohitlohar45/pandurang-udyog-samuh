@@ -92,7 +92,7 @@ const Navbar = ({ logo = null, onLoad = null }) => {
 				<nav
 					className={
 						active
-							? "navbar navbar-area-1 navbar-area navbar-expand-lg sticky-active"
+							? "navbar navbar-area-1 navbar-area navbar-expand-lg"
 							: "navbar navbar-area-1 navbar-area navbar-expand-lg"
 					}
 				>
