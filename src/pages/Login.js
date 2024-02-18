@@ -8,7 +8,9 @@ import { useToast } from "@chakra-ui/react";
 const Login = () => {
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
-	const toast = useToast();
+	const toast = useToast({
+		position: "top",
+	});
 
 	const handleLogin = async (e) => {
 		e.preventDefault();
@@ -22,6 +24,10 @@ const Login = () => {
 				status: "success",
 				duration: 9000,
 				isClosable: true,
+				containerStyle: {
+					marginTop: "40px",
+					width: "400px",
+				},
 			});
 			window.location.href = "/dashboard";
 		} catch (error) {

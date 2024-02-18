@@ -1,26 +1,34 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Box, Grid, Image, Text } from "@chakra-ui/react";
+import { auth, firestore } from "../firebase/initialise";
+import { collection, addDoc, getDocs } from "firebase/firestore";
+
 const Events = () => {
-	const events = [
-		{
-			title: "Best banana bunch award",
-			description: "This is the best banana bunch award",
-			imageUrl:
-				"https://firebasestorage.googleapis.com/v0/b/pandurang-udyog-samuh.appspot.com/o/best-banana-bunch-award.jpg?alt=media&token=9635ef0a-45cb-4475-ab5c-3ea8fb060cfe",
-		},
-		{
-			title: "Best banana bunch award",
-			description: "This is the best banana bunch award",
-			imageUrl:
-				"https://firebasestorage.googleapis.com/v0/b/pandurang-udyog-samuh.appspot.com/o/best-banana-bunch-award.jpg?alt=media&token=9635ef0a-45cb-4475-ab5c-3ea8fb060cfe",
-		},
-		{
-			title: "Best banana bunch award",
-			description: "This is the best banana bunch award",
-			imageUrl:
-				"https://firebasestorage.googleapis.com/v0/b/pandurang-udyog-samuh.appspot.com/o/best-banana-bunch-award.jpg?alt=media&token=9635ef0a-45cb-4475-ab5c-3ea8fb060cfe",
-		},
-	];
+	const [events, setEvents] = useState([]);
+
+	useEffect(() => {
+		const fetchData = async () => {
+			try {
+				const events = collection(firestore, "events");
+				const querySnapshot = await getDocs(events);
+
+				const eventsData = [];
+				querySnapshot.forEach((doc) => {
+					eventsData.push({
+						id: doc.id,
+						...doc.data(),
+					});
+				});
+
+				setEvents(eventsData);
+				console.log(events);
+			} catch (error) {
+				console.error("Error fetching data: ", error);
+			}
+		};
+
+		fetchData();
+	}, []);
 	return (
 		<>
 			<div className="section-title text-center" style={{ marginBottom: "0", marginTop: "5%" }}>
@@ -43,7 +51,7 @@ const Events = () => {
 							width="100%"
 							height="250px"
 							objectFit="cover"
-						/>{" "}
+						/>
 						<Box p={4}>
 							<Text fontSize="xl" fontWeight="bold" mb={2}>
 								{event.title}
