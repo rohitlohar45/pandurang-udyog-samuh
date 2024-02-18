@@ -27,9 +27,6 @@ const ServiceDetailsInner = ({ service }) => {
 							<div className="service-details-wrap">
 								<div className="thumb">
 									<img src={information.image1} alt="image1" />
-									<div className="icon">
-										<img src={information.image2} alt="image2" />
-									</div>
 								</div>
 								<h2>{information?.title}</h2>
 								<p>{information?.description1}</p>

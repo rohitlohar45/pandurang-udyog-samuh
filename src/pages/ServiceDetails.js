@@ -10,38 +10,37 @@ const ServiceDetailsInner = React.lazy(() => import("../components/ServiceDetail
 const SearchPopup = React.lazy(() => import("../elements/SearchPopup"));
 const ServiceDetails = () => {
 	// collect slug from URL
+	const [isImagesLoaded, setIsImagesLoaded] = useState(false);
+	const [isLogoLoaded, setIsLogoLoaded] = useState(false);
 	const { id } = useParams();
-	const [image, setImage] = useState("");
+	const [image, setImage] = useState(
+		"https://firebasestorage.googleapis.com/v0/b/pandurang-udyog-samuh.appspot.com/o/awards.png?alt=media&token=0b4b2051-1624-4542-a44c-1c7dc50eb058"
+	);
+
+	const [logo, setLogo] = useState(
+		"https://firebasestorage.googleapis.com/v0/b/pandurang-udyog-samuh.appspot.com/o/logo-2.png?alt=media&token=8e04a245-c22d-4823-b621-77f927a0771a"
+	);
 
 	// get the name of the service from the slug
 	const service = servicePages.find((service) => service.slug === id);
 
-	useEffect(() => {
-		if (service) {
-			setImage("assets/img/banner/awards1.png");
-		}
-	}, [service]);
+	// Handler for image and logo loading
+	const handleLogoLoaded = () => {
+		setIsLogoLoaded(true);
+	};
+	const handleImagesLoad = () => {
+		setIsImagesLoaded(true);
+	};
 
 	return (
 		<>
 			<Fragment>
 				<Suspense fallback={<Preloader />}>
-					{/* Search Popup */}
-					<SearchPopup />
-
-					{/* Navbar One */}
-					<Navbar />
-
-					{/* Breadcrumb */}
-					<Breadcrumb title={service?.name} image={image} />
-
-					{/* Service Details Inner */}
+					{!isImagesLoaded && <Preloader />}
+					<Navbar logo={logo} onLoad={handleImagesLoad} />
+					<Breadcrumb title={service?.name} image={image} onLoad={handleImagesLoad} />
 					<ServiceDetailsInner service={service.slug} />
-
-					{/* Footer One */}
-					<FooterOne />
-
-					{/* Footer Bottom One */}
+					<FooterOne logo={logo} onLoad={handleImagesLoad} />
 					<FooterBottomOne />
 				</Suspense>
 			</Fragment>

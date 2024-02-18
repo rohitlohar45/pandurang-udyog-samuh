@@ -80,7 +80,7 @@ const TeamOne = () => {
 									{/* <div className='item'>
                     <div className='single-team-wrap'>
                       <div className='thumb'>
-                        <img src='assets/img/team/1.png' alt='Transpro' />
+                        <img src='assets/img/team/1.png' alt='PAUS' />
                       </div>
                       <div className='details'>
                         <h5>MICHEL RICHARD</h5>
@@ -116,7 +116,7 @@ const TeamOne = () => {
 									<div className="item">
 										<div className="single-team-wrap">
 											<div className="thumb">
-												<img src="assets/img/team/partner-1.jpg" alt="Transpro" />
+												<img src="assets/img/team/partner-1.jpg" alt="PAUS" />
 											</div>
 											<div className="details">
 												<h5>SHIVAJI NAMDEO PATIL</h5>
@@ -152,7 +152,7 @@ const TeamOne = () => {
 									<div className="item">
 										<div className="single-team-wrap">
 											<div className="thumb">
-												<img src="assets/img/team/partner-2 (1).png" alt="Transpro" />
+												<img src="assets/img/team/partner-2 (1).png" alt="PAUS" />
 											</div>
 											<div className="details">
 												<h5>DADASAHEB NAMDEO PATIL</h5>
@@ -188,7 +188,7 @@ const TeamOne = () => {
 									<div className="item">
 										<div className="single-team-wrap">
 											<div className="thumb">
-												<img src="assets/img/team/partner-3 (1).png" alt="Transpro" />
+												<img src="assets/img/team/partner-3 (1).png" alt="PAUS" />
 											</div>
 											<div className="details">
 												<h5>SHAMBHUDEO NAMDEO PATIL</h5>

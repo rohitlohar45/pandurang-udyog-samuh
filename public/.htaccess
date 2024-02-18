@@ -1,0 +1,4 @@
+# Set MIME types for images
+AddType image/jpeg .jpg .jpeg
+AddType image/png .png
+AddType image/gif .gif

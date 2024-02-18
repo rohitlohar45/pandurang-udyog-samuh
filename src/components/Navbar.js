@@ -13,7 +13,7 @@ import { SetSearchPopUp } from "../redux/stateSlice/clickActionSlice";
 import store from "../redux/store/store";
 import servicePages from "../utils/services";
 
-const Navbar = () => {
+const Navbar = ({ logo = null, onLoad = null }) => {
 	const [open, setOpen] = useState(false);
 	const [active, setActive] = useState(false);
 
@@ -51,7 +51,8 @@ const Navbar = () => {
 					<Link className="main-logo" to="/">
 						<div className="logo d-none d-xl-block">
 							<img
-								src="/assets/img/logo.png"
+								src={logo ? logo : "assets/img/logo-2.png"}
+								onLoad={onLoad}
 								alt="Pandurang Udyog Samuh"
 								style={{
 									maxWidth: "100%",
@@ -115,7 +116,8 @@ const Navbar = () => {
 						<div className="logo">
 							<Link to="/">
 								<img
-									src="assets/img/logo-2.png"
+									src={logo ? logo : "assets/img/logo-2.png"}
+									onLoad={onLoad}
 									alt="Pandurang Udyog Samuh"
 									style={{ width: "75%" }}
 								/>
