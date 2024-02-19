@@ -10,7 +10,7 @@ import {
 import { Link } from "react-router-dom";
 import servicePages from "../utils/services";
 
-const FooterOne = () => {
+const FooterOne = ({ logo = null, onLoad = null }) => {
 	return (
 		<>
 			<footer className="footer-area">
@@ -23,7 +23,11 @@ const FooterOne = () => {
 						<div className="col-xl-4 col-md-12 order-xl-1 order-md-1">
 							<div className="widget widget_about">
 								<div className="thumb">
-									<img src="assets/img/logo-2.png" alt="Pandurang Udyog Samuh" />
+									<img
+										onLoad={onLoad}
+										src={logo ? logo : "assets/img/logo-2.png"}
+										alt="Pandurang Udyog Samuh"
+									/>
 								</div>
 								<div className="details">
 									<p>
