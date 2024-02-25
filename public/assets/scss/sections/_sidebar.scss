@@ -6,6 +6,9 @@
   background-color: #2f4050;
   border-radius: 10px;
 
+  @media all and (max-width: 768px) {
+    display: none;
+  }
   &__logo {
     width: 200px;
     width: 150px;

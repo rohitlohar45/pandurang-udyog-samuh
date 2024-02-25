@@ -88,8 +88,8 @@ function Dashboard() {
 
   return (
     <Flex>
-      <Sidebar />
-      <Box ml="50px" p={4} w="100%">
+      <Sidebar display={"none"} />
+      <Box p={4} w="100%">
         <Flex mb={4}>
           <IconButton
             icon={<Icon as={MdMenu} />}
@@ -102,7 +102,7 @@ function Dashboard() {
             right="10"
             onClick={handleLogout}
             variant="ghost"
-            colorScheme="teal"
+            colorScheme="red"
             leftIcon={<Icon as={MdExitToApp} />}
           >
             Logout
@@ -111,6 +111,7 @@ function Dashboard() {
         <Flex p={4}>
           {/* Search input on the left */}
           <Input
+            style={{ width: "75%", marginLeft: "5%" }}
             placeholder="Search"
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
@@ -124,7 +125,7 @@ function Dashboard() {
           <Text fontSize="xl" mb={4}>
             User Data
           </Text>
-          <Table variant="striped" colorScheme="gray">
+          <Table variant="simple">
             <Thead>
               <Tr>
                 <Th>ID</Th>
