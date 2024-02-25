@@ -36,6 +36,8 @@ import { handleCreateEntry, handleDelete, handleEdit } from "./Utils";
 function Dashboard() {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const toast = useToast();
+	const { isOpen, onOpen, onClose } = useDisclosure();
+	const toast = useToast({ position: "top" });
 
   const handleLogout = () => {
     signOut(auth)
@@ -63,6 +65,12 @@ function Dashboard() {
       try {
         const usersCollection = collection(firestore, "users");
         const querySnapshot = await getDocs(usersCollection);
+	// Fetch data from Firestore on component mount
+	useEffect(() => {
+		const fetchData = async () => {
+			try {
+				const eventsCollection = collection(firestore, "events");
+				const querySnapshot = await getDocs(eventsCollection);
 
         const usersData = [];
         querySnapshot.forEach((doc) => {
@@ -71,6 +79,13 @@ function Dashboard() {
             ...doc.data(),
           });
         });
+				const eventsData = [];
+				querySnapshot.forEach((doc) => {
+					eventsData.push({
+						id: doc.id,
+						...doc.data(),
+					});
+				});
 
         setData(usersData);
       } catch (error) {
@@ -78,6 +93,12 @@ function Dashboard() {
         // Handle error, perhaps display a toast or message to the user
       }
     };
+				setData(eventsData);
+			} catch (error) {
+				console.error("Error fetching data: ", error);
+				// Handle error, perhaps display a toast or message to the event
+			}
+		};
 
     fetchData();
   }, []);
@@ -85,11 +106,14 @@ function Dashboard() {
   const filteredData = data.filter((user) =>
     user.name.toLowerCase().includes(searchTerm.toLowerCase())
   );
+	const filteredData = data.filter((data) =>
+		data?.title?.toLowerCase().includes(searchTerm.toLowerCase())
+	);
 
   return (
     <Flex>
-      <Sidebar display={"none"} />
-      <Box p={4} w="100%">
+      <Sidebar />
+      <Box ml="200px" p={4} w="100%">
         <Flex mb={4}>
           <IconButton
             icon={<Icon as={MdMenu} />}
@@ -102,7 +126,7 @@ function Dashboard() {
             right="10"
             onClick={handleLogout}
             variant="ghost"
-            colorScheme="red"
+            colorScheme="teal"
             leftIcon={<Icon as={MdExitToApp} />}
           >
             Logout
@@ -111,7 +135,6 @@ function Dashboard() {
         <Flex p={4}>
           {/* Search input on the left */}
           <Input
-            style={{ width: "75%", marginLeft: "5%" }}
             placeholder="Search"
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
@@ -125,7 +148,7 @@ function Dashboard() {
           <Text fontSize="xl" mb={4}>
             User Data
           </Text>
-          <Table variant="simple">
+          <Table variant="striped" colorScheme="gray">
             <Thead>
               <Tr>
                 <Th>ID</Th>

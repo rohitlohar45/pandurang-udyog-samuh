@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { bannerImage } from "../utils/services";
 
 const Breadcrumb = ({ title, image = null, onLoad = null }) => {
 	const [isImageLoaded, setIsImageLoaded] = useState(false);
@@ -7,6 +8,7 @@ const Breadcrumb = ({ title, image = null, onLoad = null }) => {
 
 	useEffect(() => {
 		// Check if onLoad is provided and call it when the image is loaded
+		image = image ? image : bannerImage;
 		if (onLoad && image) {
 			const img = new Image();
 			img.onload = () => {
