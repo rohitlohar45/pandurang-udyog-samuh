@@ -4,7 +4,6 @@ import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import ManageAccountsIcon from "@mui/icons-material/ManageAccounts";
 
 export const SidebarData = [
-  { title: "Dashboard", icon: <DashboardIcon />, link: "/dashboard" },
-  { title: "Profile", icon: <AccountCircleIcon />, link: "/profile" },
-  { title: "Settings", icon: <ManageAccountsIcon />, link: "/settings" },
+	{ title: "Events", icon: <DashboardIcon />, link: "/dashboard" },
+	{ title: "Queries", icon: <AccountCircleIcon />, link: "/dashboard/queries" },
 ];

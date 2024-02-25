@@ -1,7 +1,8 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import { FaCalculator, FaFileAlt, FaPencilAlt, FaRegEnvelope, FaUserAlt } from "react-icons/fa";
 import { getFirestore, collection, addDoc } from "firebase/firestore";
 import { useToast } from "@chakra-ui/react";
+import servicePages from "../utils/services";
 
 const ContactInner = () => {
 	const form = useRef();
@@ -9,6 +10,12 @@ const ContactInner = () => {
 	const toast = useToast({
 		position: "top",
 	});
+
+	const [selectedOption, setSelectedOption] = useState("");
+
+	const handleSelectChange = (event) => {
+		setSelectedOption(event.target.value);
+	};
 
 	const sendQuery = async (e) => {
 		e.preventDefault();
@@ -19,9 +26,50 @@ const ContactInner = () => {
 			user_name: formData.get("user_name"),
 			user_email: formData.get("user_email"),
 			phone_number: formData.get("phone_number"),
-			subject: formData.get("subject"),
+			subject: selectedOption,
 			message: formData.get("message"),
 		};
+		console.log(queryContent);
+		if (
+			queryContent.user_email &&
+			!queryContent.user_email.match(/^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/i)
+		) {
+			toast({
+				title: "Please enter a valid email address",
+				status: "error",
+				duration: 2000,
+				isClosable: true,
+				containerStyle: {
+					marginTop: "40px",
+					width: "600px",
+				},
+			});
+			return;
+		}
+		if (
+			!queryContent.user_name ||
+			!queryContent.user_email ||
+			!selectedOption ||
+			!queryContent.message
+		) {
+			let emptyFields = [];
+			if (!queryContent.user_name) emptyFields.push("Name");
+			if (!queryContent.user_email) emptyFields.push("Email");
+			if (!selectedOption) emptyFields.push("Subject");
+			if (!queryContent.message) emptyFields.push("Message");
+
+			toast({
+				title: `Please fill in the following fields: ${emptyFields.join(", ")}`,
+				status: "error",
+				duration: 2000,
+				isClosable: true,
+				containerStyle: {
+					marginTop: "40px",
+					width: "600px",
+				},
+			});
+			return;
+		}
 
 		const eventsCollectionRef = collection(db, "queries");
 
@@ -92,10 +140,18 @@ const ContactInner = () => {
 											<label>
 												<FaFileAlt />
 											</label>
-											<select className="single-select" name="subject">
-												<option>Subject</option>
-												<option value={1}>Some option</option>
-												<option value={2}>Another option</option>
+											<select
+												className="single-select"
+												name="subject"
+												onChange={handleSelectChange}
+												value={selectedOption}
+											>
+												{!selectedOption && <option>Subject</option>}
+												{servicePages.map((service, index) => (
+													<option key={index} value={service.name}>
+														{service.name}
+													</option>
+												))}
 											</select>
 										</div>
 									</div>

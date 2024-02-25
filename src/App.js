@@ -10,8 +10,8 @@ import Awards from "./pages/Awards";
 import Contact from "./pages/Contact";
 import RouteScrollToTop from "./elements/RouteScrollToTop";
 import Login from "./pages/Login";
-import Dashboard from "./pages/Dashboard/Dashboard";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
+import Dashboard from "./pages/Dashboard/Index";
 function App() {
 	const [user, setUser] = useState(null);
 
