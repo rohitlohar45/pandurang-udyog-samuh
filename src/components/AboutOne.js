@@ -98,7 +98,7 @@ const AboutOne = () => {
                         </div>
                       </div> */}
                     </div>
-                    <div className="btn-wrap">
+                    {/* <div className="btn-wrap">
                       <Link className="btn btn-base" to="/about">
                         ABOUT MORE
                       </Link>
@@ -117,7 +117,7 @@ const AboutOne = () => {
                           <p>CEO, Of Company</p>
                         </div>
                       </div>
-                    </div>
+                    </div> */}
                   </div>
                 </div>
               </div>
