@@ -478,7 +478,8 @@
     background: var(--main-color);
     .details {
       p,
-      h5 {
+      h5,
+      h6 {
         color: #fff;
       }
       .hover-icon {
@@ -498,6 +499,10 @@
       line-height: 35px;
       transition: $transition;
       margin-bottom: -2px;
+    }
+    h6{
+      font-weight: bold;
+      color: var(--main-color);
     }
     p {
       line-height: 24px;

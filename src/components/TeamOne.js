@@ -1,3 +1,4 @@
+import { color } from "framer-motion";
 import React from "react";
 import {
   FaArrowLeft,
@@ -161,6 +162,7 @@ const TeamOne = () => {
                       </div>
                       <div className="details">
                         <h5>DADASAHEB NAMDEO PATIL</h5>
+                        <h6 className="main-name">(KRUSHIBHUSHAN)</h6>
                         <p>Founder</p>
                         {/* <div className="hover-icon">
                           <FaPlus />
