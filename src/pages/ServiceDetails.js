@@ -38,7 +38,7 @@ const ServiceDetails = () => {
 				<Suspense fallback={<Preloader />}>
 					{!isImagesLoaded && <Preloader />}
 					<Navbar logo={logo} onLoad={handleImagesLoad} />
-					<Breadcrumb title={service?.name} image={image} onLoad={handleImagesLoad} />
+					<Breadcrumb title={service?.name} onLoad={handleImagesLoad} />
 					<ServiceDetailsInner service={service.slug} />
 					<FooterOne logo={logo} onLoad={handleImagesLoad} />
 					<FooterBottomOne />

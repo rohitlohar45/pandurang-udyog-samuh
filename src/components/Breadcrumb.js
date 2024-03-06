@@ -2,34 +2,15 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { bannerImage } from "../utils/services";
 
-const Breadcrumb = ({ title, image = null, onLoad = null }) => {
-	const [isImageLoaded, setIsImageLoaded] = useState(false);
-	const timestamp = new Date().getTime();
+let image =
+	"https://firebasestorage.googleapis.com/v0/b/pandurang-udyog-samuh.appspot.com/o/awards.png?alt=media&token=0b4b2051-1624-4542-a44c-1c7dc50eb058";
 
-	useEffect(() => {
-		// Check if onLoad is provided and call it when the image is loaded
-		image = image ? image : bannerImage;
-		if (onLoad && image) {
-			const img = new Image();
-			img.onload = () => {
-				setIsImageLoaded(true);
-				onLoad(); // Call onLoad callback
-			};
-			img.src = image;
-		}
-	}, [image, onLoad]);
-
-	const className = `${isImageLoaded ? "breadcrumb-area bg-overlay-2" : ""}`;
-
+const Breadcrumb = ({ title, onLoad = null }) => {
 	return (
 		<>
 			<div
-				className={className}
 				style={{
-					backgroundImage: image
-						? `url(${image}?${timestamp})`
-						: 'url("assets/img/banner/awards.png")',
-					backgroundColor: isImageLoaded ? "transparent" : "rgba(0, 0, 0, 0.8)",
+					backgroundImage: image,
 				}}
 			>
 				<div className="container">
