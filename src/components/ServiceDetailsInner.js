@@ -59,7 +59,7 @@ const ServiceDetailsInner = ({ service }) => {
 								<div
 									className="widget widget_support text-center mb-0"
 									style={{
-										background: "url(assets/img/widget/support-bg.png)",
+										backgroundColor: "#080c24",
 									}}
 								>
 									<h4 className="widget-title style-white">

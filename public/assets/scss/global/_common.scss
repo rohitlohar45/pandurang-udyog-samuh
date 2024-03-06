@@ -593,6 +593,27 @@
     z-index: 2;
   }
 }
+.bg-overlay-1 {
+  position: relative;
+  background-size: cover !important;
+  &:after {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    background: rgba(255, 255, 255, 0);
+  }
+  .container {
+    position: relative;
+    z-index: 2;
+  }
+  .bg-z-index {
+    position: relative;
+    z-index: 2;
+  }
+}
 .pd-top-45 {
   padding-top: 45px;
 }

@@ -1,14 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { bannerImage } from "../utils/services";
 
 let image =
-	"https://firebasestorage.googleapis.com/v0/b/pandurang-udyog-samuh.appspot.com/o/awards.png?alt=media&token=0b4b2051-1624-4542-a44c-1c7dc50eb058";
+	"https://firebasestorage.googleapis.com/v0/b/pandurang-udyog-samuh.appspot.com/o/Awards.png?alt=media&token=60012774-7fc7-4999-a914-652022175918";
 
 const Breadcrumb = ({ title, onLoad = null }) => {
 	return (
 		<>
-			<div className="breadcrumb-area bg-overlay-2" style={{ backgroundImage: `url(${image})` }}>
+			<div className="breadcrumb-area bg-overlay-1" style={{ backgroundImage: `url(${image})` }}>
 				<div className="container">
 					<div className="row">
 						<div className="col-12">
