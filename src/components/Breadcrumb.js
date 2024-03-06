@@ -8,11 +8,7 @@ let image =
 const Breadcrumb = ({ title, onLoad = null }) => {
 	return (
 		<>
-			<div
-				style={{
-					backgroundImage: image,
-				}}
-			>
+			<div className="breadcrumb-area bg-overlay-2" style={{ backgroundImage: `url(${image})` }}>
 				<div className="container">
 					<div className="row">
 						<div className="col-12">
