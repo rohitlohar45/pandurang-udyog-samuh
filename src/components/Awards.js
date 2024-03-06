@@ -44,8 +44,7 @@ const Awards = () => {
 	return (
 		<div style={{ padding: "50px", textAlign: "center" }}>
 			<div style={{ marginBottom: "20px" }}>
-				<h1>Awards</h1>
-				<p>Check out our latest awards!</p>
+				<h2>Check out our latest awards!</h2>
 			</div>
 			<Grid templateColumns={{ base: "repeat(1, 1fr)", md: "repeat(3, 1fr)" }} gap={10} p={20}>
 				{awards.map((award, index) => (
