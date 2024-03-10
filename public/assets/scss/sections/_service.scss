@@ -142,6 +142,12 @@
 }
 .service-details-wrap {
   .thumb {
+    .popup__top-car {
+      margin: 0;
+      padding: 0;
+      height: auto;
+      width: auto;
+    }
     .icon {
       height: 70px;
       width: 70px;

@@ -3,22 +3,16 @@ import React, { useState } from "react";
 import Carousel from "react-bootstrap/Carousel";
 // import Carousel from "react-bootstrap/Carousel";
 
-import {
-  FaArrowRight,
-  FaPhoneAlt,
-  FaPlay,
-  FaRegEnvelope,
-  FaRegFileAlt,
-  FaRegFilePdf,
-  FaSearch,
-} from "react-icons/fa";
+import { FaArrowRight, FaPhoneAlt, FaRegEnvelope } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import servicePages from "../utils/services";
-import serviceContent from "../utils/serviceDetails";
-import Events from "./Events";
-const ServiceDetailsInner = ({ service }) => {
+// import serviceContent from "../utils/serviceDetails";
+import awardContent from "../utils/awardDetails";
+import awardsPages from "../utils/awards";
+
+const AwardDetailsInner = ({ service }) => {
   const [isOpen, setOpen] = useState(false);
-  const details = serviceContent[service];
+  const details = awardContent[service];
   const information = details.information;
   const images = information.images;
   const supportInfo = details.support;
@@ -50,22 +44,20 @@ const ServiceDetailsInner = ({ service }) => {
                   </Carousel>
                 </div>
                 <h2>{information?.title}</h2>
-                <p>{information?.description1}</p>
-                <p>{information?.description2}</p>
-                <p>{information?.description3}</p>
-                <p className="last-para">{information?.description4}</p>
+
+                <p className="last-para">{information?.description}</p>
               </div>
-              <Events />
+              {/* <Events /> */}
             </div>
             <div className="col-lg-4">
               <div className="sidebar-area">
                 <div className="widget widget_catagory">
                   <h4 className="widget-title">
-                    SERVICE LIST
+                    AWARDS
                     <span className="dot" />
                   </h4>
                   <ul className="catagory-items">
-                    {servicePages.map((service, index) => (
+                    {awardsPages.map((service, index) => (
                       <li key={index}>
                         <Link to={`/service-details/${service.slug}`}>
                           {service.name}{" "}
@@ -77,7 +69,7 @@ const ServiceDetailsInner = ({ service }) => {
                     ))}
                   </ul>
                 </div>
-                <div
+                {/* <div
                   className="widget widget_support text-center mb-0"
                   style={{
                     backgroundColor: "#080c24",
@@ -95,7 +87,7 @@ const ServiceDetailsInner = ({ service }) => {
                     <FaPhoneAlt />
                     {supportInfo.phoneNumber}
                   </p>
-                </div>
+                </div> */}
               </div>
             </div>
           </div>
@@ -105,4 +97,4 @@ const ServiceDetailsInner = ({ service }) => {
   );
 };
 
-export default ServiceDetailsInner;
+export default AwardDetailsInner;
