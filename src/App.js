@@ -12,6 +12,7 @@ import RouteScrollToTop from "./elements/RouteScrollToTop";
 import Login from "./pages/Login";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 import Dashboard from "./pages/Dashboard/Index";
+import AwardDetails from "./pages/AwardDetailsPage";
 function App() {
 	const [user, setUser] = useState(null);
 
@@ -43,6 +44,7 @@ function App() {
 				<Route exact path="/" element={<Home />} />
 				<Route exact path="/about" element={<About />} />
 				<Route exact path="/service-details/:id" element={<ServiceDetails />} />
+				<Route exact path="/award-details/:id" element={<AwardDetails />} />
 				<Route exact path="/awards" element={<Awards />} />
 				<Route exact path="/contact" element={<Contact />} />
 			</Routes>

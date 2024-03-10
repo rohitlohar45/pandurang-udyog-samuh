@@ -4,7 +4,7 @@ import React from "react";
 const Awards = () => {
 	const awards = [
 		{
-			title: "Best banana bunch award",
+			title: "Best banana bunch",
 			imageUrl: "assets/img/awards/best-banana-bunch-award.jpg",
 		},
 		{
@@ -41,6 +41,12 @@ const Awards = () => {
 		},
 	];
 
+	const handleClick = (id) => {
+		console.log(id);
+		let slug = id.toLowerCase().split(" ").join("-");
+		window.location.href = `award-details/${slug}`;
+	};
+
 	return (
 		<div style={{ padding: "50px", textAlign: "center" }}>
 			<div style={{ marginBottom: "20px" }}>
@@ -55,6 +61,8 @@ const Awards = () => {
 						overflow="hidden"
 						boxShadow="xl"
 						p={4}
+						onClick={() => handleClick(award.title)}
+						_hover={{ cursor: "pointer" }}
 					>
 						<Image
 							src={award.imageUrl}
@@ -62,7 +70,7 @@ const Awards = () => {
 							width="100%"
 							height="250px"
 							objectFit="cover"
-						/>{" "}
+						/>
 						<Box p={4}>
 							<Text fontSize="xl" fontWeight="bold" mb={2}>
 								{award.title}
