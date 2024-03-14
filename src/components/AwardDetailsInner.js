@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 import Carousel from "react-bootstrap/Carousel";
 
@@ -7,17 +7,20 @@ import { Link } from "react-router-dom";
 import awardContent from "../utils/awardDetails";
 import awardsPages from "../utils/awards";
 
-const AwardDetailsInner = ({ service, serviceDetails = null }) => {
-	console.log(serviceDetails);
-	const details = awardContent[service];
-	const information = details?.information;
-	const images = information?.images;
-	// console.log(images);
-	//   const images = [
-	//     "/assets/img/service/pan-exports-cold-storage/1.jpg",
-	//     "/assets/img/service/pandurang-agro-industries-cold-storage/1.jpg",
-	//     "/assets/img/service/pandurang-krushi-udyog-banana-tissue-drip/1.gif",
-	//   ];
+const AwardDetailsInner = ({ award }) => {
+	const [images, setImages] = useState([]);
+	const [information, setInformation] = useState({});
+	const [topAwards, setTopAwards] = useState([]);
+
+	useEffect(() => {
+		if (award) {
+			const { information } = award;
+			setInformation(information);
+		}
+		localStorage.getItem("top5Awards") &&
+			setTopAwards(JSON.parse(localStorage.getItem("top5Awards")));
+	}, [award]);
+
 	return (
 		<>
 			<div className="service-area pd-top-120 pd-bottom-120">
@@ -29,12 +32,16 @@ const AwardDetailsInner = ({ service, serviceDetails = null }) => {
 									<Carousel className="popup__top-car">
 										{images?.map((image, index) => (
 											<Carousel.Item key={index}>
-												<img className="popup__img" src={image} alt={`Slide ${index + 1}`} />
+												<img
+													className="popup__img"
+													src={`url${image}`}
+													alt={`Slide ${index + 1}`}
+												/>
 											</Carousel.Item>
 										))}
 									</Carousel>
 								</div>
-								<h2>{information?.title}</h2>
+								<h2>{award?.title}</h2>
 
 								<p className="last-para">{information?.description}</p>
 							</div>
@@ -47,10 +54,10 @@ const AwardDetailsInner = ({ service, serviceDetails = null }) => {
 										<span className="dot" />
 									</h4>
 									<ul className="catagory-items">
-										{awardsPages.map((service, index) => (
+										{topAwards.map((award, index) => (
 											<li key={index}>
-												<Link to={`/award-details/${service.slug}`}>
-													{service.name}
+												<Link to={`/award-details/${award.slug}`}>
+													{award.title}
 													<span>
 														<FaArrowRight />
 													</span>
