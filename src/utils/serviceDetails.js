@@ -17,6 +17,18 @@ const serviceContent = {
         "/assets/img/service/pandurang-agro-industries-cold-storage/1.jpg",
         "/assets/img/service/pandurang-krushi-udyog-banana-tissue-drip/1.gif",
       ],
+      // images: [
+      //   "https://drive.google.com/file/d/17JACQcJ7z2OHnpUIGtnjmBn0u39iH3yU/view?usp=drive_link",
+      //   "https://drive.google.com/file/d/1Xk6hdjk1EAiubnVTjLsFWwLEtrFOgg4_/view?usp=drive_link",
+      //   "https://drive.google.com/file/d/1PUZEB_HWPg6SlrxROqR2itKvlnxb1NT7/view?usp=drive_link",
+      //   "https://drive.google.com/file/d/1N3shLjid8N0D5-N7P_DioakO8yIsw2t2/view?usp=drive_link",
+      //   "https://drive.google.com/file/d/1grEaNTMaeLcO4GW69ekyhdUbMGzXf7xO/view?usp=drive_link",
+      //   "https://drive.google.com/file/d/1NDORXGyM7-S-n8NwU0V9IqCl5cLumOUe/view?usp=drive_link",
+      //   "https://drive.google.com/file/d/19_vwvbeJrY04cl7w304RCqDmMQIeAV5u/view?usp=drive_link",
+      //   "https://drive.google.com/file/d/1Vz4hlE0R45_9tBdI2zyMaQ2efIK-zZCq/view?usp=drive_link",
+      //   "https://drive.google.com/file/d/17IxdzHu8X8lJ7MGumqHdwalp6XnO-oma/view?usp=drive_link",
+      //   "https://drive.google.com/file/d/13IEEwp7LE1OEsaVYPXXKTpXlZzmQ3qbN/view?usp=drive_link",
+      // ],
     },
     support: {
       title: "24/7 ONLINE SUPPORT",
@@ -40,6 +52,13 @@ const serviceContent = {
       image1:
         "/assets/img/service/pandurang-agro-industries-cold-storage/1.jpg",
       image2: "assets/img/service/pandurang-agro-industries-cold-storage/2.png",
+      images: [
+        "https://drive.google.com/file/d/1F1bQdu5Sfq4dfYlQhw2E86knfi9mP5-Y/view?usp=drive_link",
+        "https://drive.google.com/file/d/1wN-AVULrdbz5uVl_tW0oJZBqirjBaVV_/view?usp=drive_link",
+        "https://drive.google.com/file/d/1tTerz9WCkjLdbZ-3JFMD1w4ow2rBnmIR/view?usp=drive_link",
+        "https://drive.google.com/file/d/1mlHBZ8-ZIdPdTtO_YxX_wYl0FwUwCEnU/view?usp=drive_link",
+        "https://drive.google.com/file/d/1LClYr3tCLh65Zum9jNSjs3fh8uLF4tXd/view?usp=drive_link",
+      ],
     },
     support: {
       title: "24/7 ONLINE SUPPORT",
@@ -62,6 +81,13 @@ const serviceContent = {
         "In addition to our standard packaging options, we also offer customized packaging solutions tailored to meet the unique needs and branding requirements of our clients. From branded labels to customized packing sizes and materials, we work closely with our clients to ensure that their products are presented in the most appealing and professional manner.",
       image1: "/assets/img/service/dp-fruit-suppliers-reliance-ini-sk/1.jpg",
       image2: "/assets/img/service/dp-fruit-suppliers-reliance-ini-sk/2.png",
+      images: [
+        "https://drive.google.com/file/d/1sCVrbA8YVRZAJuIyQaPBTaXjEgY5Mhef/view?usp=drive_link",
+        "https://drive.google.com/file/d/1-K1ora0G1RD_ayvI0hFqWivCzx1fI1Wv/view?usp=drive_link",
+        "https://drive.google.com/file/d/1XA0fU95vXC5-5Vrvfk4_Wvtpts2grqOC/view?usp=drive_link",
+        "https://drive.google.com/file/d/1vP2_UPIvCbxfBq22OVKwbZ4wnR7gcKj8/view?usp=drive_link",
+        "https://drive.google.com/file/d/1OF-3xK6gsSCbVMuMEAOXjZpJ1c0U4JXn/view?usp=drive_link",
+      ],
     },
     support: {
       title: "24/7 ONLINE SUPPORT",
@@ -86,6 +112,14 @@ const serviceContent = {
         "/assets/img/service/pandurang-krushi-udyog-banana-tissue-drip/1.gif",
       image2:
         "assets/img/service/pandurang-krushi-udyog-banana-tissue-drip/2.png",
+      images: [
+        "https://drive.google.com/file/d/1e8SU_i9rtlRRacwHPAUVMc4u5-zORUXF/view?usp=drive_link",
+        "https://drive.google.com/file/d/1p7IB4eA9Ujf7yWuXPK-_DAefWy884jF4/view?usp=drive_link",
+        "https://drive.google.com/file/d/1NgiIDUuEQywN4HYSyq0hUgAIXEEnLL_c/view?usp=drive_link",
+        "https://drive.google.com/file/d/1Z_qU6u3ajD5gjq9sYWMdux5jXBhhm-9_/view?usp=drive_link",
+        "https://drive.google.com/file/d/16ineaRVBHcbWmx9UcwOXy-8GFtFRq_5p/view?usp=drive_link",
+        "https://drive.google.com/file/d/1nRaS0a-kf40PGAOsJd3mdaXtma-wB4ti/view?usp=drive_link",
+      ],
     },
     support: {
       title: "24/7 ONLINE SUPPORT",
@@ -109,6 +143,10 @@ const serviceContent = {
       image1:
         "/assets/img/service/pandurang-petroleum-services-hp-dealer/1.png",
       image2: "assets/img/service/pandurang-petroleum-services-hp-dealer/2.png",
+      images: [
+        "https://drive.google.com/file/d/1PU1M4YpBgWfgS5reRO5luSCgAqKrOBlR/view?usp=drive_link",
+        "https://drive.google.com/file/d/1nah1dPZJyCz7FfEsOVE88ezMU5vOM1rc/view?usp=drive_link",
+      ],
     },
     support: {
       title: "24/7 ONLINE SUPPORT",
@@ -131,6 +169,14 @@ const serviceContent = {
         "At Pandurang Steel, customer satisfaction is our top priority. We strive to exceed expectations by delivering top-quality products, exceptional service, and value-added solutions that meet the diverse needs of our clients. With our unwavering commitment to excellence and integrity, we are your trusted partner in construction, helping you build the future with confidence and success.",
       image1: "/assets/img/service/pandurang-steel-building-material/1.png",
       image2: "assets/img/service/pandurang-steel-building-material/2.png",
+      images: [
+        "https://drive.google.com/file/d/15QTp6AJ_unJ0LmkX3VVKTxnW-78LxDn4/view?usp=drive_link",
+        "https://drive.google.com/file/d/1IqZo4v-tnSFx0Cg8dqg5GUAnIXWyXk9L/view?usp=drive_link",
+        "https://drive.google.com/file/d/19An2y-Oe6m3pDLreTg0cyqMFvN5PFKfR/view?usp=drive_link",
+        "https://drive.google.com/file/d/16FC6Chbab3IsRpd7UERJ4atPQFk6y2FO/view?usp=drive_link",
+        "https://drive.google.com/file/d/1d0CFX-lSq5vUyChm1RQQyi4c9DDXO1Yo/view?usp=drive_link",
+        "https://drive.google.com/file/d/1PwcRGkS2O_NyYq5g_26PdGjqXLAEawXs/view?usp=drive_link",
+      ],
     },
     support: {
       title: "24/7 ONLINE SUPPORT",
@@ -153,6 +199,10 @@ const serviceContent = {
         "In addition to product supply, we offer comprehensive transportation services to facilitate timely delivery to construction sites, ensuring that our clients have access to the materials they need, when they need them. Our fleet of vehicles is equipped to handle various load sizes and terrain conditions, guaranteeing efficient and reliable transportation solutions.",
       image1: "/assets/img/service/pandurang-industries-stone-crusher/1.png",
       image2: "assets/img/service/pandurang-industries-stone-crusher/2.png",
+      images: [
+        "https://drive.google.com/file/d/1rGToImDcw6CVBKzN0CEWwgVVwyOW5Mo-/view?usp=drive_link",
+        "https://drive.google.com/file/d/1UI2d74yzE45hOrdcRUOEfBsv_FAqf2ZY/view?usp=drive_link",
+      ],
     },
     support: {
       title: "24/7 ONLINE SUPPORT",
