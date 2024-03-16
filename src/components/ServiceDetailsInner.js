@@ -34,7 +34,9 @@ const ServiceDetailsInner = ({ service }) => {
 									<Carousel className="popup__top-car">
 										{images?.map((image, index) => (
 											<Carousel.Item key={index}>
-												<img className="popup__img" src={image} alt={`Slide ${index + 1}`} />
+												<div className="popup__img-container">
+													<img className="popup__img" src={image} alt={`Slide ${index + 1}`} />
+												</div>
 											</Carousel.Item>
 										))}
 									</Carousel>

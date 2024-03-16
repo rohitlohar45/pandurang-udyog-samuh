@@ -88,10 +88,10 @@ const awardContent = {
 			],
 		},
 	},
-	"foundation-kolhapur": {
+	"mm-shaikh-foundation-kolhapur": {
 		rank: 7,
 		title: "M.M.SHAIKH FOUNDATION, KOLHAPUR",
-		slug: "foundation-kolhapur",
+		slug: "mm-shaikh-foundation-kolhapur",
 		information: {
 			description:
 				"M.M.SHAIKH FOUNDATION, KOLHAPURThe Hon.Mr. Dadasaheb Namdev Patil is being given a letter of honour, M. M. We are honoring you with a letter of honor through Shaikh Foundation. It is a matter of great pride that society jewels like you are honored and honored through MM Sheikh Foundation as the progress you have made is remarkable and appreciable. M. M. For receiving a letter of honor from Sheikh Foundation .",

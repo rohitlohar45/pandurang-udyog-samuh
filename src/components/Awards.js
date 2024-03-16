@@ -1,60 +1,62 @@
-import { Box, Grid, Image, Text } from "@chakra-ui/react";
-import React, { useEffect, useMemo } from "react";
-import { collection, doc, getDocs, updateDoc } from "firebase/firestore";
-import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
-import { firestore, storage } from "../firebase/initialise";
+import React, { useState, useEffect } from "react";
+import { Box, Grid, Text, Image } from "@chakra-ui/react";
+import { collection, getDocs, query, orderBy, limit, startAfter } from "firebase/firestore";
+import { firestore } from "../firebase/initialise";
+import Pagination from "./Pagination";
+
+const PAGE_SIZE = 9; // Number of awards per page
 
 const Awards = () => {
-	const [awards, setAwards] = React.useState([]);
+	const [awards, setAwards] = useState([]);
+	const [currentPage, setCurrentPage] = useState(1);
+	const [totalAwards, setTotalAwards] = useState(0);
 
-	const fetchData = async () => {
+	const fetchAwards = async (page) => {
 		try {
-			const awards = collection(firestore, "awards");
-			const querySnapshot = await getDocs(awards);
-			const awardContent = [];
-			const updatedAwards = {};
+			const awardsCollectionRef = collection(firestore, "awards");
+			const q = query(
+				awardsCollectionRef,
+				orderBy("rank"),
+				limit(PAGE_SIZE),
+				startAfter((page - 1) * PAGE_SIZE)
+			);
 
-			querySnapshot.forEach((doc) => {
-				awardContent.push({
-					id: doc.id,
-					...doc.data(),
-				});
-			});
-			awardContent.sort((a, b) => a.rank - b.rank);
-			return awardContent;
+			const querySnapshot = await getDocs(q);
+
+			const fetchedAwards = querySnapshot.docs.map((doc) => ({
+				id: doc.id,
+				...doc.data(),
+			}));
+
+			setAwards(fetchedAwards);
+			setTotalAwards(querySnapshot.size);
 		} catch (error) {
-			console.error("Error:", error);
+			console.error("Error fetching awards:", error);
 		}
 	};
 
 	useEffect(() => {
-		fetchData().then((awardsData) => {
-			setAwards(awardsData);
-			console.log(awardsData);
-		});
-	}, []);
-
-	// const cachedAwards = useMemo(() => awards, [awards]);
+		fetchAwards(currentPage);
+	}, [currentPage]);
 
 	const handleClick = (award) => {
-		console.log(award);
 		localStorage.setItem("selectedAward", JSON.stringify(award));
-		// store top 5 awards in local storage
-		const top5Awards = awards.sort((a, b) => a.rank - b.rank).slice(0, 5);
+		const top5Awards = awards.slice(0, 5);
 		localStorage.setItem("top5Awards", JSON.stringify(top5Awards));
-
 		window.location.href = `award-details/${award.slug}`;
 	};
 
-	function conatins(id) {
-		if (
-			id == "foundation-kolhapur" ||
-			id == "hp-petroleum-corporation" ||
-			id == "best-performance-award-yara"
-		) {
-			return true;
-		}
-	}
+	const totalPages = Math.ceil(totalAwards / PAGE_SIZE);
+
+	const handleNextPage = () => {
+		if (currentPage === totalPages) return;
+		setCurrentPage((prevPage) => prevPage + 1);
+	};
+
+	const handlePrevPage = () => {
+		if (currentPage === 1) return;
+		setCurrentPage((prevPage) => prevPage - 1);
+	};
 
 	return (
 		<div style={{ padding: "50px", textAlign: "center" }}>
@@ -62,35 +64,38 @@ const Awards = () => {
 				<h2>Check out our latest awards!</h2>
 			</div>
 			<Grid templateColumns={{ base: "repeat(1, 1fr)", md: "repeat(3, 1fr)" }} gap={10} p={20}>
-				{awards?.map(
-					(award, index) =>
-						!conatins(award.id) && (
-							<Box
-								key={index}
-								borderWidth="1px"
-								borderRadius="lg"
-								overflow="hidden"
-								boxShadow="xl"
-								p={4}
-								// onClick={() => handleClick(award.slug)}
-								// _hover={{ cursor: "pointer" }}
-							>
-								<Image
-									src={award.information.images[0]}
-									alt={award.title}
-									width="100%"
-									height="250px"
-									objectFit="cover"
-								/>
-								<Box p={4}>
-									<Text fontSize="xl" fontWeight="bold" mb={2}>
-										{award.title}
-									</Text>
-								</Box>
-							</Box>
-						)
-				)}
+				{awards.map((award, index) => (
+					<Box
+						key={index}
+						borderWidth="1px"
+						borderRadius="lg"
+						overflow="hidden"
+						boxShadow="xl"
+						p={4}
+						onClick={() => handleClick(award)}
+						_hover={{ cursor: "pointer" }}
+					>
+						<Image
+							src={award.information.images[0]}
+							alt={award.title}
+							width="100%"
+							height="350px"
+							objectFit="contain"
+						/>
+						<Box p={4}>
+							<Text fontSize="xl" fontWeight="bold" mb={2}>
+								{award.title}
+							</Text>
+						</Box>
+					</Box>
+				))}
 			</Grid>
+			<Pagination
+				currentPage={currentPage}
+				totalPages={totalPages}
+				handlePrevPage={handlePrevPage}
+				handleNextPage={handleNextPage}
+			/>
 		</div>
 	);
 };

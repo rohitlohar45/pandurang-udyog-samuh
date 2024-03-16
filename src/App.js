@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -21,9 +21,6 @@ function App() {
 		onAuthStateChanged(auth, (user) => {
 			if (user) {
 				setUser(user);
-				console.log(user);
-			} else {
-				console.log(user);
 			}
 		});
 	}, []);

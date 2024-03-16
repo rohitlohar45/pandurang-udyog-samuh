@@ -18,7 +18,6 @@ const AwardDetails = () => {
 
 	useEffect(() => {
 		let awardDetails = localStorage.getItem("selectedAward");
-		console.log(awardDetails);
 		setAward(JSON.parse(awardDetails));
 	}, []);
 

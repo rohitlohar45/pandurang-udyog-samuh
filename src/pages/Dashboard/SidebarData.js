@@ -5,5 +5,6 @@ import ManageAccountsIcon from "@mui/icons-material/ManageAccounts";
 
 export const SidebarData = [
 	{ title: "Events", icon: <DashboardIcon />, link: "/dashboard" },
+	{ title: "Awards", icon: <ManageAccountsIcon />, link: "/dashboard/awards" },
 	{ title: "Queries", icon: <AccountCircleIcon />, link: "/dashboard/queries" },
 ];
