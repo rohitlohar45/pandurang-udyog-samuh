@@ -13,9 +13,11 @@ const serviceContent = {
       // image1: "/assets/img/service/pan-exports-cold-storage/1.jpg",
       // image2: "assets/img/service/pan-exports-cold-storage/2.png",
       images: [
-        "/assets/img/service/pan-exports-cold-storage/1.jpg",
-        "/assets/img/service/pandurang-agro-industries-cold-storage/1.jpg",
-        "/assets/img/service/pandurang-krushi-udyog-banana-tissue-drip/1.gif",
+        // "/assets/img/service/pan-exports-cold-storage/1.jpg",
+        // "/assets/img/service/pandurang-agro-industries-cold-storage/1.jpg",
+        // "/assets/img/service/pandurang-krushi-udyog-banana-tissue-drip/1.gif",
+        "https://firebasestorage.googleapis.com/v0/b/pandurang-udyog-samuh.appspot.com/o/services%2Fpan-exports-cold-storage%2F1.jpg?alt=media&token=e16cfdbe-a8e5-4107-82a3-dbdf76a28574",
+        "https://firebasestorage.googleapis.com/v0/b/pandurang-udyog-samuh.appspot.com/o/services%2Fpan-exports-cold-storage%2F2.jpg?alt=media&token=c131c760-1220-4fb2-8696-0e88f4339cbd",
       ],
       // images: [
       //   "https://drive.google.com/file/d/17JACQcJ7z2OHnpUIGtnjmBn0u39iH3yU/view?usp=drive_link",
@@ -52,12 +54,20 @@ const serviceContent = {
       image1:
         "/assets/img/service/pandurang-agro-industries-cold-storage/1.jpg",
       image2: "assets/img/service/pandurang-agro-industries-cold-storage/2.png",
+      // images: [
+      //   "https://drive.google.com/file/d/1F1bQdu5Sfq4dfYlQhw2E86knfi9mP5-Y/view?usp=drive_link",
+      //   "https://drive.google.com/file/d/1wN-AVULrdbz5uVl_tW0oJZBqirjBaVV_/view?usp=drive_link",
+      //   "https://drive.google.com/file/d/1tTerz9WCkjLdbZ-3JFMD1w4ow2rBnmIR/view?usp=drive_link",
+      //   "https://drive.google.com/file/d/1mlHBZ8-ZIdPdTtO_YxX_wYl0FwUwCEnU/view?usp=drive_link",
+      //   "https://drive.google.com/file/d/1LClYr3tCLh65Zum9jNSjs3fh8uLF4tXd/view?usp=drive_link",
+      // ],
+
       images: [
-        "https://drive.google.com/file/d/1F1bQdu5Sfq4dfYlQhw2E86knfi9mP5-Y/view?usp=drive_link",
-        "https://drive.google.com/file/d/1wN-AVULrdbz5uVl_tW0oJZBqirjBaVV_/view?usp=drive_link",
-        "https://drive.google.com/file/d/1tTerz9WCkjLdbZ-3JFMD1w4ow2rBnmIR/view?usp=drive_link",
-        "https://drive.google.com/file/d/1mlHBZ8-ZIdPdTtO_YxX_wYl0FwUwCEnU/view?usp=drive_link",
-        "https://drive.google.com/file/d/1LClYr3tCLh65Zum9jNSjs3fh8uLF4tXd/view?usp=drive_link",
+        "https://firebasestorage.googleapis.com/v0/b/pandurang-udyog-samuh.appspot.com/o/services%2Fpandurang-agro-industries-cold-storage%2Fed8e6252-973f-403b-bbde-81c5efeda83f.jpg?alt=media&token=f5f8c4d9-4154-40b8-97d3-4a0f0a9668ae",
+        "https://firebasestorage.googleapis.com/v0/b/pandurang-udyog-samuh.appspot.com/o/services%2Fpandurang-agro-industries-cold-storage%2F3dc2a28b-77e5-404f-b077-639783f2f475.jpg?alt=media&token=8ef8350c-c021-45a0-a8a2-3894e1177eda",
+        "https://firebasestorage.googleapis.com/v0/b/pandurang-udyog-samuh.appspot.com/o/services%2Fpandurang-agro-industries-cold-storage%2Fa5431b0b-0ea3-47ea-b465-edc7c99a4f1d.jpg?alt=media&token=5c77d3c1-a0d0-46a0-94a2-77c85d7994aa",
+        "https://firebasestorage.googleapis.com/v0/b/pandurang-udyog-samuh.appspot.com/o/services%2Fpandurang-agro-industries-cold-storage%2F008f9400-c428-4ccf-948a-cf6d79852657.jpg?alt=media&token=6f9fa8ca-cf3c-43e5-ba99-da532f9d3866",
+        "https://firebasestorage.googleapis.com/v0/b/pandurang-udyog-samuh.appspot.com/o/services%2Fpandurang-agro-industries-cold-storage%2F8d4a0e81-ba45-4eda-a93e-0d48f5be6aa4.jpg?alt=media&token=f5399714-c649-42b5-88f0-2c12337f6b3e",
       ],
     },
     support: {
@@ -82,11 +92,17 @@ const serviceContent = {
       image1: "/assets/img/service/dp-fruit-suppliers-reliance-ini-sk/1.jpg",
       image2: "/assets/img/service/dp-fruit-suppliers-reliance-ini-sk/2.png",
       images: [
-        "https://drive.google.com/file/d/1sCVrbA8YVRZAJuIyQaPBTaXjEgY5Mhef/view?usp=drive_link",
-        "https://drive.google.com/file/d/1-K1ora0G1RD_ayvI0hFqWivCzx1fI1Wv/view?usp=drive_link",
-        "https://drive.google.com/file/d/1XA0fU95vXC5-5Vrvfk4_Wvtpts2grqOC/view?usp=drive_link",
-        "https://drive.google.com/file/d/1vP2_UPIvCbxfBq22OVKwbZ4wnR7gcKj8/view?usp=drive_link",
-        "https://drive.google.com/file/d/1OF-3xK6gsSCbVMuMEAOXjZpJ1c0U4JXn/view?usp=drive_link",
+        // "https://drive.google.com/file/d/1sCVrbA8YVRZAJuIyQaPBTaXjEgY5Mhef/view?usp=drive_link",
+        // "https://drive.google.com/file/d/1-K1ora0G1RD_ayvI0hFqWivCzx1fI1Wv/view?usp=drive_link",
+        // "https://drive.google.com/file/d/1XA0fU95vXC5-5Vrvfk4_Wvtpts2grqOC/view?usp=drive_link",
+        // "https://drive.google.com/file/d/1vP2_UPIvCbxfBq22OVKwbZ4wnR7gcKj8/view?usp=drive_link",
+        // "https://drive.google.com/file/d/1OF-3xK6gsSCbVMuMEAOXjZpJ1c0U4JXn/view?usp=drive_link",
+
+        "https://firebasestorage.googleapis.com/v0/b/pandurang-udyog-samuh.appspot.com/o/services%2Fdp-fruit-suppliers-reliance-ini-sk%2FIMG_8075.JPG?alt=media&token=aeccb151-c3ad-464f-92b6-299727571932",
+        "https://firebasestorage.googleapis.com/v0/b/pandurang-udyog-samuh.appspot.com/o/services%2Fdp-fruit-suppliers-reliance-ini-sk%2FIMG_8076.JPG?alt=media&token=530a340e-07d9-47f7-b80d-f5258047913b",
+        "https://firebasestorage.googleapis.com/v0/b/pandurang-udyog-samuh.appspot.com/o/services%2Fdp-fruit-suppliers-reliance-ini-sk%2FIMG_8077.JPG?alt=media&token=b97793a5-1014-4416-a100-19b656d63abf",
+        "https://firebasestorage.googleapis.com/v0/b/pandurang-udyog-samuh.appspot.com/o/services%2Fdp-fruit-suppliers-reliance-ini-sk%2FIMG_8079.JPG?alt=media&token=2bbbcc0f-eca0-4924-8968-893773fccad0",
+        "https://firebasestorage.googleapis.com/v0/b/pandurang-udyog-samuh.appspot.com/o/services%2Fdp-fruit-suppliers-reliance-ini-sk%2FIMG_8081.JPG?alt=media&token=0118c0c5-c99e-4017-aa7c-acdcde48df4b",
       ],
     },
     support: {
@@ -113,12 +129,19 @@ const serviceContent = {
       image2:
         "assets/img/service/pandurang-krushi-udyog-banana-tissue-drip/2.png",
       images: [
-        "https://drive.google.com/file/d/1e8SU_i9rtlRRacwHPAUVMc4u5-zORUXF/view?usp=drive_link",
-        "https://drive.google.com/file/d/1p7IB4eA9Ujf7yWuXPK-_DAefWy884jF4/view?usp=drive_link",
-        "https://drive.google.com/file/d/1NgiIDUuEQywN4HYSyq0hUgAIXEEnLL_c/view?usp=drive_link",
-        "https://drive.google.com/file/d/1Z_qU6u3ajD5gjq9sYWMdux5jXBhhm-9_/view?usp=drive_link",
-        "https://drive.google.com/file/d/16ineaRVBHcbWmx9UcwOXy-8GFtFRq_5p/view?usp=drive_link",
-        "https://drive.google.com/file/d/1nRaS0a-kf40PGAOsJd3mdaXtma-wB4ti/view?usp=drive_link",
+        // "https://drive.google.com/file/d/1e8SU_i9rtlRRacwHPAUVMc4u5-zORUXF/view?usp=drive_link",
+        // "https://drive.google.com/file/d/1p7IB4eA9Ujf7yWuXPK-_DAefWy884jF4/view?usp=drive_link",
+        // "https://drive.google.com/file/d/1NgiIDUuEQywN4HYSyq0hUgAIXEEnLL_c/view?usp=drive_link",
+        // "https://drive.google.com/file/d/1Z_qU6u3ajD5gjq9sYWMdux5jXBhhm-9_/view?usp=drive_link",
+        // "https://drive.google.com/file/d/16ineaRVBHcbWmx9UcwOXy-8GFtFRq_5p/view?usp=drive_link",
+        // "https://drive.google.com/file/d/1nRaS0a-kf40PGAOsJd3mdaXtma-wB4ti/view?usp=drive_link",
+
+        "https://firebasestorage.googleapis.com/v0/b/pandurang-udyog-samuh.appspot.com/o/services%2Fpandurang-krushi-udyog-banana-tissue-drip%2FIMG_8028.JPG?alt=media&token=b95b2a55-35fd-4d9a-a92e-65aca25fe596",
+        "https://firebasestorage.googleapis.com/v0/b/pandurang-udyog-samuh.appspot.com/o/services%2Fpandurang-krushi-udyog-banana-tissue-drip%2FIMG_8029.JPG?alt=media&token=9ca5910c-6bea-408a-8439-1e78b0601d52",
+        "https://firebasestorage.googleapis.com/v0/b/pandurang-udyog-samuh.appspot.com/o/services%2Fpandurang-krushi-udyog-banana-tissue-drip%2FIMG_8042.PNG?alt=media&token=4fef12ee-de22-411e-9729-4ee3cf8ab020",
+        "https://firebasestorage.googleapis.com/v0/b/pandurang-udyog-samuh.appspot.com/o/services%2Fpandurang-krushi-udyog-banana-tissue-drip%2FIMG_8044.PNG?alt=media&token=62cb34e5-2075-4f3a-b41a-1e96d2f3f0d5",
+        "https://firebasestorage.googleapis.com/v0/b/pandurang-udyog-samuh.appspot.com/o/services%2Fpandurang-krushi-udyog-banana-tissue-drip%2FIMG_8027.JPG?alt=media&token=dc996fb6-7fb1-40b6-a972-4a76e085f221",
+        "https://firebasestorage.googleapis.com/v0/b/pandurang-udyog-samuh.appspot.com/o/services%2Fpandurang-krushi-udyog-banana-tissue-drip%2FIMG_8062.jpg?alt=media&token=49c3dc2e-88b4-4f48-9370-c9afc6fa65b1",
       ],
     },
     support: {
@@ -144,8 +167,11 @@ const serviceContent = {
         "/assets/img/service/pandurang-petroleum-services-hp-dealer/1.png",
       image2: "assets/img/service/pandurang-petroleum-services-hp-dealer/2.png",
       images: [
-        "https://drive.google.com/file/d/1PU1M4YpBgWfgS5reRO5luSCgAqKrOBlR/view?usp=drive_link",
-        "https://drive.google.com/file/d/1nah1dPZJyCz7FfEsOVE88ezMU5vOM1rc/view?usp=drive_link",
+        // "https://drive.google.com/file/d/1PU1M4YpBgWfgS5reRO5luSCgAqKrOBlR/view?usp=drive_link",
+        // "https://drive.google.com/file/d/1nah1dPZJyCz7FfEsOVE88ezMU5vOM1rc/view?usp=drive_link",
+
+        "https://firebasestorage.googleapis.com/v0/b/pandurang-udyog-samuh.appspot.com/o/services%2Fpandurang-petroleum-services-hp-dealer%2FIMG_8032.PNG?alt=media&token=330549e5-8940-419f-8cee-df9b0d23910b",
+        "https://firebasestorage.googleapis.com/v0/b/pandurang-udyog-samuh.appspot.com/o/services%2Fpandurang-petroleum-services-hp-dealer%2FIMG_8031.PNG?alt=media&token=344a0be8-44b2-4d64-928c-cf84cb15a19e",
       ],
     },
     support: {
@@ -170,12 +196,19 @@ const serviceContent = {
       image1: "/assets/img/service/pandurang-steel-building-material/1.png",
       image2: "assets/img/service/pandurang-steel-building-material/2.png",
       images: [
-        "https://drive.google.com/file/d/15QTp6AJ_unJ0LmkX3VVKTxnW-78LxDn4/view?usp=drive_link",
-        "https://drive.google.com/file/d/1IqZo4v-tnSFx0Cg8dqg5GUAnIXWyXk9L/view?usp=drive_link",
-        "https://drive.google.com/file/d/19An2y-Oe6m3pDLreTg0cyqMFvN5PFKfR/view?usp=drive_link",
-        "https://drive.google.com/file/d/16FC6Chbab3IsRpd7UERJ4atPQFk6y2FO/view?usp=drive_link",
-        "https://drive.google.com/file/d/1d0CFX-lSq5vUyChm1RQQyi4c9DDXO1Yo/view?usp=drive_link",
-        "https://drive.google.com/file/d/1PwcRGkS2O_NyYq5g_26PdGjqXLAEawXs/view?usp=drive_link",
+        // "https://drive.google.com/file/d/15QTp6AJ_unJ0LmkX3VVKTxnW-78LxDn4/view?usp=drive_link",
+        // "https://drive.google.com/file/d/1IqZo4v-tnSFx0Cg8dqg5GUAnIXWyXk9L/view?usp=drive_link",
+        // "https://drive.google.com/file/d/19An2y-Oe6m3pDLreTg0cyqMFvN5PFKfR/view?usp=drive_link",
+        // "https://drive.google.com/file/d/16FC6Chbab3IsRpd7UERJ4atPQFk6y2FO/view?usp=drive_link",
+        // "https://drive.google.com/file/d/1d0CFX-lSq5vUyChm1RQQyi4c9DDXO1Yo/view?usp=drive_link",
+        // "https://drive.google.com/file/d/1PwcRGkS2O_NyYq5g_26PdGjqXLAEawXs/view?usp=drive_link",
+
+        "https://firebasestorage.googleapis.com/v0/b/pandurang-udyog-samuh.appspot.com/o/services%2Fpandurang-steel-building-material%2FIMG_8038.PNG?alt=media&token=3bd4446b-6d63-43fb-80d3-609b18e021c9",
+        "https://firebasestorage.googleapis.com/v0/b/pandurang-udyog-samuh.appspot.com/o/services%2Fpandurang-steel-building-material%2FIMG_8040.PNG?alt=media&token=6e5af589-fce0-47ae-ac82-7a07b04baa4c",
+        "https://firebasestorage.googleapis.com/v0/b/pandurang-udyog-samuh.appspot.com/o/services%2Fpandurang-steel-building-material%2FIMG_8041.PNG?alt=media&token=101090a5-a7c5-43cf-aadd-4f6b8a994ea0",
+        "https://firebasestorage.googleapis.com/v0/b/pandurang-udyog-samuh.appspot.com/o/services%2Fpandurang-steel-building-material%2FIMG_8043.PNG?alt=media&token=942503cd-8499-4140-9a42-bd9e81f033c2",
+        "https://firebasestorage.googleapis.com/v0/b/pandurang-udyog-samuh.appspot.com/o/services%2Fpandurang-steel-building-material%2FIMG_8066.jpg?alt=media&token=31fb7df4-8c55-4876-9d08-3cf21d5735b7",
+        "https://firebasestorage.googleapis.com/v0/b/pandurang-udyog-samuh.appspot.com/o/services%2Fpandurang-steel-building-material%2FIMG_9060.jpg?alt=media&token=26cffa1e-046f-4ba4-a17e-48f749bcbef3",
       ],
     },
     support: {
@@ -200,8 +233,11 @@ const serviceContent = {
       image1: "/assets/img/service/pandurang-industries-stone-crusher/1.png",
       image2: "assets/img/service/pandurang-industries-stone-crusher/2.png",
       images: [
-        "https://drive.google.com/file/d/1rGToImDcw6CVBKzN0CEWwgVVwyOW5Mo-/view?usp=drive_link",
-        "https://drive.google.com/file/d/1UI2d74yzE45hOrdcRUOEfBsv_FAqf2ZY/view?usp=drive_link",
+        // "https://drive.google.com/file/d/1rGToImDcw6CVBKzN0CEWwgVVwyOW5Mo-/view?usp=drive_link",
+        // "https://drive.google.com/file/d/1UI2d74yzE45hOrdcRUOEfBsv_FAqf2ZY/view?usp=drive_link",
+
+        "https://firebasestorage.googleapis.com/v0/b/pandurang-udyog-samuh.appspot.com/o/services%2Fpandurang-industries-stone-crusher%2FIMG_8012.PNG?alt=media&token=5bd0593d-ee32-43bc-93b6-4edc6f1c061c",
+        "https://firebasestorage.googleapis.com/v0/b/pandurang-udyog-samuh.appspot.com/o/services%2Fpandurang-industries-stone-crusher%2FIMG_8012%20(1).PNG?alt=media&token=a9a159dc-fe8a-4e8c-ab5a-079ab17437f9",
       ],
     },
     support: {
