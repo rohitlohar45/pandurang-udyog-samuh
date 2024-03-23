@@ -103,6 +103,8 @@ const serviceContent = {
         "https://firebasestorage.googleapis.com/v0/b/pandurang-udyog-samuh.appspot.com/o/services%2Fdp-fruit-suppliers-reliance-ini-sk%2FIMG_8077.JPG?alt=media&token=b97793a5-1014-4416-a100-19b656d63abf",
         "https://firebasestorage.googleapis.com/v0/b/pandurang-udyog-samuh.appspot.com/o/services%2Fdp-fruit-suppliers-reliance-ini-sk%2FIMG_8079.JPG?alt=media&token=2bbbcc0f-eca0-4924-8968-893773fccad0",
         "https://firebasestorage.googleapis.com/v0/b/pandurang-udyog-samuh.appspot.com/o/services%2Fdp-fruit-suppliers-reliance-ini-sk%2FIMG_8081.JPG?alt=media&token=0118c0c5-c99e-4017-aa7c-acdcde48df4b",
+        "https://www.youtube.com/embed/ft2BVuKKkEg?si=I4a2WKWewpihcmaq",
+        "https://www.youtube.com/embed/RlJvqMbYGS8?si=G7pqf56iZdlzT-k3",
       ],
     },
     support: {
@@ -238,6 +240,7 @@ const serviceContent = {
 
         "https://firebasestorage.googleapis.com/v0/b/pandurang-udyog-samuh.appspot.com/o/services%2Fpandurang-industries-stone-crusher%2FIMG_8012.PNG?alt=media&token=5bd0593d-ee32-43bc-93b6-4edc6f1c061c",
         "https://firebasestorage.googleapis.com/v0/b/pandurang-udyog-samuh.appspot.com/o/services%2Fpandurang-industries-stone-crusher%2FIMG_8012%20(1).PNG?alt=media&token=a9a159dc-fe8a-4e8c-ab5a-079ab17437f9",
+        "https://www.youtube.com/embed/kjN11ikFBpk?si=PQj_zjCs2EhJXqlz",
       ],
     },
     support: {
