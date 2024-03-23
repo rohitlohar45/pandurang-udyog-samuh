@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 import Carousel from "react-bootstrap/Carousel";
 // import Carousel from "react-bootstrap/Carousel";
@@ -16,6 +16,14 @@ import { Link } from "react-router-dom";
 import servicePages from "../utils/services";
 import serviceContent from "../utils/serviceDetails";
 import Events from "./Events";
+
+function isVideo(url) {
+	if (url.includes("youtube.com")) {
+		return true;
+	}
+	return false;
+}
+
 const ServiceDetailsInner = ({ service }) => {
 	const [isOpen, setOpen] = useState(false);
 	const details = serviceContent[service];
@@ -34,9 +42,20 @@ const ServiceDetailsInner = ({ service }) => {
 									<Carousel className="popup__top-car">
 										{images?.map((image, index) => (
 											<Carousel.Item key={index}>
-												<div className="popup__img-container">
-													<img className="popup__img" src={image} alt={`Slide ${index + 1}`} />
-												</div>
+												{isVideo(image) ? (
+													<div className="popup__img-container">
+														<iframe
+															className="popup__img"
+															title={`Slide ${index + 1}`}
+															src={image}
+															allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+														></iframe>
+													</div>
+												) : (
+													<div className="popup__img-container">
+														<img className="popup__img" src={image} alt={`Slide ${index + 1}`} />
+													</div>
+												)}
 											</Carousel.Item>
 										))}
 									</Carousel>
