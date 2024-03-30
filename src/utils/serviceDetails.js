@@ -10,14 +10,18 @@ const serviceContent = {
         "At Pan Exports Cold Storage, we recognize the importance of flexibility and customization in meeting the unique needs of our clients. Our storage solutions are meticulously tailored to accommodate the specific requirements of each client. From short-term storage needs to long-term warehousing solutions, we offer scalable options that can seamlessly adapt to varying inventory levels and seasonal demands, ensuring optimal efficiency and cost-effectiveness.",
       description4:
         "What truly sets us apart is our relentless dedication to quality and customer satisfaction. Our team of seasoned professionals works tirelessly to ensure that every facet of our operations adheres to the highest standards of excellence. From implementing stringent quality control measures to conducting round-the-clock monitoring, we leave no stone unturned in safeguarding the integrity and freshness of your products. Moreover, we offer comprehensive logistics support, including inventory management and distribution services, to streamline your supply chain operations and enhance overall efficiency.",
-      // image1: "/assets/img/service/pan-exports-cold-storage/1.jpg",
-      // image2: "assets/img/service/pan-exports-cold-storage/2.png",
+
       images: [
-        // "/assets/img/service/pan-exports-cold-storage/1.jpg",
-        // "/assets/img/service/pandurang-agro-industries-cold-storage/1.jpg",
-        // "/assets/img/service/pandurang-krushi-udyog-banana-tissue-drip/1.gif",
-        "https://firebasestorage.googleapis.com/v0/b/pandurang-udyog-samuh.appspot.com/o/services%2Fpan-exports-cold-storage%2F1.jpg?alt=media&token=e16cfdbe-a8e5-4107-82a3-dbdf76a28574",
-        "https://firebasestorage.googleapis.com/v0/b/pandurang-udyog-samuh.appspot.com/o/services%2Fpan-exports-cold-storage%2F2.jpg?alt=media&token=c131c760-1220-4fb2-8696-0e88f4339cbd",
+        "https://firebasestorage.googleapis.com/v0/b/pandurang-udyog-samuh.appspot.com/o/services%2Fpan-exports-cold-storage%2FP4.jpg?alt=media&token=d2b86cc4-a20e-4d23-ab31-6ad20c67d8d9",
+        "https://firebasestorage.googleapis.com/v0/b/pandurang-udyog-samuh.appspot.com/o/services%2Fpan-exports-cold-storage%2FP2.jpg?alt=media&token=f664a74b-7862-49c4-a237-cd1e0d205139",
+        "https://firebasestorage.googleapis.com/v0/b/pandurang-udyog-samuh.appspot.com/o/services%2Fpan-exports-cold-storage%2FP3.jpg?alt=media&token=50931153-6d1f-4fe1-be5e-21823a430783",
+        "https://firebasestorage.googleapis.com/v0/b/pandurang-udyog-samuh.appspot.com/o/services%2Fpan-exports-cold-storage%2FP7.jpg?alt=media&token=8eae8efa-389b-473d-b16c-713a3422b913",
+        "https://firebasestorage.googleapis.com/v0/b/pandurang-udyog-samuh.appspot.com/o/services%2Fpan-exports-cold-storage%2FP5.jpg?alt=media&token=afc027b9-10b9-4844-b65a-bdcaac3a9f44",
+        "https://firebasestorage.googleapis.com/v0/b/pandurang-udyog-samuh.appspot.com/o/services%2Fpan-exports-cold-storage%2FP10.jpg?alt=media&token=79c8e548-a3ec-4fe4-be69-2517694045db",
+        "https://firebasestorage.googleapis.com/v0/b/pandurang-udyog-samuh.appspot.com/o/services%2Fpan-exports-cold-storage%2FP8.jpg?alt=media&token=3327c888-f4ae-41af-9791-0952294ddf7e",
+        "https://firebasestorage.googleapis.com/v0/b/pandurang-udyog-samuh.appspot.com/o/services%2Fpan-exports-cold-storage%2FP9.jpg?alt=media&token=291d290a-07ed-4892-b7c8-f891cc149c7a",
+
+        "https://firebasestorage.googleapis.com/v0/b/pandurang-udyog-samuh.appspot.com/o/services%2Fpan-exports-cold-storage%2FP6.jpg?alt=media&token=48ece0ca-c4af-4c68-a722-323b718dfeb7",
       ],
       // images: [
       //   "https://drive.google.com/file/d/17JACQcJ7z2OHnpUIGtnjmBn0u39iH3yU/view?usp=drive_link",
