@@ -26,7 +26,7 @@ self.addEventListener("fetch", (event) => {
 							cache.put(event.request, clonedResponse);
 						});
 					}
-					console.log(response);
+					// console.log(response);
 					return response;
 				})
 			);

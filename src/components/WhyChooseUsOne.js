@@ -20,7 +20,7 @@ const WhyChooseUsOne = () => {
 						reader.onloadend = () => {
 							const base64data = reader.result;
 							setImg(base64data);
-							console.log(base64data);
+							// console.log(base64data);
 						};
 					});
 
@@ -60,7 +60,7 @@ const WhyChooseUsOne = () => {
 				reader.onloadend = () => {
 					const base64data = reader.result;
 					// setImg(base64data);
-					// console.log(base64data);
+					// // console.log(base64data);
 				};
 			} catch (error) {
 				console.error("Error loading image:", error);

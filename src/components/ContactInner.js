@@ -42,7 +42,7 @@ const ContactInner = () => {
 			const eventsCollectionRef = collection(db, "queries");
 			try {
 				const docRef = await addDoc(eventsCollectionRef, queryContent);
-				console.log("Query added with ID: ", docRef.id);
+				// console.log("Query added with ID: ", docRef.id);
 				toast({
 					title: "Query sent successfully!",
 					status: "success",

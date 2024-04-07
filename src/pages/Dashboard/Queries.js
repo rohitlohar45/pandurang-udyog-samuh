@@ -4,28 +4,17 @@ import {
 	Flex,
 	Button,
 	Spacer,
-	IconButton,
 	Icon,
-	useDisclosure,
 	Table,
 	Thead,
 	Tbody,
 	Tr,
 	Th,
 	Td,
-	Text,
 	Input,
 	useToast,
-	Modal,
-	ModalOverlay,
-	ModalContent,
-	ModalHeader,
-	ModalFooter,
-	ModalBody,
-	ModalCloseButton,
 } from "@chakra-ui/react";
-import { MdMenu, MdExitToApp, MdEdit, MdDelete } from "react-icons/md";
-import firebase from "firebase/app";
+import { MdExitToApp } from "react-icons/md";
 import "firebase/firestore";
 import { collection, getDocs } from "firebase/firestore";
 import { firestore } from "../../firebase/initialise";
@@ -52,7 +41,7 @@ const Queries = () => {
 						...doc.data(),
 					});
 				});
-				console.log(eventsData);
+				// console.log(eventsData);
 
 				setQueries(eventsData);
 				setSearchResults(eventsData);

@@ -15,21 +15,23 @@ const Login = () => {
 	const handleLogin = async (e) => {
 		e.preventDefault();
 		try {
-			console.log(email, password);
+			// console.log(email, password);
 			const auth = getAuth();
 			const res = await signInWithEmailAndPassword(auth, email, password);
-			toast({
-				title: "Login Success.",
-				description: "Login Success. Redirecting to dashboard.",
-				status: "success",
-				duration: 9000,
-				isClosable: true,
-				containerStyle: {
-					marginTop: "40px",
-					width: "400px",
-				},
-			});
-			window.location.href = "/dashboard";
+			if (res) {
+				toast({
+					title: "Login Success.",
+					description: "Login Success. Redirecting to dashboard.",
+					status: "success",
+					duration: 9000,
+					isClosable: true,
+					containerStyle: {
+						marginTop: "40px",
+						width: "400px",
+					},
+				});
+				window.location.href = "/dashboard";
+			}
 		} catch (error) {
 			console.error("Error signing in:", error);
 			// Handle error (display error message, reset form, etc.)

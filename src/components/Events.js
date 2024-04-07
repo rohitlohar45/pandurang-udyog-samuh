@@ -21,7 +21,7 @@ const Events = () => {
 				});
 
 				setEvents(eventsData);
-				// console.log(events);
+				// // console.log(events);
 			} catch (error) {
 				console.error("Error fetching data: ", error);
 			}

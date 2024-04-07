@@ -41,7 +41,7 @@ function EntryForm({ handleCreateEntry, onClose, setData, id }) {
 				const data = docSnap.data();
 				setFormData(data);
 			} else {
-				console.log("No such document!");
+				// console.log("No such document!");
 			}
 		} catch (error) {
 			console.error("Error fetching data: ", error);
@@ -103,7 +103,7 @@ function EntryForm({ handleCreateEntry, onClose, setData, id }) {
 					});
 				} else {
 					try {
-						console.log(formData);
+						// console.log(formData);
 						await handleCreateEntry(formData, toast);
 						setData((prevData) => [...prevData, formData]);
 						toast({
@@ -118,7 +118,7 @@ function EntryForm({ handleCreateEntry, onClose, setData, id }) {
 						});
 						onClose();
 					} catch (e) {
-						console.log(e);
+						// console.log(e);
 					}
 				}
 			} catch (error) {

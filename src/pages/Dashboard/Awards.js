@@ -13,7 +13,6 @@ import {
 	Tr,
 	Th,
 	Td,
-	Text,
 	Input,
 	useToast,
 	Modal,
@@ -28,14 +27,8 @@ import { MdMenu, MdExitToApp, MdEdit, MdDelete } from "react-icons/md";
 import { signOut } from "firebase/auth";
 import Sidebar from "./Sidebar";
 import { auth, firestore } from "../../firebase/initialise";
-import { collection, addDoc, getDocs } from "firebase/firestore";
-import {
-	handleAwardDelete,
-	handleCreateAward,
-	handleCreateEntry,
-	handleDelete,
-	handleEdit,
-} from "./Utils";
+import { collection, getDocs } from "firebase/firestore";
+import { handleAwardDelete, handleCreateAward } from "./Utils";
 import AwardEntryForm from "./AwardForm";
 
 const handleLogout = (toast) => {
@@ -62,7 +55,7 @@ const Awards = () => {
 
 	const closeModal = () => {
 		setId(null);
-		console.log("close modal");
+		// console.log("close modal");
 		onClose();
 	};
 
@@ -89,8 +82,8 @@ const Awards = () => {
 						...doc.data(),
 					});
 				});
-				console.log(eventsData);
-
+				// console.log(eventsData);
+				setData(eventsData);
 				setFilteredData(eventsData);
 			} catch (error) {
 				console.error("Error fetching data: ", error);
@@ -104,7 +97,7 @@ const Awards = () => {
 			const searchedData = data.filter((data) =>
 				data?.title?.toLowerCase().includes(searchTerm.toLowerCase())
 			);
-			console.log(searchedData);
+			// console.log(searchedData);
 			setFilteredData(searchedData);
 		}
 	}, [searchTerm]);

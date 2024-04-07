@@ -4,10 +4,8 @@ import Carousel from "react-bootstrap/Carousel";
 
 import { FaArrowRight, FaPhoneAlt, FaRegEnvelope } from "react-icons/fa";
 import { Link } from "react-router-dom";
-import awardContent from "../utils/awardDetails";
-import awardsPages from "../utils/awards";
 
-const AwardDetailsInner = ({ award }) => {
+const AwardDetailsInner = ({ award, handleRedirect }) => {
 	const [images, setImages] = useState([]);
 	const [information, setInformation] = useState({});
 	const [topAwards, setTopAwards] = useState([]);
@@ -53,8 +51,8 @@ const AwardDetailsInner = ({ award }) => {
 									</h4>
 									<ul className="catagory-items">
 										{topAwards.map((award, index) => (
-											<li key={index}>
-												<Link to={`/award-details/${award.slug}`}>
+											<li key={index} onClick={() => handleRedirect(award)}>
+												<Link>
 													{award.title}
 													<span>
 														<FaArrowRight />

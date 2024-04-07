@@ -13,14 +13,12 @@ import {
 	Tr,
 	Th,
 	Td,
-	Text,
 	Input,
 	useToast,
 	Modal,
 	ModalOverlay,
 	ModalContent,
 	ModalHeader,
-	ModalFooter,
 	ModalBody,
 	ModalCloseButton,
 } from "@chakra-ui/react";
@@ -29,11 +27,8 @@ import { signOut } from "firebase/auth";
 import EntryForm from "./Form";
 import Sidebar from "./Sidebar";
 import { auth, firestore } from "../../firebase/initialise";
-import { collection, addDoc, getDocs } from "firebase/firestore";
-import { handleCreateEntry, handleDelete, handleEdit } from "./Utils";
-import { useParams } from "react-router-dom";
-import Queries from "./Queries";
-// import ClippedDrawer from "../../components/Drawer";
+import { collection, getDocs } from "firebase/firestore";
+import { handleCreateEntry, handleDelete } from "./Utils";
 
 export const handleLogout = (toast) => {
 	signOut(auth)
@@ -59,7 +54,7 @@ function Events() {
 
 	const closeModal = () => {
 		setId(null);
-		console.log("close modal");
+		// console.log("close modal");
 		onClose();
 	};
 
@@ -86,9 +81,10 @@ function Events() {
 						...doc.data(),
 					});
 				});
-				console.log(eventsData);
+				// console.log(eventsData);
 
 				setFilteredData(eventsData);
+				setData(eventsData);
 			} catch (error) {
 				console.error("Error fetching data: ", error);
 			}
@@ -98,11 +94,13 @@ function Events() {
 
 	useEffect(() => {
 		if (searchTerm) {
-			const searchedData = data.filter((data) =>
+			const searchedData = filteredData.filter((data) =>
 				data?.title?.toLowerCase().includes(searchTerm.toLowerCase())
 			);
-			console.log(searchedData);
+			// console.log(searchedData);
 			setFilteredData(searchedData);
+		} else {
+			setFilteredData(data);
 		}
 	}, [searchTerm]);
 

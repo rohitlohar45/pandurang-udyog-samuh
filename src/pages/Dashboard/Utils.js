@@ -2,7 +2,6 @@ import { collection, addDoc, doc, setDoc, deleteDoc, getFirestore } from "fireba
 import { firestore } from "../../firebase/initialise";
 
 import { getStorage, ref, uploadString, getDownloadURL, getMetadata } from "firebase/storage";
-import { useToast } from "react-toastify";
 
 const handleCreateEntry = async (formData, toast) => {
 	try {
@@ -11,7 +10,7 @@ const handleCreateEntry = async (formData, toast) => {
 		const eventsCollectionRef = collection(db, "events");
 
 		// Upload the image to Firebase Storage
-		console.log(formData);
+		// console.log(formData);
 		const imageRef = ref(storage, `images/${Date.now()}_${Math.floor(Math.random() * 1000)}`);
 		await uploadString(imageRef, formData.imageUrl, "data_url");
 
@@ -84,7 +83,7 @@ const handleCreateAward = async (formData, toast) => {
 
 const handleEdit = async (id, data) => {
 	try {
-		console.log(data);
+		// console.log(data);
 		const userRef = doc(firestore, "events", id);
 		await setDoc(userRef, data);
 		return true;
@@ -95,7 +94,7 @@ const handleEdit = async (id, data) => {
 
 const handleAwardEdit = async (id, data) => {
 	try {
-		console.log(data);
+		// console.log(data);
 		const userRef = doc(firestore, "awards", id);
 		await setDoc(userRef, data);
 		return true;

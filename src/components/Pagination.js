@@ -3,7 +3,7 @@ import { Button, Flex, Text } from "@chakra-ui/react";
 
 function Pagination({ currentPage, totalPages, handlePrevPage, handleNextPage }) {
 	useEffect(() => {
-		console.log("Pagination component mounted", currentPage, totalPages);
+		// console.log("Pagination component mounted", currentPage, totalPages);
 	}, []);
 
 	return (

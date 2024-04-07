@@ -11,7 +11,6 @@ const AwardDetails = () => {
 	const [isImagesLoaded, setIsImagesLoaded] = useState(false);
 	const [isLogoLoaded, setIsLogoLoaded] = useState(false);
 	const [award, setAward] = useState(null);
-	const { id } = useParams();
 	const [logo, setLogo] = useState(
 		"https://firebasestorage.googleapis.com/v0/b/pandurang-udyog-samuh.appspot.com/o/logo-2.png?alt=media&token=8e04a245-c22d-4823-b621-77f927a0771a"
 	);
@@ -19,6 +18,7 @@ const AwardDetails = () => {
 	useEffect(() => {
 		let awardDetails = localStorage.getItem("selectedAward");
 		setAward(JSON.parse(awardDetails));
+		// console.log(award);
 	}, []);
 
 	const handleLogoLoaded = () => {
@@ -28,6 +28,11 @@ const AwardDetails = () => {
 		setIsImagesLoaded(true);
 	};
 
+	const handleRedirect = (award) => {
+		localStorage.setItem("selectedAward", JSON.stringify(award));
+		setAward(award);
+	};
+
 	return (
 		<>
 			<Fragment>
@@ -35,7 +40,7 @@ const AwardDetails = () => {
 					{!isImagesLoaded && <Preloader />}
 					<Navbar logo={logo} onLoad={handleImagesLoad} />
 					<Breadcrumb title={award?.title} onLoad={handleImagesLoad} />
-					<AwardDetailsInner award={award} />
+					<AwardDetailsInner award={award} handleRedirect={handleRedirect} />
 					<FooterOne logo={logo} onLoad={handleImagesLoad} />
 					<FooterBottomOne />
 				</Suspense>

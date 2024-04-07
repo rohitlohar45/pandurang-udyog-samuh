@@ -31,6 +31,11 @@ const ServiceDetailsInner = ({ service }) => {
 	const images = information?.images;
 	const supportInfo = details?.support;
 	const eventInfo = details?.events;
+
+	useEffect(() => {
+		window.scrollTo(0, 0);
+		// console.log(service);
+	}, [service]);
 	return (
 		<>
 			<div className="service-area pd-top-120 pd-bottom-120">

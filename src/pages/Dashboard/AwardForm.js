@@ -7,10 +7,8 @@ import {
 	Button,
 	Image,
 	Text,
-	Select,
 	useToast,
 } from "@chakra-ui/react";
-import servicePages from "../../utils/services";
 import { firestore } from "../../firebase/initialise";
 import { doc, getDoc, setDoc } from "firebase/firestore";
 import heic2any from "heic2any"; // Import heic2any for HEIC to JPG conversion
@@ -33,7 +31,7 @@ function AwardEntryForm({ handleCreateEntry, onClose, setData, id }) {
 		if (id) {
 			fetchData();
 		}
-		console.log("id", id);
+		// console.log("id", id);
 	}, [id]);
 
 	const fetchData = async () => {
@@ -45,7 +43,7 @@ function AwardEntryForm({ handleCreateEntry, onClose, setData, id }) {
 				const data = docSnap.data();
 				setFormData(data);
 			} else {
-				console.log("No such document!");
+				// console.log("No such document!");
 			}
 		} catch (error) {
 			console.error("Error fetching data: ", error);
@@ -61,11 +59,11 @@ function AwardEntryForm({ handleCreateEntry, onClose, setData, id }) {
 	};
 
 	const handleImageChange = async (e) => {
-		console.log(e.target.files);
+		// console.log(e.target.files);
 		const files = Array.from(e.target.files);
 		const updatedImagesArray = [];
 
-		console.log("files", files);
+		// console.log("files", files);
 
 		try {
 			for (const file of files) {
@@ -121,14 +119,14 @@ function AwardEntryForm({ handleCreateEntry, onClose, setData, id }) {
 
 	const handleSubmit = async () => {
 		// Validation code here
-		console.log("Form Data:", formData);
+		// console.log("Form Data:", formData);
 		try {
 			const newData = {
 				...formData,
 				rank: formData.rank || 0,
 				slug: formData.title.toLowerCase().replace(/\s+/g, "-"),
 			};
-			console.log(newData);
+			// console.log(newData);
 
 			if (id) {
 				await setDoc(doc(firestore, "awards", id), newData);
