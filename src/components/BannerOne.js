@@ -100,6 +100,40 @@ const BannerOne = () => {
                 </div>
               </div>
             </div>
+
+            <div>
+              <div
+                className="item"
+                style={{
+                  backgroundImage: 'url("./assets/img/banner/solar.jpg")',
+                }}
+              >
+                <div className="container">
+                  <div className="row">
+                    <div className="col-lg-7 col-md-8">
+                      <div className="banner-inner style-white">
+                        <h1 className="b-animate-2 title">
+                          EMBRACE THE POWER OF SOLAR CHAMPIONING ECO-FRIENDLY
+                          SOLUTIONS
+                        </h1>
+                        <p className="b-animate-3 content">
+                          Make the Switch to Solar Today and Lead the Charge
+                          Towards Environmental Responsibility.
+                        </p>
+                        <div className="btn-wrap">
+                          <Link
+                            className="btn btn-white b-animate-4"
+                            to="/contact"
+                          >
+                            Contact Us
+                          </Link>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </Slider>
         </div>
       </div>
