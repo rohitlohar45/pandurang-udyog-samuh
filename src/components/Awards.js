@@ -14,22 +14,20 @@ const Awards = () => {
 	const fetchAwards = async (page) => {
 		try {
 			const awardsCollectionRef = collection(firestore, "awards");
-			const q = query(
-				awardsCollectionRef,
-				orderBy("rank"),
-				limit(PAGE_SIZE),
-				startAfter((page - 1) * PAGE_SIZE)
-			);
+			const q = query(awardsCollectionRef);
 
 			const querySnapshot = await getDocs(q);
+
+			console.log("Total awards:", querySnapshot.size);
 
 			const fetchedAwards = querySnapshot.docs.map((doc) => ({
 				id: doc.id,
 				...doc.data(),
 			}));
-
-			setAwards(fetchedAwards);
+			setAwards(fetchedAwards.sort((a, b) => a.rank - b.rank));
 			setTotalAwards(querySnapshot.size);
+
+			console.log(fetchedAwards);
 		} catch (error) {
 			console.error("Error fetching awards:", error);
 		}

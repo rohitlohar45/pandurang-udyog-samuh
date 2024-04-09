@@ -73,6 +73,7 @@ const handleCreateAward = async (formData, toast) => {
 				description: formData.information.description,
 				images: images,
 			},
+			rank: formData.rank,
 		});
 
 		return docRef;
