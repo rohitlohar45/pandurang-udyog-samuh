@@ -3,6 +3,113 @@ import { firestore } from "../../firebase/initialise";
 
 import { getStorage, ref, uploadString, getDownloadURL, getMetadata } from "firebase/storage";
 
+const handleCreateService = async (formData, toast) => {
+	try {
+		const storage = getStorage(); // Access Firebase Storage
+		const db = getFirestore(); // Access Firestore
+		const servicesCollectionRef = collection(db, "services"); // Firestore collection reference
+
+		// Create a reference to the folder in Firebase Storage
+		const folderRef = ref(storage, `services/${formData.slug}`);
+
+		// Check if the folder exists
+		let folderExists = true;
+		try {
+			await getMetadata(folderRef);
+		} catch (error) {
+			if (error.code === "storage/object-not-found") {
+				folderExists = false;
+			} else {
+				throw error;
+			}
+		}
+
+		// If the folder doesn't exist, create it
+		if (!folderExists) {
+			await uploadString(ref(folderRef, ".keep"), ""); // Create an empty file to ensure folder creation
+		}
+
+		// Upload images to Firebase Storage and get download URLs
+		const imagesPromises = formData.information.images.map(async (image) => {
+			const imageName = `${Date.now()}_${Math.floor(Math.random() * 1000)}`;
+			const imageRef = ref(folderRef, imageName);
+			await uploadString(imageRef, image, "data_url"); // Assuming `image` is a Base64-encoded data URL
+			return getDownloadURL(imageRef);
+		});
+		const images = await Promise.all(imagesPromises); // Await all upload operations to complete
+
+		// Add the service document to Firestore with the obtained image URLs
+		const docRef = await addDoc(servicesCollectionRef, {
+			information: {
+				...formData.information,
+				images: images,
+			},
+			support: formData.support,
+		});
+
+		// Return the document reference for further processing
+		return docRef;
+	} catch (error) {
+		// Handle errors and potentially show a notification
+		toast.error("An error occurred while creating the service. Please try again.");
+		throw error;
+	}
+};
+
+const handleEditService = async (serviceId, formData, toast) => {
+	try {
+		console.log(formData);
+		const storage = getStorage();
+		const db = getFirestore();
+		const serviceDocRef = doc(db, "services", serviceId);
+		const folderRef = ref(storage, `services/${formData.slug}`);
+
+		// Check and upload new images
+		const imagesPromises = formData.information.images.map(async (image) => {
+			if (image.startsWith("http")) {
+				return image;
+			} else {
+				const imageName = `${Date.now()}_${Math.floor(Math.random() * 1000)}`;
+				const imageRef = ref(folderRef, imageName);
+
+				await uploadString(imageRef, image, "data_url");
+				return getDownloadURL(imageRef);
+			}
+		});
+
+		const uploadedImages = await Promise.all(imagesPromises); // Wait for all upload operations to complete
+
+		// Update the service document in Firestore
+		await setDoc(serviceDocRef, {
+			information: {
+				...formData.information, // Include other information fields
+				images: uploadedImages, // Use the updated image URLs
+			},
+			support: formData.support, // Include support details
+		});
+
+		// Optionally, show a success toast notification
+		toast({
+			title: "Service updated successfully.",
+			status: "success",
+			duration: 2000,
+			isClosable: true,
+		});
+	} catch (error) {
+		// Handle errors and show an error notification
+		console.error("Error updating service: ", error);
+		toast({
+			title: "An error occurred while updating the service.",
+			description: "Please try again.",
+			status: "error",
+			duration: 2000,
+			isClosable: true,
+		});
+
+		throw error;
+	}
+};
+
 const handleCreateEntry = async (formData, toast) => {
 	try {
 		const storage = getStorage(); // Access Storage
@@ -136,4 +243,6 @@ export {
 	handleCreateAward,
 	handleAwardEdit,
 	handleAwardDelete,
+	handleCreateService,
+	handleEditService,
 };

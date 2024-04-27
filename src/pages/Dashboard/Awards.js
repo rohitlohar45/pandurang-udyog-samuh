@@ -38,7 +38,7 @@ const handleLogout = (toast) => {
 				title: "Logout Success",
 				description: "Logout Success",
 				status: "success",
-				duration: 9000,
+				duration: 2000,
 				isClosable: true,
 			});
 			window.location.href = "/login";

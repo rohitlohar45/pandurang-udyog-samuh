@@ -94,7 +94,7 @@ function EntryForm({ handleCreateEntry, onClose, setData, id }) {
 					toast({
 						title: "Event Updated Successfully",
 						status: "success",
-						duration: 9000,
+						duration: 2000,
 						isClosable: true,
 						containerStyle: {
 							marginTop: "40px",
@@ -109,7 +109,7 @@ function EntryForm({ handleCreateEntry, onClose, setData, id }) {
 						toast({
 							title: "Event Added Successfully",
 							status: "success",
-							duration: 9000,
+							duration: 2000,
 							isClosable: true,
 							containerStyle: {
 								marginTop: "40px",

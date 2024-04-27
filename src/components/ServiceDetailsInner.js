@@ -16,6 +16,8 @@ import { Link } from "react-router-dom";
 import servicePages from "../utils/services";
 import serviceContent from "../utils/serviceDetails";
 import Events from "./Events";
+import { doc, getDoc, setDoc } from "firebase/firestore";
+import { firestore } from "../firebase/initialise";
 
 function isVideo(url) {
 	if (url.includes("youtube.com")) {
@@ -26,16 +28,39 @@ function isVideo(url) {
 
 const ServiceDetailsInner = ({ service }) => {
 	const [isOpen, setOpen] = useState(false);
-	const details = serviceContent[service];
-	const information = details?.information;
-	const images = information?.images;
-	const supportInfo = details?.support;
-	const eventInfo = details?.events;
+	const [information, setInformation] = useState([]);
+	const [images, setImages] = useState([]);
+	const [supportInfo, setSupportInfo] = useState([]);
+	const [eventInfo, setEventInfo] = useState([]);
+
+	const [click, onClick] = useState(false);
 
 	useEffect(() => {
 		window.scrollTo(0, 0);
-		// console.log(service);
+		// get data from Firestore
+		const fetchData = async () => {
+			try {
+				const docRef = doc(firestore, "services", service);
+				const docSnap = await getDoc(docRef);
+
+				if (docSnap.exists()) {
+					const data = docSnap.data();
+					setInformation(data.information);
+					setImages(data.information.images);
+					setSupportInfo(data.support);
+					setEventInfo(data.eventInfo);
+					console.log("Document data:", data);
+				} else {
+					console.log("No such document!");
+				}
+			} catch (error) {
+				console.error("Error fetching data: ", error);
+			}
+		};
+
+		fetchData();
 	}, [service]);
+
 	return (
 		<>
 			<div className="service-area pd-top-120 pd-bottom-120">

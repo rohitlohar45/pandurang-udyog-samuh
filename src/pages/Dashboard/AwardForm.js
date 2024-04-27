@@ -118,15 +118,12 @@ function AwardEntryForm({ handleCreateEntry, onClose, setData, id }) {
 	};
 
 	const handleSubmit = async () => {
-		// Validation code here
-		// console.log("Form Data:", formData);
 		try {
 			const newData = {
 				...formData,
 				rank: formData.rank || 0,
 				slug: formData.title.toLowerCase().replace(/\s+/g, "-"),
 			};
-			// console.log(newData);
 
 			if (id) {
 				await setDoc(doc(firestore, "awards", id), newData);
@@ -139,7 +136,7 @@ function AwardEntryForm({ handleCreateEntry, onClose, setData, id }) {
 				toast({
 					title: "Award Updated Successfully",
 					status: "success",
-					duration: 9000,
+					duration: 2000,
 					isClosable: true,
 					containerStyle: {
 						marginTop: "40px",
@@ -151,7 +148,7 @@ function AwardEntryForm({ handleCreateEntry, onClose, setData, id }) {
 				toast({
 					title: "Award Created Successfully",
 					status: "success",
-					duration: 9000,
+					duration: 2000,
 					isClosable: true,
 					containerStyle: {
 						marginTop: "40px",

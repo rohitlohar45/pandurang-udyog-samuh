@@ -23,7 +23,7 @@ const Login = () => {
 					title: "Login Success.",
 					description: "Login Success. Redirecting to dashboard.",
 					status: "success",
-					duration: 9000,
+					duration: 2000,
 					isClosable: true,
 					containerStyle: {
 						marginTop: "40px",
@@ -33,7 +33,39 @@ const Login = () => {
 				window.location.href = "/dashboard";
 			}
 		} catch (error) {
-			console.error("Error signing in:", error);
+			let errorMessage;
+
+			switch (error.code) {
+				case "auth/invalid-credential":
+					errorMessage = "Invalid credential. Please check your credentials and try again.";
+					break;
+				case "auth/user-not-found":
+					errorMessage = "User not found. Please check your email and try again.";
+					break;
+				case "auth/wrong-password":
+					errorMessage = "Incorrect password. Please try again or reset your password.";
+					break;
+				case "auth/too-many-requests":
+					errorMessage = "Too many requests. Please wait a while before trying again.";
+					break;
+				default:
+					errorMessage = "An unknown error occurred. Please try again.";
+					break;
+			}
+
+			// Display a toast notification with the specific error message
+			toast({
+				title: "Error signing in",
+				description: errorMessage,
+				status: "error",
+				duration: 2000,
+				isClosable: true,
+				containerStyle: {
+					marginTop: "40px",
+					width: "400px",
+				},
+			});
+
 			// Handle error (display error message, reset form, etc.)
 		}
 	};

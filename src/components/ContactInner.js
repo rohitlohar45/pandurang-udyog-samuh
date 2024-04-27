@@ -46,7 +46,7 @@ const ContactInner = () => {
 				toast({
 					title: "Query sent successfully!",
 					status: "success",
-					duration: 9000,
+					duration: 2000,
 					isClosable: true,
 					containerStyle: {
 						marginTop: "40px",
@@ -59,7 +59,7 @@ const ContactInner = () => {
 				toast({
 					title: "Not sent",
 					status: "error",
-					duration: 9000,
+					duration: 2000,
 					isClosable: true,
 					containerStyle: {
 						marginTop: "40px",
