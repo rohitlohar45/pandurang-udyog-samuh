@@ -8,9 +8,10 @@ import {
 	FaWhatsapp,
 } from "react-icons/fa";
 import { Link } from "react-router-dom";
-import servicePages from "../utils/services";
+import { useAppContext } from "../context/AppContext";
 
 const FooterOne = ({ logo = null, onLoad = null }) => {
+	const { servicePages } = useAppContext();
 	return (
 		<>
 			<footer className="footer-area">
@@ -42,7 +43,7 @@ const FooterOne = ({ logo = null, onLoad = null }) => {
 							<div className="widget widget_nav_menu">
 								<h4 className="widget-title">OUR SERVICES</h4>
 								<ul>
-									{servicePages.map((service, index) => (
+									{servicePages?.map((service, index) => (
 										<li key={index}>
 											<FaArrowRight />
 											<Link to={`/service-details/${service.slug}`}>{service.name}</Link>

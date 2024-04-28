@@ -213,14 +213,22 @@ function ServiceEntryForm({ handleCreateEntry, onClose, setFilteredData, service
 	};
 
 	const handleSubmit = async () => {
+		console.log(formData);
+		if (images.length === 0) {
+			setErrors((prevErrors) => ({
+				...prevErrors,
+				images: "Please upload at least one image",
+			}));
+			return;
+		}
 		try {
 			setIsSubmitting(true);
 			const newSlug = formData.information.title.toLowerCase().replace(/\s+/g, "-");
 			const newData = {
 				...formData,
-				slug: newSlug,
 				information: {
 					...formData.information,
+					slug: newSlug,
 					images: [...images, ...allYouTubeLinks],
 				},
 			};
@@ -375,6 +383,7 @@ function ServiceEntryForm({ handleCreateEntry, onClose, setFilteredData, service
 							</Box>
 						</GridItem>
 					))}
+					{errors.images && <Text color="red.500">{errors.images}</Text>}
 				</Grid>
 			</FormControl>
 
@@ -410,7 +419,12 @@ function ServiceEntryForm({ handleCreateEntry, onClose, setFilteredData, service
 			</FormControl>
 
 			<Flex justifyContent="flex-end" mt={4}>
-				<Button colorScheme="teal" isLoading={isSubmitting} disabled={isSubmitting}>
+				<Button
+					colorScheme="teal"
+					isLoading={isSubmitting}
+					onClick={handleSubmit}
+					disabled={isSubmitting}
+				>
 					Submit
 				</Button>
 			</Flex>

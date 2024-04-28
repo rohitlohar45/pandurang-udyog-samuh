@@ -11,9 +11,11 @@ import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { SetSearchPopUp } from "../redux/stateSlice/clickActionSlice";
 import store from "../redux/store/store";
-import servicePages from "../utils/services";
+import { useAppContext } from "../context/AppContext";
 
 const Navbar = ({ logo = null, onLoad = null }) => {
+	const { servicePages } = useAppContext();
+
 	const [open, setOpen] = useState(false);
 	const [active, setActive] = useState(false);
 
@@ -139,7 +141,7 @@ const Navbar = ({ logo = null, onLoad = null }) => {
 								<li className="menu-item-has-children">
 									<Link to="#">Services</Link>
 									<ul className="sub-menu">
-										{servicePages.map((service, index) => (
+										{servicePages?.map((service, index) => (
 											<li key={index}>
 												<Link to={`/service-details/${service.slug}`}>{service.name}</Link>
 											</li>

@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import {
 	FaCalculator,
 	FaFileAlt,
@@ -11,7 +11,7 @@ import {
 import emailjs from "@emailjs/browser";
 import { getFirestore, collection, addDoc } from "firebase/firestore";
 import { useToast } from "@chakra-ui/react";
-import servicePages from "../utils/services";
+import { useAppContext } from "../context/AppContext";
 const ContactInner = () => {
 	const form = useRef();
 	const db = getFirestore();
@@ -20,6 +20,8 @@ const ContactInner = () => {
 	});
 	const [selectedOption, setSelectedOption] = useState("");
 	const [hidden, setHidden] = useState(true);
+
+	const { servicePages } = useAppContext();
 
 	const handleSelectChange = (event) => {
 		setSelectedOption(event.target.value);
@@ -143,7 +145,7 @@ const ContactInner = () => {
 												value={selectedOption}
 											>
 												{!selectedOption && <option>Subject</option>}
-												{servicePages.map((service, index) => (
+												{servicePages?.map((service, index) => (
 													<option key={index} value={service.name}>
 														{service.name}
 													</option>

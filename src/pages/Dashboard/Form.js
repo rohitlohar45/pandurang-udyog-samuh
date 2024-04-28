@@ -10,14 +10,17 @@ import {
 	useToast,
 	Select,
 } from "@chakra-ui/react";
-import servicePages from "../../utils/services";
 import { firestore } from "../../firebase/initialise";
 import { doc, getDoc, setDoc } from "firebase/firestore";
+import { useAppContext } from "../../context/AppContext";
 
 function EntryForm({ handleCreateEntry, onClose, setData, id }) {
 	const toast = useToast({
 		position: "top",
 	});
+
+	const { servicePages } = useAppContext();
+
 	const [formData, setFormData] = useState({
 		name: "",
 		description: "",
@@ -168,7 +171,7 @@ function EntryForm({ handleCreateEntry, onClose, setData, id }) {
 					value={formData.service}
 					onChange={(e) => handleChange({ target: { name: "service", value: e.target.value } })}
 				>
-					{servicePages.map((page, index) => (
+					{servicePages?.map((page, index) => (
 						<option key={index} value={page.slug}>
 							{page.name}
 						</option>

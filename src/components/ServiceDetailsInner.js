@@ -13,11 +13,11 @@ import {
 	FaSearch,
 } from "react-icons/fa";
 import { Link } from "react-router-dom";
-import servicePages from "../utils/services";
 import serviceContent from "../utils/serviceDetails";
 import Events from "./Events";
 import { doc, getDoc, setDoc } from "firebase/firestore";
 import { firestore } from "../firebase/initialise";
+import { useAppContext } from "../context/AppContext";
 
 function isVideo(url) {
 	if (url.includes("youtube.com")) {
@@ -32,6 +32,7 @@ const ServiceDetailsInner = ({ service }) => {
 	const [images, setImages] = useState([]);
 	const [supportInfo, setSupportInfo] = useState([]);
 	const [eventInfo, setEventInfo] = useState([]);
+	const { servicePages } = useAppContext();
 
 	const [click, onClick] = useState(false);
 
@@ -49,9 +50,7 @@ const ServiceDetailsInner = ({ service }) => {
 					setImages(data.information.images);
 					setSupportInfo(data.support);
 					setEventInfo(data.eventInfo);
-					console.log("Document data:", data);
-				} else {
-					console.log("No such document!");
+					// console.log("Document data:", data);
 				}
 			} catch (error) {
 				console.error("Error fetching data: ", error);
@@ -106,7 +105,7 @@ const ServiceDetailsInner = ({ service }) => {
 										<span className="dot" />
 									</h4>
 									<ul className="catagory-items">
-										{servicePages.map((service, index) => (
+										{servicePages?.map((service, index) => (
 											<li key={index}>
 												<Link to={`/service-details/${service.slug}`}>
 													{service.name}{" "}
