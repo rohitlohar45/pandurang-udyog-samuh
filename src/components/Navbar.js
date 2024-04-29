@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
 import {
-	FaFacebookF,
-	FaInstagram,
-	FaLinkedinIn,
-	FaPhoneAlt,
-	FaRegClock,
-	FaTwitter,
+  FaFacebookF,
+  FaInstagram,
+  FaLinkedinIn,
+  FaPhoneAlt,
+  FaRegClock,
+  FaTwitter,
 } from "react-icons/fa";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
@@ -14,65 +14,67 @@ import store from "../redux/store/store";
 import { useAppContext } from "../context/AppContext";
 
 const Navbar = ({ logo = null, onLoad = null }) => {
-	const { servicePages } = useAppContext();
+  const { servicePages } = useAppContext();
 
-	const [open, setOpen] = useState(false);
-	const [active, setActive] = useState(false);
+  const [open, setOpen] = useState(false);
+  const [active, setActive] = useState(false);
 
-	useEffect(() => {
-		window.onscroll = () => {
-			if (window.pageYOffset < 300) {
-				setActive(false);
-			} else if (window.pageYOffset > 300) {
-				setActive(true);
-			}
-			return () => (window.onscroll = null);
-		};
-	}, []);
+  useEffect(() => {
+    window.onscroll = () => {
+      if (window.pageYOffset < 300) {
+        setActive(false);
+      } else if (window.pageYOffset > 300) {
+        setActive(true);
+      }
+      return () => (window.onscroll = null);
+    };
+  }, []);
 
-	const searchPopUp = useSelector((state) => state.clickAction.searchPopUp);
-	const actionSearch = () => {
-		store.dispatch(SetSearchPopUp(!searchPopUp));
-	};
+  const searchPopUp = useSelector((state) => state.clickAction.searchPopUp);
+  const actionSearch = () => {
+    store.dispatch(SetSearchPopUp(!searchPopUp));
+  };
 
-	// Control sidebar navigation
-	let items = document.querySelectorAll(".menu-item-has-children > a");
-	for (let i in items) {
-		if (items.hasOwnProperty(i)) {
-			items[i].onclick = function () {
-				this.parentElement.querySelector(".sub-menu").classList.toggle("active");
-				this.classList.toggle("open");
-			};
-		}
-	}
-	return (
-		<>
-			{/* navbar start */}
-			<header className="navbar-area">
-				<div className="navbar-top">
-					<Link className="main-logo" to="/">
-						<div className="logo d-none d-xl-block">
-							<img
-								src={logo ? logo : "assets/img/logo-2.png"}
-								onLoad={onLoad}
-								alt="Pandurang Udyog Samuh"
-								style={{
-									maxWidth: "100%",
-									height: "auto",
-									display: "block",
-									marginLeft: "auto",
-									marginRight: "auto",
-									alignContent: "center",
-								}}
-							/>
-						</div>
-					</Link>
-					<div className="container p-lg-0">
-						<div className="row">
-							<div className="col-lg-10 col-md-9 text-md-center text-center">
-								<ul className="topbar-left">
-									<li>
-										<svg
+  // Control sidebar navigation
+  let items = document.querySelectorAll(".menu-item-has-children > a");
+  for (let i in items) {
+    if (items.hasOwnProperty(i)) {
+      items[i].onclick = function () {
+        this.parentElement
+          .querySelector(".sub-menu")
+          .classList.toggle("active");
+        this.classList.toggle("open");
+      };
+    }
+  }
+  return (
+    <>
+      {/* navbar start */}
+      <header className="navbar-area">
+        <div className="navbar-top">
+          <Link className="main-logo" to="/">
+            <div className="logo d-none d-xl-block">
+              <img
+                src={logo ? logo : "assets/img/logo-2.png"}
+                onLoad={onLoad}
+                alt="Pandurang Udyog Samuh"
+                style={{
+                  maxWidth: "100%",
+                  height: "auto",
+                  display: "block",
+                  marginLeft: "auto",
+                  marginRight: "auto",
+                  alignContent: "center",
+                }}
+              />
+            </div>
+          </Link>
+          <div className="container p-lg-0">
+            <div className="row">
+              <div className="col-lg-10 col-md-9 text-md-center text-center">
+                <ul className="topbar-left">
+                  <li>
+                    {/* <svg
 											width={12}
 											height={17}
 											viewBox="0 0 12 17"
@@ -84,83 +86,89 @@ const Navbar = ({ logo = null, onLoad = null }) => {
 												fill="#bd0e0e"
 											/>
 										</svg>
-										A/p. KandarTal. KarmalaDist. Solapur Maharashtra,India
-									</li>
-								</ul>
-							</div>
-						</div>
-					</div>
-				</div>
-				<nav
-					className={
-						active
-							? "navbar navbar-area-1 navbar-area navbar-expand-lg"
-							: "navbar navbar-area-1 navbar-area navbar-expand-lg"
-					}
-				>
-					<div className="container nav-container">
-						<div className="responsive-mobile-menu">
-							<button
-								onClick={() => setOpen(!open)}
-								className={
-									open
-										? "menu toggle-btn d-block d-lg-none open"
-										: "menu toggle-btn d-block d-lg-none "
-								}
-								data-target="#pandurang-udyog-samuh_main_menu"
-								aria-expanded="false"
-								aria-label="Toggle navigation"
-							>
-								<span className="icon-left" />
-								<span className="icon-right" />
-							</button>
-						</div>
-						<div className="logo">
-							<Link to="/">
-								<img
-									src={logo ? logo : "assets/img/logo-2.png"}
-									onLoad={onLoad}
-									alt="Pandurang Udyog Samuh"
-									style={{ width: "75%" }}
-								/>
-							</Link>
-						</div>
-						<div className="nav-left-part"></div>
+										A/p. KandarTal. KarmalaDist. Solapur Maharashtra,India */}
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <nav
+          className={
+            active
+              ? "navbar navbar-area-1 navbar-area navbar-expand-lg"
+              : "navbar navbar-area-1 navbar-area navbar-expand-lg"
+          }
+        >
+          <div className="container nav-container">
+            <div className="responsive-mobile-menu">
+              <button
+                onClick={() => setOpen(!open)}
+                className={
+                  open
+                    ? "menu toggle-btn d-block d-lg-none open"
+                    : "menu toggle-btn d-block d-lg-none "
+                }
+                data-target="#pandurang-udyog-samuh_main_menu"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+              >
+                <span className="icon-left" />
+                <span className="icon-right" />
+              </button>
+            </div>
+            <div className="logo">
+              <Link to="/">
+                <img
+                  src={logo ? logo : "assets/img/logo-2.png"}
+                  onLoad={onLoad}
+                  alt="Pandurang Udyog Samuh"
+                  style={{ width: "75%" }}
+                />
+              </Link>
+            </div>
+            <div className="nav-left-part"></div>
 
-						<div
-							className={open ? "collapse navbar-collapse sopen" : "collapse navbar-collapse"}
-							id="pandurang-udyog-samuh_main_menu"
-						>
-							<ul className="navbar-nav menu-open text-md-end">
-								<li className="current-menu-item">
-									<Link to="/">Home</Link>
-								</li>
-								<li>
-									<Link to="/about">About Us</Link>
-								</li>
-								<li className="menu-item-has-children">
-									<Link to="#">Services</Link>
-									<ul className="sub-menu">
-										{servicePages?.map((service, index) => (
-											<li key={index}>
-												<Link to={`/service-details/${service.slug}`}>{service.name}</Link>
-											</li>
-										))}
-									</ul>
-								</li>
-								<li>
-									<Link to="/awards">Awards</Link>
-								</li>
-								<li>
-									<Link to="/contact">Contact Us</Link>
-								</li>
-							</ul>
-						</div>
-					</div>
-				</nav>
-			</header>
-		</>
-	);
+            <div
+              className={
+                open
+                  ? "collapse navbar-collapse sopen"
+                  : "collapse navbar-collapse"
+              }
+              id="pandurang-udyog-samuh_main_menu"
+            >
+              <ul className="navbar-nav menu-open text-md-end">
+                <li className="current-menu-item">
+                  <Link to="/">Home</Link>
+                </li>
+                <li>
+                  <Link to="/about">About Us</Link>
+                </li>
+                <li className="menu-item-has-children">
+                  <Link to="#">Services</Link>
+                  <ul className="sub-menu">
+                    {servicePages?.map((service, index) => (
+                      <li key={index}>
+                        <Link to={`/service-details/${service.slug}`}>
+                          {service.name}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </li>
+                <li>
+                  <Link to="/awards">Awards</Link>
+                </li>
+                <li>
+                  <Link to="/contact">Contact Us</Link>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </header>
+    </>
+  );
 };
 
 export default Navbar;
