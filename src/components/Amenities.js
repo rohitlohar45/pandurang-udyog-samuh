@@ -37,19 +37,23 @@ const Card = ({ imageSrc, text }) => {
 
 const cardsData = [
   {
-    imageSrc: "http://anuragdevelopers.com/img/icons/inverter_wiring_.png",
+    imageSrc:
+      "https://firebasestorage.googleapis.com/v0/b/pandurang-udyog-samuh.appspot.com/o/Aminities%2Finverter_wiring_.png?alt=media&token=373c3a64-3d26-4ec3-9336-ba61b699b315",
     text: "Inverter Wiring",
   },
   {
-    imageSrc: "http://anuragdevelopers.com/img/icons/Solar%20Pannel.png",
+    imageSrc:
+      "https://firebasestorage.googleapis.com/v0/b/pandurang-udyog-samuh.appspot.com/o/Aminities%2FSolar%20Pannel.png?alt=media&token=eff0dafa-9111-4340-813a-9c234c359c13",
     text: "Solar Provision",
   },
   {
-    imageSrc: "http://anuragdevelopers.com/img/icons/Rain_water_harvesting.png",
+    imageSrc:
+      "https://firebasestorage.googleapis.com/v0/b/pandurang-udyog-samuh.appspot.com/o/Aminities%2FRain_water_harvesting.png?alt=media&token=421fc753-ecf1-484a-9795-714063988056",
     text: "Rain Water Harvesting",
   },
   {
-    imageSrc: "http://anuragdevelopers.com/img/icons/water_controller.png",
+    imageSrc:
+      "https://firebasestorage.googleapis.com/v0/b/pandurang-udyog-samuh.appspot.com/o/Aminities%2Fwater_controller.png?alt=media&token=784ff507-7269-4215-914b-82fa4b47895c",
     text: "Automatic Water Controller",
   },
 ];
