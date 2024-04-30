@@ -6,7 +6,7 @@ const useStyles = makeStyles({
   root: {
     display: "flex",
     flexDirection: "column", // Align items vertically
-    gap: "20px",
+    gap: "10px",
     textAlign: "center",
     marginTop: "5%",
   },
@@ -16,7 +16,7 @@ const useStyles = makeStyles({
   imagesRow: {
     display: "flex",
     justifyContent: "center", // Center items horizontally
-    gap: "20px",
+    gap: "40px",
   },
   imageContainer: {
     flex: 1,
@@ -27,8 +27,8 @@ const useStyles = makeStyles({
   image: {
     maxWidth: "100%",
     maxHeight: "100%",
-    borderRadius: "8px",
-    padding: "30px",
+    // borderRadius: "50%",
+    padding: "25px",
     transition: "transform 0.3s ease",
     "&:hover": {
       transform: "scale(1.05)",
@@ -59,8 +59,6 @@ const Bank = () => {
             className={classes.image}
           />
         </div>
-      </div>
-      <div className={classes.imagesRow}>
         <div className={classes.imageContainer}>
           <img
             src="../../assets/img/bank/hdfc.jpg"
@@ -76,6 +74,22 @@ const Bank = () => {
           />
         </div>
       </div>
+      {/* <div className={classes.imagesRow}>
+        <div className={classes.imageContainer}>
+          <img
+            src="../../assets/img/bank/hdfc.jpg"
+            alt="bank3"
+            className={classes.image}
+          />
+        </div>
+        <div className={classes.imageContainer}>
+          <img
+            src="../../assets/img/bank/IDBI.jpg"
+            alt="bank4"
+            className={classes.image}
+          />
+        </div>
+      </div> */}
     </div>
   );
 };

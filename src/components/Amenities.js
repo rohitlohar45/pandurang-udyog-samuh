@@ -7,8 +7,9 @@ const useStyles = makeStyles({
   root: {
     flexGrow: 1,
     textAlign: "center",
+
     title: {
-      // marginBottom: "5%",
+      // marginBottom: "10%",
     },
   },
 });
@@ -31,22 +32,28 @@ const Amenities = () => {
   const chunkedCards = [cardsData.slice(0, 4), cardsData.slice(4, 8)];
 
   return (
-    <div className={classes.root}>
-      <Typography variant="h4" className={classes.title}>
-        Exclusive Amenities
-      </Typography>
-      <Grid container spacing={3} justifyContent="center">
-        {chunkedCards.map((chunk, chunkIndex) => (
-          <React.Fragment key={chunkIndex}>
-            {chunk.map((card, cardIndex) => (
-              <Grid item xs={3} key={cardIndex} justifyContent="center">
-                <Card icon={card.icon} text={card.text} />
-              </Grid>
-            ))}
-          </React.Fragment>
-        ))}
-      </Grid>
-    </div>
+    <>
+      <div className={classes.root}>
+        <Typography
+          variant="h4"
+          className={classes.title}
+          style={{ marginBottom: "10px" }}
+        >
+          Exclusive Amenities
+        </Typography>
+        <Grid container spacing={3} justifyContent="center">
+          {chunkedCards.map((chunk, chunkIndex) => (
+            <React.Fragment key={chunkIndex}>
+              {chunk.map((card, cardIndex) => (
+                <Grid item xs={3} key={cardIndex} justifyContent="center">
+                  <Card icon={card.icon} text={card.text} />
+                </Grid>
+              ))}
+            </React.Fragment>
+          ))}
+        </Grid>
+      </div>
+    </>
   );
 };
 
