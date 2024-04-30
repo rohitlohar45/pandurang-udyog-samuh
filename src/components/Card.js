@@ -1,55 +1,43 @@
 import React from "react";
-import { makeStyles } from "@material-ui/core/styles";
-import { Card as MuiCard, CardContent, Typography } from "@material-ui/core";
-import { Favorite, Star, Bookmark } from "@material-ui/icons"; // Import Material-UI icons
-
-const useStyles = makeStyles({
-  card: {
-    width: "100%",
-    height: "100%",
-    display: "flex",
-    flexDirection: "column",
-    justifyContent: "center",
-    alignItems: "center",
-    borderRadius: "10px",
-    boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
-    transition: "transform 0.3s ease",
-    padding: "20px 20px",
-    "&:hover": {
-      transform: "scale(1.05)",
-    },
-  },
-  icon: {
-    fontSize: 64,
-  },
-});
+import { Box, Flex, Icon, Text } from "@chakra-ui/react";
+import { FaHeart, FaStar, FaBookmark } from "react-icons/fa"; // Import icons from react-icons
 
 const Card = ({ icon, text }) => {
-  const classes = useStyles();
+	const getIcon = () => {
+		switch (icon) {
+			case "favorite":
+				return <FaHeart />;
+			case "star":
+				return <FaStar />;
+			case "bookmark":
+				return <FaBookmark />;
+			default:
+				return null;
+		}
+	};
 
-  const renderIcon = () => {
-    switch (icon) {
-      case "favorite":
-        return <Favorite className={classes.icon} />;
-      case "star":
-        return <Star className={classes.icon} />;
-      case "bookmark":
-        return <Bookmark className={classes.icon} />;
-      default:
-        return null;
-    }
-  };
-
-  return (
-    <MuiCard className={classes.card}>
-      <CardContent>
-        {renderIcon()}
-        <Typography variant="body2" component="p">
-          {text}
-        </Typography>
-      </CardContent>
-    </MuiCard>
-  );
+	return (
+		<Box
+			w="100%"
+			h="100%"
+			display="flex"
+			flexDirection="column"
+			justifyContent="center"
+			alignItems="center"
+			borderRadius="10px"
+			boxShadow="0 4px 8px rgba(0, 0, 0, 0.1)"
+			transition="transform 0.3s ease"
+			p="20px"
+			_hover={{ transform: "scale(1.05)" }}
+		>
+			<Flex flexDirection="column" alignItems="center">
+				<Icon as={getIcon()} boxSize={16} /> {/* Setting size to 64px */}
+				<Text fontSize="md" mt="10px">
+					{text}
+				</Text>
+			</Flex>
+		</Box>
+	);
 };
 
 export default Card;
