@@ -9,4 +9,5 @@ export const SidebarData = [
 	{ title: "Events", icon: <DashboardIcon />, link: "/dashboard/events" },
 	{ title: "Awards", icon: <ManageAccountsIcon />, link: "/dashboard/awards" },
 	{ title: "Queries", icon: <AccountCircleIcon />, link: "/dashboard/queries" },
+	{ title: "Testimonials", icon: <AccountCircleIcon />, link: "/dashboard/testimonials" },
 ];

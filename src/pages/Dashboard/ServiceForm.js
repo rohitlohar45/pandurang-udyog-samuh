@@ -50,6 +50,15 @@ function ServiceEntryForm({ handleCreateEntry, onClose, setFilteredData, service
 		}
 	}, [serviceId]);
 
+	const createSlug = (title) => {
+		return title
+			.toLowerCase()
+			.replace(/['’]/g, "")
+			.replace(/[()]/g, "")
+			.replace(/[^a-z0-9]+/g, "-")
+			.replace(/^-|-$/g, "");
+	};
+
 	const fetchData = async () => {
 		try {
 			const docRef = doc(firestore, "services", serviceId);
@@ -223,7 +232,7 @@ function ServiceEntryForm({ handleCreateEntry, onClose, setFilteredData, service
 		}
 		try {
 			setIsSubmitting(true);
-			const newSlug = formData.information.title.toLowerCase().replace(/\s+/g, "-");
+			const newSlug = createSlug(formData.information.title);
 			const newData = {
 				...formData,
 				information: {

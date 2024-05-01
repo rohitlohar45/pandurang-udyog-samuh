@@ -4,6 +4,7 @@ import Queries from "./Queries";
 import Events from "./Dashboard";
 import Awards from "./Awards";
 import Services from "./Services";
+import Testimonials from "./Testimonials";
 
 const Dashboard = () => {
 	const urlParams = useParams();
@@ -14,6 +15,8 @@ const Dashboard = () => {
 		return <Awards />;
 	} else if (urlParams["*"] == "events") {
 		return <Events />;
+	} else if (urlParams["*"] == "testimonials") {
+		return <Testimonials />;
 	} else {
 		return <Services />;
 	}
