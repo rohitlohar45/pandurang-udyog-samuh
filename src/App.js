@@ -8,6 +8,7 @@ import ScrollToTop from "react-scroll-to-top";
 import About from "./pages/About";
 import ServiceDetails from "./pages/ServiceDetails";
 import Awards from "./pages/Awards";
+import Gallery from "./pages/Gallery";
 import Contact from "./pages/Contact";
 import RouteScrollToTop from "./elements/RouteScrollToTop";
 import Login from "./pages/Login";
@@ -47,6 +48,7 @@ function App() {
 					<Route exact path="/about" element={<About />} />
 					<Route exact path="/service-details/:id" element={<ServiceDetails />} />
 					<Route exact path="/award-details/:id" element={<AwardDetails />} />
+					<Route exact path="/gallery" element={<Gallery />} />
 					<Route exact path="/awards" element={<Awards />} />
 					<Route exact path="/contact" element={<Contact />} />
 				</Routes>
