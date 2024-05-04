@@ -20,10 +20,11 @@ export const AppProvider = ({ children }) => {
 
 	const createSlug = (title) => {
 		return title
-			.toLowerCase()
-			.replace(/[()]/g, "")
-			.replace(/[^a-z0-9]+/g, "-")
-			.replace(/^-|-$/g, "");
+			.toLowerCase() // Convert to lowercase
+			.replace(/['’]/g, "") // Remove apostrophes (single quotes)
+			.replace(/[()]/g, "") // Remove parentheses
+			.replace(/[^a-z0-9]+/g, "-") // Replace all non-alphanumeric characters with hyphens
+			.replace(/^-|-$/g, ""); // Trim leading and trailing hyphens
 	};
 
 	const fetchServices = async (page) => {

@@ -1,8 +1,9 @@
 import React, { Fragment, Suspense } from "react";
 import Preloader from "../elements/Preloader";
-import LogisticsOne from "../components/LogisticsOne";
-import Amenities from "../components/Amenities";
-import Bank from "../components/Bank";
+const LogisticsOne = React.lazy(() => import("../components/LogisticsOne"));
+const Amenities = React.lazy(() => import("../components/Amenities"));
+const Bank = React.lazy(() => import("../components/Bank"));
+const TestimonialsCarousel = React.lazy(() => import("./Testimonials"));
 const BannerOne = React.lazy(() => import("../components/BannerOne"));
 const AboutOne = React.lazy(() => import("../components/AboutOne"));
 const FeatureOne = React.lazy(() => import("../components/FeatureOne"));
@@ -24,6 +25,7 @@ const HomeOne = () => {
 					<AboutOne />
 					<WhyChooseUsOne />
 					<LogisticsOne />
+					<TestimonialsCarousel />
 					<Amenities />
 					<Bank />
 					<FooterOne />

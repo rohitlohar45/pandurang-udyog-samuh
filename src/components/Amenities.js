@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Grid, Heading, Text, Image } from "@chakra-ui/react";
+import { Box, Grid, Text, Image, chakra } from "@chakra-ui/react";
 
 const Card = ({ imageSrc, text }) => {
   return (
@@ -65,10 +65,17 @@ const cardsData = [
 
 const Amenities = () => {
   return (
-    <Box textAlign="center">
-      <Heading as="h2" size="xl" paddingBottom={{ base: 10 }}>
-        Exclusive Amenities
-      </Heading>
+    <Box textAlign="center" mt="5%">
+      <Box width={{ base: "full", sm: "lg", lg: "xl" }} margin="auto">
+        <chakra.h2
+          py={5}
+          fontSize={{ base: 32, sm: 48 }}
+          fontFamily="Work Sans"
+          fontWeight="bold"
+        >
+          Exclusive Amenities
+        </chakra.h2>
+      </Box>
       <Grid
         templateColumns={{ base: "repeat(2, 1fr)", md: "repeat(4, 1fr)" }}
         gap={{ base: 4, md: 8 }} // Responsive gap

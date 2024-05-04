@@ -14,9 +14,16 @@ import {
   FaSearch,
 } from "react-icons/fa";
 import { Link } from "react-router-dom";
-import serviceContent from "../utils/serviceDetails";
 import Events from "./Events";
-import { doc, getDoc, setDoc } from "firebase/firestore";
+import {
+  collection,
+  doc,
+  getDoc,
+  getDocs,
+  query,
+  setDoc,
+  where,
+} from "firebase/firestore";
 import { firestore } from "../firebase/initialise";
 import { useAppContext } from "../context/AppContext";
 import { Address } from "../utils/addresses";
@@ -52,7 +59,23 @@ const ServiceDetailsInner = ({ service, location }) => {
           setImages(data.information.images);
           setSupportInfo(data.support);
           setEventInfo(data.eventInfo);
-          // console.log("Document data:", data);
+        } else {
+          const servicesCollection = collection(firestore, "services");
+          const slugQuery = query(
+            servicesCollection,
+            where("information.slug", "==", service)
+          );
+          const querySnapshot = await getDocs(slugQuery);
+
+          if (!querySnapshot.empty) {
+            let data = querySnapshot.docs[0].data();
+            setInformation(data.information);
+            setImages(data.information.images);
+            setSupportInfo(data.support);
+            setEventInfo(data.eventInfo);
+          } else {
+            console.log("No such document!");
+          }
         }
       } catch (error) {
         console.error("Error fetching data: ", error);
@@ -101,13 +124,13 @@ const ServiceDetailsInner = ({ service, location }) => {
                 <p>{information?.description3}</p>
                 <p className="last-para">{information?.description4}</p>
               </div>
-              <Events />
+              {/* <Events /> */}
             </div>
             <div className="col-lg-4">
               <div className="sidebar-area">
                 <div className="widget widget_catagory">
                   <h4 className="widget-title">
-                    SERVICE LIST
+                    BUSINESS LIST
                     <span className="dot" />
                   </h4>
                   <ul className="catagory-items">
