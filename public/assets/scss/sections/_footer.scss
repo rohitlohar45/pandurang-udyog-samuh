@@ -277,3 +277,22 @@
     }
   }
 }
+
+.social-icons-container {
+  display: flex;
+  align-items: center;
+  margin-top: 6%;
+}
+
+.social-icon {
+  margin-right: 20px;
+  cursor: pointer;
+}
+
+.paragraph-text {
+  color: white;
+}
+
+.footer-area .widget {
+  margin-left: 5%;
+}

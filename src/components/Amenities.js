@@ -28,7 +28,12 @@ const Card = ({ imageSrc, text }) => {
         borderRadius="full"
         transition="all 0.3s ease" // Transition for smooth animation
       />
-      <Text fontSize="lg" mt="10px" transition="all 0.3s ease">
+      <Text
+        fontSize="lg"
+        mt="10px"
+        fontWeight="bold"
+        transition="all 0.3s ease"
+      >
         {text}
       </Text>
     </Box>

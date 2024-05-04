@@ -60,7 +60,7 @@ const TeamOne = () => {
   return (
     <>
       {/*team-area start*/}
-      <div className="team-area pd-top-115">
+      <div className="team-area pd-top-90">
         <div className="container">
           <div className="row justify-content-center">
             <div className="col-lg-6">
