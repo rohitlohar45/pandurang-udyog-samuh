@@ -1,4 +1,3 @@
-import { WidthFull } from "@mui/icons-material";
 import React from "react";
 
 const AboutTwo = () => {
@@ -19,53 +18,54 @@ const AboutTwo = () => {
                   />
 
                   <img
-                    src="https://firebasestorage.googleapis.com/v0/b/pandurang-udyog-samuh.appspot.com/o/About%20Us%2FUntitled%20design.jpg?alt=media&token=564bb3b9-bd65-4eac-bb28-4d599034673a"
-                    alt="Image 1"
+                    src="https://firebasestorage.googleapis.com/v0/b/pandurang-udyog-samuh.appspot.com/o/About%20Us%2F1bc60243-18e6-4c4d-87b9-a929812a26fd.jpg?alt=media&token=5ae8e95f-4349-4114-9196-dfaf6406aca8"
+                    alt="Image 2"
                     className="img-fluid mb-4"
                     style={{ width: "100%", height: "auto" }}
                   />
                   {/* Wrap the remaining images in a container */}
-                  {/* <div className="image-container mb-4"> */}
-                  {/* Second row */}
-                  {/* <div className="row mb-4">
+                  <div className="image-container mb-4">
+                    {/* Second row */}
+                    <div className="row mb-4">
                       <div className="col-6">
                         <img
                           src="https://firebasestorage.googleapis.com/v0/b/pandurang-udyog-samuh.appspot.com/o/About%20Us%2F68234a9c-1b5c-4df9-a760-3d73b1431f7a.jpg?alt=media&token=768f0c40-ac70-4eda-8d91-93a49aad637f"
-                          alt="Image 2"
-                          className="img-fluid"
-                        />
-                      </div>
-                      <div className="col-6">
-                        <img
-                          src="https://firebasestorage.googleapis.com/v0/b/pandurang-udyog-samuh.appspot.com/o/About%20Us%2FIMG_4140.jpg?alt=media&token=445bb75b-fff6-4b9b-9de9-c474789b73c3"
-                          alt="Image 1"
-                          className="img-fluid"
-                        />
-                      </div>
-                    </div> */}
-                  {/* Third row */}
-                  {/* <div className="row">
-                      <div className="col-6">
-                        <img
-                          src="https://firebasestorage.googleapis.com/v0/b/pandurang-udyog-samuh.appspot.com/o/About%20Us%2FIMG_8089.jpg?alt=media&token=bd43c705-6356-4389-b7fb-7cc5f7b2b8ef"
-                          alt="Image 4"
-                          className="img-fluid"
-                        />
-                      </div> */}
-                  {/* <div className="col-6">
-                        <img
-                          src="https://firebasestorage.googleapis.com/v0/b/pandurang-udyog-samuh.appspot.com/o/About%20Us%2FIMG_8064.jpg?alt=media&token=2f1a266a-8039-4553-8873-dc43092b3e66"
                           alt="Image 3"
                           className="img-fluid"
                         />
                       </div>
+                      <div className="col-6">
+                        <img
+                          src="https://firebasestorage.googleapis.com/v0/b/pandurang-udyog-samuh.appspot.com/o/About%20Us%2FWhatsApp%20Image%202024-05-05%20at%2016.45.37_0b410926.jpg?alt=media&token=96d99afc-efa6-452f-a6b4-355dfd9d4489"
+                          alt="Image 4"
+                          className="img-fluid"
+                        />
+                      </div>
                     </div>
-                  </div> */}
+                    {/* Third row */}
+                    <div className="row">
+                      <div className="col-6">
+                        <img
+                          src="https://firebasestorage.googleapis.com/v0/b/pandurang-udyog-samuh.appspot.com/o/About%20Us%2FIMG_8089.jpg?alt=media&token=bd43c705-6356-4389-b7fb-7cc5f7b2b8ef"
+                          alt="Image 5"
+                          className="img-fluid"
+                          style={{ width: "60%", marginLeft: "20%" }}
+                        />
+                      </div>
+                      <div className="col-6">
+                        <img
+                          src="https://firebasestorage.googleapis.com/v0/b/pandurang-udyog-samuh.appspot.com/o/About%20Us%2FIMG_8064.jpg?alt=media&token=2f1a266a-8039-4553-8873-dc43092b3e66"
+                          alt="Image 6"
+                          className="img-fluid"
+                        />
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
               <div className="col-lg-6  align-self-start">
                 {/* Content section */}
-                <div className="about-inner-wrap">
+                <div className="about-inner-wrap" style={{ fontSize: "18px" }}>
                   <div className="section-title mb-0">
                     <h4 className="subtitle">About Pandurang Udyog Samuh</h4>
                     <p>
@@ -76,7 +76,7 @@ const AboutTwo = () => {
                       products, exceptional services, and unwavering commitment
                       to excellence.
                     </p>
-                    <h4 className="subtitle">Our Values</h4>
+                    <h4 className="subtitle mt-4">Our Values</h4>
                     <ul>
                       <li>
                         <strong>Integrity:</strong> We conduct our business with
@@ -105,7 +105,7 @@ const AboutTwo = () => {
                         success.
                       </li>
                     </ul>
-                    <h4 className="subtitle">Our Products and Services</h4>
+                    <h4 className="subtitle mt-4">Our Products and Services</h4>
                     <p>
                       Pandurang Udyog Samuh offers a comprehensive range of
                       industrial solutions tailored to meet the diverse needs of
@@ -120,7 +120,7 @@ const AboutTwo = () => {
                       their operations, improve efficiency, and achieve their
                       strategic objectives.
                     </p>
-                    <h4 className="subtitle">Why Choose Us?</h4>
+                    <h4 className="subtitle mt-4">Why Choose Us?</h4>
                     <ul>
                       <li>
                         <strong>Experience:</strong> With decades of industry
