@@ -59,7 +59,27 @@ const cardsData = [
   {
     imageSrc:
       "https://firebasestorage.googleapis.com/v0/b/pandurang-udyog-samuh.appspot.com/o/Aminities%2Fwater_controller.png?alt=media&token=784ff507-7269-4215-914b-82fa4b47895c",
-    text: "Automatic Water Controller",
+    text: "RO Plant",
+  },
+  {
+    imageSrc:
+      "https://firebasestorage.googleapis.com/v0/b/pandurang-udyog-samuh.appspot.com/o/Aminities%2FContainer%20Parking.webp?alt=media&token=ae59c887-e50f-4d89-90c9-0625e5573f4f",
+    text: "Alloted Container Parking",
+  },
+  {
+    imageSrc:
+      "https://firebasestorage.googleapis.com/v0/b/pandurang-udyog-samuh.appspot.com/o/Aminities%2FCCTV%20Camera.jpg?alt=media&token=738154b8-b4fc-4e73-8dec-495204d8613c",
+    text: "CCTV Camera",
+  },
+  {
+    imageSrc:
+      "https://firebasestorage.googleapis.com/v0/b/pandurang-udyog-samuh.appspot.com/o/Aminities%2Ffire-extinguishers.jpg?alt=media&token=dd7b3234-5ddf-4f1f-a147-39e6bc3c21bf",
+    text: "Fire Extinguisher",
+  },
+  {
+    imageSrc:
+      "https://firebasestorage.googleapis.com/v0/b/pandurang-udyog-samuh.appspot.com/o/Aminities%2FFirst%20Aid.jpg?alt=media&token=bdeafb6c-cd8b-48f3-bf98-d75dcc84ff70",
+    text: "First Aid",
   },
 ];
 

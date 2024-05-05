@@ -35,7 +35,7 @@ const BannerOne = () => {
             <div>
               <div
                 className="item"
-                style={{ backgroundImage: 'url("./assets/img/banner/1.jpg")' }}
+                style={{ backgroundImage: 'url("./assets/img/banner/3.jpg")' }}
               >
                 <div className="container">
                   <div className="row">
