@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Box, Grid, Text, Image } from "@chakra-ui/react";
+import { Box, Grid, Text, Image, chakra } from "@chakra-ui/react";
 import { collection, getDocs, query, orderBy, limit, startAfter } from "firebase/firestore";
 import { firestore } from "../firebase/initialise";
 import Pagination from "./Pagination";
@@ -15,14 +15,8 @@ const Awards = () => {
 		const fetchData = async () => {
 			try {
 				const eventsRef = collection(firestore, "events");
-				const eventsQuery = query(
-					eventsRef,
-					orderBy("createdAt"),
-					limit(PAGE_SIZE),
-					startAfter((currentPage - 1) * PAGE_SIZE)
-				);
+				const eventsQuery = query(eventsRef, limit(PAGE_SIZE));
 				const querySnapshot = await getDocs(eventsQuery);
-
 				const eventsData = [];
 				querySnapshot.forEach((doc) => {
 					eventsData.push({
@@ -58,7 +52,9 @@ const Awards = () => {
 	return (
 		<>
 			<div className="section-title text-center" style={{ marginBottom: "0", marginTop: "5%" }}>
-				<h4 className="subtitle style-2">Events</h4>
+				<chakra.h2 py={5} fontSize={{ base: 32, sm: 48 }} fontFamily="Work Sans" fontWeight="bold">
+					Gallery
+				</chakra.h2>
 			</div>
 			<Box padding={6} textAlign="center" backgroundColor="#f9f9f9">
 				<Grid
@@ -83,7 +79,7 @@ const Awards = () => {
 								alt={event.title}
 								width="100%"
 								height="250px"
-								objectFit="cover"
+								objectFit="contain"
 							/>
 							<Box p={4}>
 								<Text fontSize="xl" fontWeight="bold" mb={2}>

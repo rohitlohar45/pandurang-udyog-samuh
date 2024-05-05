@@ -38,6 +38,7 @@ export const AppProvider = ({ children }) => {
 				id: doc.id,
 				name: doc.data().information.title,
 				slug: createSlug(doc.data().information.title),
+				description: doc.data().information.description1,
 			}));
 			setServicePages(fetchedServices);
 		} catch (error) {

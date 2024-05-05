@@ -1,5 +1,6 @@
 import React, { Fragment, Suspense } from "react";
 import Preloader from "../elements/Preloader";
+import HomeEvents from "../components/HomeEvents";
 const LogisticsOne = React.lazy(() => import("../components/LogisticsOne"));
 const Amenities = React.lazy(() => import("../components/Amenities"));
 const Bank = React.lazy(() => import("../components/Bank"));
@@ -28,6 +29,7 @@ const HomeOne = () => {
 					<TestimonialsCarousel />
 					<Amenities />
 					<Bank />
+					<HomeEvents />
 					<FooterOne />
 					<FooterBottomOne />
 				</Suspense>
