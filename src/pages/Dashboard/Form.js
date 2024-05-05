@@ -13,26 +13,28 @@ import {
 import { firestore } from "../../firebase/initialise";
 import { doc, getDoc, setDoc } from "firebase/firestore";
 import { useAppContext } from "../../context/AppContext";
+import heic2any from "heic2any"; // Import heic2any for HEIC to JPG conversion
 
 function EntryForm({ handleCreateEntry, onClose, setData, id }) {
-	const toast = useToast({
-		position: "top",
-	});
-
-	const { servicePages } = useAppContext();
-
+	const toast = useToast();
 	const [formData, setFormData] = useState({
-		name: "",
-		description: "",
-		imageUrl: "",
-		service: "",
+		id: "",
+		rank: 0,
+		slug: "",
+		title: "",
+		information: {
+			description: "",
+			images: [],
+		},
 	});
 	const [errors, setErrors] = useState({});
+	const [isSubmitting, setIsSubmitting] = useState(false);
 
 	useEffect(() => {
 		if (id) {
 			fetchData();
 		}
+		// console.log("id", id);
 	}, [id]);
 
 	const fetchData = async () => {
@@ -59,125 +61,158 @@ function EntryForm({ handleCreateEntry, onClose, setData, id }) {
 		}));
 	};
 
-	const handleImageChange = (e) => {
-		const file = e.target.files[0];
-		if (file) {
-			const reader = new FileReader();
-			reader.onloadend = () => {
-				setFormData((prevData) => ({
-					...prevData,
-					imageUrl: reader.result,
-				}));
-			};
-			reader.readAsDataURL(file);
+	const handleImageChange = async (e) => {
+		// console.log(e.target.files);
+		const files = Array.from(e.target.files);
+		const updatedImagesArray = [];
+
+		// console.log("files", files);
+
+		try {
+			for (const file of files) {
+				let ext = file.name.split(".").pop();
+				if (ext === "HEIC") {
+					// Convert HEIC to JPEG
+					const reader = new FileReader();
+					reader.onload = async () => {
+						const arrayBuffer = reader.result;
+						const convertedImage = await convertHeicToJpg(arrayBuffer);
+						updatedImagesArray.push(convertedImage);
+						if (updatedImagesArray.length === files.length) {
+							// Set the state after all images are processed
+							setFormData((prevData) => ({
+								...prevData,
+								information: {
+									...prevData.information,
+									images: [...prevData.information.images, ...updatedImagesArray],
+								},
+							}));
+						}
+					};
+					reader.readAsArrayBuffer(file);
+				} else {
+					// For other image formats (not HEIC), add the image directly to the array
+					const reader = new FileReader();
+					reader.onloadend = () => {
+						updatedImagesArray.push(reader.result);
+						if (updatedImagesArray.length === files.length) {
+							// Set the state after all images are processed
+							setFormData((prevData) => ({
+								...prevData,
+								information: {
+									...prevData.information,
+									images: [...prevData.information.images, ...updatedImagesArray],
+								},
+							}));
+						}
+					};
+					reader.readAsDataURL(file);
+				}
+			}
+		} catch (error) {
+			console.error("Error handling image change:", error);
 		}
 	};
 
+	const convertHeicToJpg = async (file) => {
+		const buffer = await file.arrayBuffer();
+		const jpgBlob = await heic2any({ blob: buffer, toType: "image/jpeg" });
+		return URL.createObjectURL(jpgBlob);
+	};
+
 	const handleSubmit = async () => {
-		const validationErrors = {};
-		let isValid = true;
+		try {
+			setIsSubmitting(true);
+			const newData = {
+				...formData,
+				rank: formData.rank || 0,
+				slug: formData.title.toLowerCase().replace(/\s+/g, "-"),
+			};
 
-		for (const key in formData) {
-			if (!formData[key]) {
-				validationErrors[key] = `${key.charAt(0).toUpperCase() + key.slice(1)} is required`;
-				isValid = false;
+			if (id) {
+				await setDoc(doc(firestore, "events", id), newData);
+				setData((prevData) => {
+					const index = prevData.findIndex((item) => item.id === id);
+					const updatedData = [...prevData];
+					updatedData[index] = newData;
+					return updatedData;
+				});
+				toast({
+					title: "Event Updated Successfully",
+					status: "success",
+					duration: 2000,
+					isClosable: true,
+					containerStyle: {
+						marginTop: "40px",
+						width: "400px",
+					},
+				});
+			} else {
+				await handleCreateEntry(newData);
+				toast({
+					title: "Event Created Successfully",
+					status: "success",
+					duration: 2000,
+					isClosable: true,
+					containerStyle: {
+						marginTop: "40px",
+						width: "400px",
+					},
+				});
 			}
-		}
-
-		if (isValid) {
-			try {
-				if (id) {
-					await setDoc(doc(firestore, "events", id), formData);
-					setData((prevData) => {
-						const index = prevData.findIndex((item) => item.id === id);
-						const updatedData = [...prevData];
-						updatedData[index] = formData;
-						return updatedData;
-					});
-					toast({
-						title: "Event Updated Successfully",
-						status: "success",
-						duration: 2000,
-						isClosable: true,
-						containerStyle: {
-							marginTop: "40px",
-							width: "400px",
-						},
-					});
-				} else {
-					try {
-						// console.log(formData);
-						await handleCreateEntry(formData, toast);
-						setData((prevData) => [...prevData, formData]);
-						toast({
-							title: "Event Added Successfully",
-							status: "success",
-							duration: 2000,
-							isClosable: true,
-							containerStyle: {
-								marginTop: "40px",
-								width: "400px",
-							},
-						});
-						onClose();
-					} catch (e) {
-						// console.log(e);
-					}
-				}
-			} catch (error) {
-				console.error("Error:", error);
-			}
-		} else {
-			setErrors(validationErrors);
+		} catch (error) {
+			console.error("Error:", error);
+		} finally {
+			setIsSubmitting(false);
+			onClose();
 		}
 	};
 
 	return (
 		<Box mt={4}>
-			<FormControl isInvalid={errors.name}>
-				<FormLabel>Name</FormLabel>
+			<FormControl isInvalid={errors.title}>
+				<FormLabel>Title</FormLabel>
 				<Input
 					type="text"
-					placeholder="Enter name"
+					placeholder="Enter title"
 					mb={2}
-					name="name"
-					value={formData.name}
+					name="title"
+					value={formData.title}
 					onChange={handleChange}
 				/>
-				{errors.name && <Text color="red.500">{errors.name}</Text>}
+				{errors.title && <Text color="red.500">{errors.title}</Text>}
 			</FormControl>
-			<FormControl isInvalid={errors.description}>
+			<FormControl isInvalid={errors.information && errors.information.description}>
 				<FormLabel>Description</FormLabel>
 				<Input
 					type="text"
 					placeholder="Enter description"
 					mb={2}
 					name="description"
-					value={formData.description}
-					onChange={handleChange}
+					value={formData.information.description}
+					onChange={(e) =>
+						handleChange({
+							target: {
+								name: "information",
+								value: { ...formData.information, description: e.target.value },
+							},
+						})
+					}
 				/>
-				{errors.description && <Text color="red.500">{errors.description}</Text>}
+				{errors.information && errors.information.description && (
+					<Text color="red.500">{errors.information.description}</Text>
+				)}
 			</FormControl>
-			<FormControl isInvalid={errors.imageUrl}>
-				<FormLabel>Image</FormLabel>
-				<Input type="file" accept="image/*" mb={2} onChange={handleImageChange} />
-				{errors.imageUrl && <Text color="red.500">{errors.imageUrl}</Text>}
-				{formData.imageUrl && <Image src={formData.imageUrl} alt="Preview" boxSize="100px" />}
-			</FormControl>
-			<FormControl isInvalid={errors.service}>
-				<FormLabel>Service</FormLabel>
-				<Select
-					placeholder="Select service"
-					value={formData.service}
-					onChange={(e) => handleChange({ target: { name: "service", value: e.target.value } })}
-				>
-					{servicePages?.map((page, index) => (
-						<option key={index} value={page.slug}>
-							{page.name}
-						</option>
+			<FormControl isInvalid={errors.information && errors.information.images}>
+				<FormLabel>Images</FormLabel>
+				<Input type="file" mb={2} onChange={handleImageChange} multiple />
+				{errors.information && errors.information.images && (
+					<Text color="red.500">{errors.information.images}</Text>
+				)}
+				{formData.information.images &&
+					formData.information.images.map((imageUrl, index) => (
+						<Image key={index} src={imageUrl} alt={`Image ${index + 1}`} boxSize="100px" mb={2} />
 					))}
-				</Select>
-				{errors.service && <Text color="red.500">{errors.service}</Text>}
 			</FormControl>
 			<Button colorScheme="teal" onClick={handleSubmit}>
 				Submit

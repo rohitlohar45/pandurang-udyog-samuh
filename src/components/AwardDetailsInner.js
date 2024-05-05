@@ -15,6 +15,7 @@ const AwardDetailsInner = ({ award, handleRedirect }) => {
 			const { information } = award;
 			setInformation(information);
 		}
+		console.log(award);
 		localStorage.getItem("top5Awards") &&
 			setTopAwards(JSON.parse(localStorage.getItem("top5Awards")));
 	}, [award]);

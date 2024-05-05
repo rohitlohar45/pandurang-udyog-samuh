@@ -128,18 +128,41 @@ const handleCreateEntry = async (formData, toast) => {
 
 		// Upload the image to Firebase Storage
 		// console.log(formData);
-		const imageRef = ref(storage, `images/${Date.now()}_${Math.floor(Math.random() * 1000)}`);
-		await uploadString(imageRef, formData.imageUrl, "data_url");
+		const folderRef = ref(storage, `awards/${formData.slug}`);
 
-		// Get the download URL for the uploaded image
-		const imageUrl = await getDownloadURL(imageRef);
+		// Check if the folder exists
+		let folderExists = true;
+		try {
+			await getMetadata(folderRef);
+		} catch (error) {
+			if (error.code === "storage/object-not-found") {
+				folderExists = false;
+			} else {
+				throw error;
+			}
+		}
 
-		// Add document to Firestore collection with the obtained image URL
+		// If the folder doesn't exist, create it
+		if (!folderExists) {
+			await uploadString(ref(folderRef, ".keep"), "");
+		}
+
+		// Upload images to Firebase Storage and get download URLs
+		const imagesPromises = formData.information.images.map(async (image) => {
+			const imageName = `${Date.now()}_${Math.floor(Math.random() * 1000)}`;
+			const imageRef = ref(folderRef, imageName);
+			await uploadString(imageRef, image, "data_url");
+			return getDownloadURL(imageRef);
+		});
+		const images = await Promise.all(imagesPromises);
 		const docRef = await addDoc(eventsCollectionRef, {
-			name: formData.name,
-			description: formData.description,
-			imageUrl: imageUrl,
-			service: formData.service,
+			title: formData.title,
+			slug: formData.slug,
+			information: {
+				description: formData.information.description,
+				images: images,
+			},
+			rank: formData.rank,
 		});
 		return docRef;
 	} catch (error) {
