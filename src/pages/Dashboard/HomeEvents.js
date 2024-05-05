@@ -201,7 +201,7 @@ const HomeEvents = () => {
 							{selectedEvents.map((event, index) => (
 								<Tr key={event.id}>
 									<Td>Event {index + 1}</Td>
-									<Td>{event.name}</Td>
+									<Td>{event.title}</Td>
 									<Td>
 										<IconButton
 											icon={<MdEdit />}
@@ -235,7 +235,7 @@ const HomeEvents = () => {
 						>
 							{filteredEvents.map((event) => (
 								<option key={event.id} value={event.id}>
-									{event.name}
+									{event.title}
 								</option>
 							))}
 						</Select>

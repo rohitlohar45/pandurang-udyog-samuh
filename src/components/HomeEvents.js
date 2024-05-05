@@ -23,6 +23,7 @@ const HomeEvents = () => {
 						...doc.data(),
 					});
 				});
+				console.log(eventsData);
 				setAllEvents(eventsData);
 			} catch (error) {
 				console.error("Error fetching data:", error);
@@ -46,9 +47,9 @@ const HomeEvents = () => {
 					}}
 					gap={25}
 				>
-					{events?.map((event) => (
+					{events?.map((event, index) => (
 						<Box
-							key={event.id}
+							key={index}
 							borderWidth="1px"
 							borderRadius="lg"
 							overflow="hidden"
@@ -56,7 +57,7 @@ const HomeEvents = () => {
 							p={4}
 						>
 							<Image
-								src={event.imageUrl}
+								src={event.information?.images[0]}
 								alt={event.title}
 								width="100%"
 								height="250px"
@@ -64,7 +65,7 @@ const HomeEvents = () => {
 							/>
 							<Box p={4}>
 								<Text fontSize="xl" fontWeight="bold" mb={2}>
-									{event.name}
+									{event.title}
 								</Text>
 							</Box>
 						</Box>
