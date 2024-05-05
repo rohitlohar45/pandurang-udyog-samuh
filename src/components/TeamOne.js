@@ -68,7 +68,7 @@ const TeamOne = () => {
                 <h4 className="subtitle">TEAM MEMBERS</h4>
                 <h2 className="title">OUR PROFESSIONAL TEAM</h2>
                 <p>
-                  Empower your business with innovative strategies, driving
+                  Empowering businesses with innovative strategies, driving
                   unparalleled growth and satisfaction through meticulously
                   crafted agro initiatives.
                 </p>

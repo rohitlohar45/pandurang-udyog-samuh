@@ -7,6 +7,7 @@ import {
   FaInstagram,
   FaLinkedin,
   FaTwitter,
+  FaYoutube,
 } from "react-icons/fa";
 import { Box, Flex, Icon, Text } from "@chakra-ui/react";
 import { MdLocationOn, MdPhone, MdEmail } from "react-icons/md";
@@ -111,6 +112,14 @@ const FooterOne = ({ logo = null, onLoad = null }) => {
                     className="social-icon"
                   >
                     <FaLinkedin size={24} color="white" />
+                  </a>
+                  <a
+                    href="https://youtube.com/@pandurang66?si=UzKn4Tf0KxSDrzjx"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="social-icon"
+                  >
+                    <FaYoutube size={24} color="white" />
                   </a>
                 </div>
               </div>

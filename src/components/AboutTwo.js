@@ -1,3 +1,4 @@
+import { WidthFull } from "@mui/icons-material";
 import React from "react";
 
 const AboutTwo = () => {
@@ -14,45 +15,52 @@ const AboutTwo = () => {
                   <img
                     src="https://firebasestorage.googleapis.com/v0/b/pandurang-udyog-samuh.appspot.com/o/About%20Us%2FIMG_4118.jpg?alt=media&token=f511da8a-0f62-4d3f-bfd4-7a107c67436d"
                     alt="Image 1"
+                    className="img-fluid mb-4 "
+                  />
+
+                  <img
+                    src="https://firebasestorage.googleapis.com/v0/b/pandurang-udyog-samuh.appspot.com/o/About%20Us%2FUntitled%20design.jpg?alt=media&token=564bb3b9-bd65-4eac-bb28-4d599034673a"
+                    alt="Image 1"
                     className="img-fluid mb-4"
+                    style={{ width: "100%", height: "auto" }}
                   />
                   {/* Wrap the remaining images in a container */}
-                  <div className="image-container mb-4">
-                    {/* Second row */}
-                    <div className="row mb-4">
+                  {/* <div className="image-container mb-4"> */}
+                  {/* Second row */}
+                  {/* <div className="row mb-4">
                       <div className="col-6">
                         <img
-                          src="https://firebasestorage.googleapis.com/v0/b/pandurang-udyog-samuh.appspot.com/o/About%20Us%2FIMG_9065.PNG?alt=media&token=fc67f56c-493c-418c-9eb0-8f9060da1363"
+                          src="https://firebasestorage.googleapis.com/v0/b/pandurang-udyog-samuh.appspot.com/o/About%20Us%2F68234a9c-1b5c-4df9-a760-3d73b1431f7a.jpg?alt=media&token=768f0c40-ac70-4eda-8d91-93a49aad637f"
                           alt="Image 2"
                           className="img-fluid"
                         />
                       </div>
                       <div className="col-6">
                         <img
-                          src="https://firebasestorage.googleapis.com/v0/b/pandurang-udyog-samuh.appspot.com/o/About%20Us%2F68234a9c-1b5c-4df9-a760-3d73b1431f7a.jpg?alt=media&token=768f0c40-ac70-4eda-8d91-93a49aad637f"
+                          src="https://firebasestorage.googleapis.com/v0/b/pandurang-udyog-samuh.appspot.com/o/About%20Us%2FIMG_4140.jpg?alt=media&token=445bb75b-fff6-4b9b-9de9-c474789b73c3"
                           alt="Image 1"
                           className="img-fluid"
                         />
                       </div>
-                    </div>
-                    {/* Third row */}
-                    <div className="row">
+                    </div> */}
+                  {/* Third row */}
+                  {/* <div className="row">
                       <div className="col-6">
                         <img
-                          src="https://firebasestorage.googleapis.com/v0/b/pandurang-udyog-samuh.appspot.com/o/About%20Us%2FIMG_8093.jpg?alt=media&token=1f675bbb-c4d0-4a65-9474-476e2e606667"
+                          src="https://firebasestorage.googleapis.com/v0/b/pandurang-udyog-samuh.appspot.com/o/About%20Us%2FIMG_8089.jpg?alt=media&token=bd43c705-6356-4389-b7fb-7cc5f7b2b8ef"
                           alt="Image 4"
                           className="img-fluid"
                         />
-                      </div>
-                      <div className="col-6">
+                      </div> */}
+                  {/* <div className="col-6">
                         <img
-                          src="https://firebasestorage.googleapis.com/v0/b/pandurang-udyog-samuh.appspot.com/o/About%20Us%2FIMG_8062.jpg?alt=media&token=6688744d-d592-4ff5-ae39-e467c0279823"
+                          src="https://firebasestorage.googleapis.com/v0/b/pandurang-udyog-samuh.appspot.com/o/About%20Us%2FIMG_8064.jpg?alt=media&token=2f1a266a-8039-4553-8873-dc43092b3e66"
                           alt="Image 3"
                           className="img-fluid"
                         />
                       </div>
                     </div>
-                  </div>
+                  </div> */}
                 </div>
               </div>
               <div className="col-lg-6  align-self-start">
