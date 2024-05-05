@@ -26,6 +26,7 @@ function ServiceEntryForm({ handleCreateEntry, onClose, setFilteredData, service
 		support: {
 			email: "",
 			phoneNumber: "",
+			address: "",
 		},
 		information: {
 			title: "",
@@ -129,6 +130,14 @@ function ServiceEntryForm({ handleCreateEntry, onClose, setFilteredData, service
 				support: {
 					...prevData.support,
 					phoneNumber: value,
+				},
+			}));
+		} else if (name === "address") {
+			setFormData((prevData) => ({
+				...prevData,
+				support: {
+					...prevData.support,
+					address: value,
 				},
 			}));
 		}
@@ -364,6 +373,22 @@ function ServiceEntryForm({ handleCreateEntry, onClose, setFilteredData, service
 						setFormData((prevData) => ({
 							...prevData,
 							support: { ...prevData.support, phoneNumber: e.target.value },
+						}))
+					}
+				/>
+			</FormControl>
+
+			<FormControl mb={4}>
+				<FormLabel>Support Address</FormLabel>
+				<Input
+					type="text"
+					placeholder="Enter support address"
+					name="address"
+					value={formData.support.address}
+					onChange={(e) =>
+						setFormData((prevData) => ({
+							...prevData,
+							support: { ...prevData.support, address: e.target.value },
 						}))
 					}
 				/>
